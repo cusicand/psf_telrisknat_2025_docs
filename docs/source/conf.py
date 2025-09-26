@@ -18,7 +18,7 @@ extensions = [
     "sphinx_immaterial",
     'myst_parser',
     'sphinx.ext.duration',
-    "sphinx_pdf_generate",
+    # "sphinx_pdf_generate",
     'sphinxcontrib.bibtex',
     'sphinx_togglebutton',
     # 'sphinx_immaterial.kbd_keys',
@@ -79,7 +79,7 @@ html_theme_options = {
     "site_url": "https://cusicand.github.io/psf_telrisknat_2025_docs/",
     "repo_url": "https://github.com/cusicand/psf_telrisknat_2025_docs",
     "repo_name": "PSF TelRiskNat 2025",
-    "edit_uri": "blob/main/docs",
+    "edit_uri": "edit/main/docs/source/",
     "globaltoc_collapse": True,
     "features": [
         "navigation.expand",
