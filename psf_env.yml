@@ -1,0 +1,14 @@
+name: psf_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - xdem=0.1.*
+  - geoutils=0.1.*
+  - jupyter
+  - jupytext
+  - numpy
+  - opencv
+  - matplotlib
+  - rasterio
+  - geopandas

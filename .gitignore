@@ -1,0 +1,44 @@
+# Sphinx build output
+docs/build/
+docs/_build/
+docs/build/doctrees/
+docs/build/html/
+
+# Python build/test caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+build/
+dist/
+.pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local envs
+.venv_psf/
+.venv*/
+venv/
+env/
+
+# IDE
+.vscode/
+.DS_Store
+
+# Project data (large datasets)
+data/
+*.tif
+*.tiff
+*.jp2
+*.nc
+*.zip
+*.tar.gz
