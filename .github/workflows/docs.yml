@@ -29,6 +29,12 @@ jobs:
           pip install -r docs/requirements.txt
       - name: Build Sphinx HTML
         run: sphinx-build -b html docs/source docs/_build/html
+      # multilengual build steps
+      - name: Build Sphinx HTML (multi-language)
+        run: |
+          sphinx-build -b html -D language=en docs/source docs/_build/html/en
+          sphinx-build -b html -D language=fr docs/source docs/_build/html/fr
+          sphinx-build -b html -D language=es docs/source docs/_build/html/es
       - name: Zip site for release asset
         run: |
           cd docs/_build/html
@@ -43,6 +49,7 @@ jobs:
         with:
           name: site-zip
           path: docs/site.zip
+      
 
   deploy:
     if: github.ref == 'refs/heads/main'

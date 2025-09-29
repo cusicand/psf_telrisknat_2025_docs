@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, PSF TelRiskNat Optical team (D. Cusicanqui, P. Lacroix
+# & R. Basantes)
+# This file is distributed under the same license as the PSF TelRiskNat 2025
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PSF TelRiskNat 2025 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/practicals/landslide_prediction.rst:14
+#: edf7f845d1bc40fc8907507e41246b67
+msgid "Landslide prediction using time series of displacement"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:16
+#: cdcb6d78e0024e93a2f095e0e9e615bd
+msgid "be patient"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:21
+#: d1956c2c794d402f85bf24aab2aeb132
+msgid "Advice from PSF TelRiskNat optical team."
+msgstr ""
+

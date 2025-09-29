@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, PSF TelRiskNat Optical team (D. Cusicanqui, P. Lacroix
+# & R. Basantes)
+# This file is distributed under the same license as the PSF TelRiskNat 2025
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PSF TelRiskNat 2025 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/practicals/dem_generation.rst:14
+#: 6c58fd6205854200964a706e03933872
+msgid "Automatic generation of Digital Elevation Models using ASTER images"
+msgstr ""
+
+#: ../../source/practicals/dem_generation.rst:16
+#: 92b09a33a7134e51aaa85a16b7f16a79
+msgid "be patient"
+msgstr ""
+
+#: ../../source/practicals/dem_generation.rst:21
+#: 1a23d6e69b7d4240a7dd7ad397b6b7c2
+msgid "Advice from PSF TelRiskNat optical team."
+msgstr ""
+

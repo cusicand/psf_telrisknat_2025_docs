@@ -1,0 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, PSF TelRiskNat Optical team (D. Cusicanqui, P. Lacroix & R. Basantes)
+# This file is distributed under the same license as the PSF TelRiskNat 2025 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PSF TelRiskNat 2025 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/practicals/image_correlation.rst:14
+#: c45ade9fdc87495ba900768b9af0a888
+msgid "Feature tracking image correlation"
+msgstr ""
+
+#: ../../source/practicals/image_correlation.rst:16
+#: e8b0094d006a4192b186cb2d0db2d993
+msgid "be patient"
+msgstr ""
+
+#: ../../source/practicals/image_correlation.rst:21
+#: 035e6dc99e1d4ed1b882ec4e05c9e892
+msgid "Advice from PSF TelRiskNat optical team."
+msgstr ""

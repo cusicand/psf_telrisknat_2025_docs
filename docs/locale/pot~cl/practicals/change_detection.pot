@@ -1,0 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, PSF TelRiskNat Optical team (D. Cusicanqui, P. Lacroix & R. Basantes)
+# This file is distributed under the same license as the PSF TelRiskNat 2025 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PSF TelRiskNat 2025 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/practicals/change_detection.rst:12
+#: 33154242a89f49378c18a86dc1ba3d3e
+msgid "Change detection using optical images"
+msgstr ""
+
+#: ../../source/practicals/change_detection.rst:14
+#: 3057409259484b5d9fcec12f211179f7
+msgid "be patient"
+msgstr ""
+
+#: ../../source/practicals/change_detection.rst:19
+#: 13e19eb557844948a2e93dc65f897e82
+msgid "Content will be soon available. Advice from PSF TelRiskNat optical team."
+msgstr ""

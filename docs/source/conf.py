@@ -60,8 +60,11 @@ google_fonts = [
 ]
 
 # Multiple languages extension
-locale_dirs = ['locale/']
-gettext_compact = False
+language = "en"  # default/source language
+locale_dirs = ["locale/"]  # translations in docs/locale/<lang>/LC_MESSAGES
+gettext_compact = False       # keep one .po per .rst
+gettext_uuid = True           # stable msg ids across moves
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -163,3 +166,12 @@ html_theme_options = {
     ],
     # END: social icons
 }
+
+# Add language switcher
+html_theme_options.update({
+    "alternate": [
+        {"name": "English",  "link": "/psf_telrisknat_2025_docs/en/", "lang": "en"},
+        {"name": "Français", "link": "/psf_telrisknat_2025_docs/fr/", "lang": "fr"},
+        {"name": "Español",  "link": "/psf_telrisknat_2025_docs/es/", "lang": "es"},
+    ],
+})
