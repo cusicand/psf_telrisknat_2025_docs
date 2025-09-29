@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"POT-Creation-Date: 2025-09-29 05:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -38,7 +38,7 @@ msgstr ""
 
 #: ../../source/practicals/installation.rst:19 ad5e8eaec8d34cd0b8cee0e0400834ad
 msgid ""
-"`QGIS <https://qgis.org/en/site/forusers/download.html>` (to visualize "
+"`QGIS <https://qgis.org/en/site/forusers/download.html>`_ (to visualize "
 "and analyze geospatial data)."
 msgstr ""
 
@@ -285,4 +285,10 @@ msgid ""
 "details: `How to install QGIS with SAGA "
 "<https://www.youtube.com/watch?v=Erwg2BRLnNA>`_."
 msgstr ""
+
+#~ msgid ""
+#~ "`QGIS <https://qgis.org/en/site/forusers/download.html>` "
+#~ "(to visualize and analyze geospatial "
+#~ "data)."
+#~ msgstr ""
 

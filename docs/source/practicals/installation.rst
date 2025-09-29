@@ -16,7 +16,7 @@ Installation of necessary software
 For this workshop, we will rely on open-source software, mainly:
 
 - `Ames Stereo Pipeline (ASP) <https://stereopipeline.readthedocs.io/en/latest/introduction.html>`_ (to generate DEMs and correlate images).
-- `QGIS <https://qgis.org/en/site/forusers/download.html>` (to visualize and analyze geospatial data).
+- `QGIS <https://qgis.org/en/site/forusers/download.html>`_ (to visualize and analyze geospatial data).
 - `Python <https://www.python.org/>`_ (version 3.7 or higher).
 - `Jupyter Notebook <https://jupyter.org/>`_ (to run Python code in your browser).
 - `Geoutils <https://geoutils.readthedocs.io/en/stable/>`_ (to handle raster and vector geospatial data).
