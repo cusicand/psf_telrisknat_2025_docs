@@ -3,10 +3,11 @@ name: docs
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
+    tags: [ 'v*' ] 
+  # workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -28,10 +29,19 @@ jobs:
           pip install -r docs/requirements.txt
       - name: Build Sphinx HTML
         run: sphinx-build -b html docs/source docs/_build/html
-      - name: Upload artifact
+      - name: Zip site for release asset
+        run: |
+          cd docs/_build/html
+          zip -r ../../site.zip .
+      - name: Upload artifact (Pages)
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/_build/html
+      - name: Upload artifact (release asset)
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-zip
+          path: docs/site.zip
 
   deploy:
     needs: build
@@ -43,3 +53,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+  
+  release:
+    # only run when the ref is a tag (v*)
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download site zip
+        uses: actions/download-artifact@v4
+        with:
+          name: site-zip
+          path: .
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: |
+            docs/site.zip
