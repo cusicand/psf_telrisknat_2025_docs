@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"POT-Creation-Date: 2025-09-29 23:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -21,45 +21,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../../source/index.rst:15
+#: ../../source/index.rst:22
 msgid "Programme"
 msgstr ""
 
-#: ../../source/index.rst:15
+#: ../../source/index.rst:22
 msgid "Lectures"
 msgstr ""
 
-#: ../../source/index.rst:15
+#: ../../source/index.rst:22
 msgid "Practical sessions"
 msgstr ""
 
-#: ../../source/index.rst:7 e2decb92a41c4347b7a65d0a75b29afe
+#: ../../source/index.rst:7 d20b562c25624095ac361c0bf04d52f1
 msgid "Welcome to 'PSF TelRiskNat 2025 workshop documentation'"
 msgstr ""
 
-#: ../../source/index.rst:8 bf8279f923d74faba6d36aa4ab941739
+#: ../../source/index.rst:8 9f7f6fd3ef154adf91827f2fa4247921
 msgid ""
 "Regional workshop on \"Natural hazards in mountains: satellite monitoring"
 " and social impacts\""
 msgstr ""
 
-#: ../../source/index.rst:10 bd40dd98cee24c3da3c87adec7e9637c
+#: ../../source/index.rst:10 498396c78f5b416dbf447bc18ee2bc6b
 msgid "6–17 October 2025 Yachay Tech University, San Miguel de Urcuqui, Ecuador"
 msgstr ""
 
-#: ../../source/index.rst:13 e92bf87350d2410da9319d1d071a876c
+#: ../../source/index.rst:12 0dc76e4ceb744bc8829b6f279f24045e
+msgid ""
+"The workshop **Natural hazards in mountain areas: satellite monitoring "
+"and social impacts** aims to strengthen the technical and methodological "
+"capacities of local actors in the use of advanced optical remote sensing "
+"tools for better assessment of natural hazards in mountain areas. The "
+"workshop will not only examine threats in mountain environments from a "
+"physical perspective, but will also cover the fundamental principles of "
+"analysing the vulnerability of populations to natural disasters, giving "
+"participants an interdisciplinary view of risk management."
+msgstr ""
+
+#: ../../source/index.rst:14 7514c9d16d8e47c4ac1092b703937bfc
+msgid "Note"
+msgstr ""
+
+#: ../../source/index.rst:15 c5263d1565c6454f8fb6226e0d86671f
+msgid ""
+"This documentation is a work in progress. Content will be added and "
+"updated regularly. However, the content will remain accessible even after"
+" the workshop."
+msgstr ""
+
+#: ../../source/index.rst:17 19fbfda1e1144f949986ce0e56f1d975
+msgid ""
+"If you find any issues, please report them on the `GitHub issue tracker "
+"<https://github.com/cusicand/psf_telrisknat_2025_docs/issues>`_."
+msgstr ""
+
+#: ../../source/index.rst:20 8bd2e2ffc4bc49d2a2f31df5042752c2
 msgid "Contents"
 msgstr ""
 
-#: ../../source/index.rst:25 1ec57a9f28004cf6a34d6a3b9b8e1aae
-msgid ":ref:`genindex`"
-msgstr ""
+#~ msgid ":ref:`genindex`"
+#~ msgstr ""
 
-#: ../../source/index.rst:26 09bbf0ca092d496ab9b42e2fa62e0d09
-msgid ":ref:`modindex`"
-msgstr ""
+#~ msgid ":ref:`modindex`"
+#~ msgstr ""
 
-#: ../../source/index.rst:27 b2444a9022634814b9eeea9cdf3e6363
-msgid ":ref:`search`"
-msgstr ""
+#~ msgid ":ref:`search`"
+#~ msgstr ""
 

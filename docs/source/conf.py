@@ -151,6 +151,26 @@ html_theme_options = {
     #     },
     # ],
     # # END: version_dropdown
+    # # BEGIN: language switcher
+    "version_dropdown": True,
+    "version_info": [
+        {
+            "version": "/psf_telrisknat_2025_docs/en/",
+            "title": "en",
+            "aliases": ["english"],
+        },
+        {
+            "version": "/psf_telrisknat_2025_docs/fr/",
+            "title": "fr",
+            "aliases": ["french"],
+        },
+        {
+            "version": "/psf_telrisknat_2025_docs/es/",
+            "title": "es",
+            "aliases": ["spanish"],
+        },
+    ],
+    # # END: language switcher
     "toc_title_is_page_title": True,
     # BEGIN: social icons
     "social": [
@@ -167,17 +187,17 @@ html_theme_options = {
     # END: social icons
 }
 
-# Add language switcher
-html_theme_options.update({
-    "alternate": [
-        {"name": "English",  "link": "/psf_telrisknat_2025_docs/en/", "lang": "en"},
-        {"name": "Français", "link": "/psf_telrisknat_2025_docs/fr/", "lang": "fr"},
-        {"name": "Español",  "link": "/psf_telrisknat_2025_docs/es/", "lang": "es"},
-    ],
-    "version_dropdown": True,
-    "version_info": [
-        {"version": "/psf_telrisknat_2025_docs/en/", "title": "main", "aliases": ["latest"]},
-        {"version": "/psf_telrisknat_2025_docs/fr/", "title": "fr"},
-        {"version": "/psf_telrisknat_2025_docs/es/", "title": "es"},
-    ],
-})
+# # Add language switcher
+# html_theme_options.update({
+#     "alternate": [
+#         {"name": "English",  "link": "/psf_telrisknat_2025_docs/en/", "lang": "en"},
+#         {"name": "Français", "link": "/psf_telrisknat_2025_docs/fr/", "lang": "fr"},
+#         {"name": "Español",  "link": "/psf_telrisknat_2025_docs/es/", "lang": "es"},
+#     ],
+#     "version_dropdown": True,
+#     "version_info": [
+#         {"version": "/psf_telrisknat_2025_docs/en/", "title": "main", "aliases": ["latest"]},
+#         {"version": "/psf_telrisknat_2025_docs/fr/", "title": "fr"},
+#         {"version": "/psf_telrisknat_2025_docs/es/", "title": "es"},
+#     ],
+# })

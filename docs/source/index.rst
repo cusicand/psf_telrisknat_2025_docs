@@ -9,6 +9,13 @@ Regional workshop on "Natural hazards in mountains: satellite monitoring and soc
 
 6–17 October 2025 Yachay Tech University, San Miguel de Urcuqui, Ecuador
 
+The workshop **Natural hazards in mountain areas: satellite monitoring and social impacts** aims to strengthen the technical and methodological capacities of local actors in the use of advanced optical remote sensing tools for better assessment of natural hazards in mountain areas. The workshop will not only examine threats in mountain environments from a physical perspective, but will also cover the fundamental principles of analysing the vulnerability of populations to natural disasters, giving participants an interdisciplinary view of risk management.
+
+.. note::
+   This documentation is a work in progress. Content will be added and updated regularly. However, the content will remain accessible even after the workshop.
+
+   If you find any issues, please report them on the `GitHub issue tracker <https://github.com/cusicand/psf_telrisknat_2025_docs/issues>`_.
+
 Contents
 --------
 
