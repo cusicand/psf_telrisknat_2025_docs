@@ -34,6 +34,7 @@ jobs:
           cd docs/_build/html
           zip -r ../../site.zip .
       - name: Upload artifact (Pages)
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/_build/html
@@ -44,6 +45,7 @@ jobs:
           path: docs/site.zip
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
