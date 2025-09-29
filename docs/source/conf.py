@@ -61,7 +61,7 @@ google_fonts = [
 
 # Multiple languages extension
 language = "en"  # default/source language
-locale_dirs = ["locale/"]  # translations in docs/locale/<lang>/LC_MESSAGES
+locale_dirs = ["../locale/"]  # translations in docs/locale/<lang>/LC_MESSAGES
 gettext_compact = False       # keep one .po per .rst
 gettext_uuid = True           # stable msg ids across moves
 
@@ -173,5 +173,11 @@ html_theme_options.update({
         {"name": "English",  "link": "/psf_telrisknat_2025_docs/en/", "lang": "en"},
         {"name": "Français", "link": "/psf_telrisknat_2025_docs/fr/", "lang": "fr"},
         {"name": "Español",  "link": "/psf_telrisknat_2025_docs/es/", "lang": "es"},
+    ],
+    "version_dropdown": True,
+    "version_info": [
+        {"version": "/psf_telrisknat_2025_docs/en/", "title": "main", "aliases": ["latest"]},
+        {"version": "/psf_telrisknat_2025_docs/fr/", "title": "fr"},
+        {"version": "/psf_telrisknat_2025_docs/es/", "title": "es"},
     ],
 })
