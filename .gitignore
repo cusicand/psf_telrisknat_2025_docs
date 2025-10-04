@@ -4,6 +4,11 @@ docs/_build/
 docs/build/doctrees/
 docs/build/html/
 
+# Sphinx i18n artifacts
+**/*.mo
+**/*.pot
+docs/locale/pot/
+
 # Python build/test caches
 __pycache__/
 *.pyc

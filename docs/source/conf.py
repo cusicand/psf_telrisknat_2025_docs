@@ -24,6 +24,7 @@ extensions = [
     # 'sphinx_immaterial.kbd_keys',
     'sphinxcontrib.programoutput',
     'sphinx.ext.mathjax',
+    'sphinx_design',
 ]
 
 # sphinx_immaterial_override_builtin_admonitions = False

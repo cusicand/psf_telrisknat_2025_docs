@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"POT-Creation-Date: 2025-09-29 23:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals.rst:2
-#: 8b49b0506b5e4988ad48da6c476ce8c8
+#: 4a0c5a4c534940b9aab08b66a8fb56bd
 msgid "Practical sessions"
 msgstr ""
