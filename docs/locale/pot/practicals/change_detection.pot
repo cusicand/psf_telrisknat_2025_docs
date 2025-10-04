@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 23:05+0200\n"
+"POT-Creation-Date: 2025-10-05 00:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/change_detection.rst:12
-#: e232c4ced9e3439a94ef5f8c32cd5816
+#: 2da234da50ff4700a6bdd7b95dedbf70
 msgid "Change detection using optical images"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:14
-#: 8c5ce6a7758d4370a63532e6a43898a6
+#: c0e59003b1104f80826462cc610a831e
 msgid "be patient"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:19
-#: 8eb4b6cc09e94a45a14ede08e1361bbc
+#: b4f60f7473a84e00beb64155587a3d01
 msgid "Content will be soon available. Advice from PSF TelRiskNat optical team."
 msgstr ""

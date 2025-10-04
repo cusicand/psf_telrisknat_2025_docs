@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 23:05+0200\n"
+"POT-Creation-Date: 2025-10-05 00:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/landslide_prediction.rst:14
-#: d5caf2142c694da6bc6eba4a65a83bc8
+#: 76bb7c2b2044492597260a94f442cb82
 msgid "Landslide prediction using time series of displacement"
 msgstr ""
 
 #: ../../source/practicals/landslide_prediction.rst:16
-#: b7a00c7be0a644a39447c14e2721d299
+#: 80ce626c36f84145bafffb502b328ffe
 msgid "be patient"
 msgstr ""
 
 #: ../../source/practicals/landslide_prediction.rst:21
-#: 41ac761463bf433f8c8cf975f0d5565e
+#: c2e0ff6d7e104d05884db3641f485a04
 msgid "Advice from PSF TelRiskNat optical team."
 msgstr ""

@@ -29,6 +29,9 @@ htmlcov/
 # Jupyter
 .ipynb_checkpoints/
 
+#auto-published files
+auto_publish.sh
+
 # Local envs
 .venv_psf/
 .venv*/

@@ -21,7 +21,7 @@ Change detection using optical images
 ..
    **Floriane PROVOST**\ :sup:`1`, **Pascal LACROIX**\ :sup:`2` & **Diego CUSICANQUI**\ :sup:`2`
 
-   \ :sup:`1` bla bla (EOST), Strasbourg, France.
+   \ :sup:`1` Institut de Physique du Globe de Strasbourg, EOST/Université de Strasbourg, Strasbourg, France
 
    \ :sup:`2` Univ. Grenoble Alpes, CNES, CNRS, IRD, Institut des Sciences de la Terre (ISTerre), Grenoble, France.
 
@@ -57,7 +57,7 @@ Change detection using optical images
 
    Regarding the California wild fire event, In 2024, the San Francisco Bay Area experienced several notable wildfires around the region rather than inside the city itself. The **Corral Fire** near Tracy in the Diablo Range burned about 14,168 acres (≈ 57.34 km²) from June 1–6, while Sonoma County's Point Fire scorched ~1,207 acres (≈ 4.88 km²) from June 16–24. More infor in `CallFire <https://www.fire.ca.gov/incidents/2024/6/1/corral-fire>`_.
 
-   Smoke from these and other regional fires periodically drifted into San Francisco, prompting Bay Area Air Quality Management District advisories—especially in mid-June and again in August—due to hazy skies and particle pollution concerns. Overall, impacts in San Francisco were felt mainly through smoke and reduced air quality, while the largest burn areas were in surrounding counties `SFGATE <https://www.sfgate.com/weather/article/bay-area-air-advisory-smoky-skies-21071765.php>`_.
+   Smoke from these and other regional fires periodically drifted into San Francisco, prompting Bay Area Air Quality Management District advisories—especially in mid-June and again in August—due to hazy skies and particle pollution concerns :cite:`casey2025`. Overall, impacts in San Francisco were felt mainly through smoke and reduced air quality, while the largest burn areas were in surrounding counties `SFGATE <https://www.sfgate.com/weather/article/bay-area-air-advisory-smoky-skies-21071765.php>`_. More information about large California wildfires in :cite:`keeley2021`
 
    .. _figure_wildfire:
 
@@ -151,15 +151,12 @@ Change detection using optical images
    Vector files can be created manually with the function XXX 
    The following window should appear like :numref:`figure_vector_manual`.
 
-   1. Choose the name of the file, the extension (shapefile), and set up carefully the geometry (point, line or polygon) and the CRS. Click ``OK`` once all the options have been chosen. The layer should appear in the section ``Layers`` of the GIS environment.
-   2. To edit the layer, click on the created vector file and on the function ``Toggle Editing`` (pencil icon).
-   3. Click then on the function ``Add Polygon Feature`` (yellow star icon) to create a new entity.
-   4. Click on the map to draw the limits of the polygon you want to map.
-   5. Save the entity by clicking on the function ``Save Layer Edits`` (floppy disk icon) to render the layer non editable.
-   6. If you want to modify the points/shape of your vector, use the function ``Vertex Tool`` (icon with a point and a line) and move/modify the points.
-
-   .. admonition:: Do it yourself
-      **Map manually** the fire extent(at least the eastern fire located north of Pasadena).
+   a. Choose the name of the file, the extension (shapefile), and set up carefully the geometry (point, line or polygon) and the CRS. Click ``OK`` once all the options have been chosen. The layer should appear in the section ``Layers`` of the GIS environment.
+   b. To edit the layer, click on the created vector file and on the function ``Toggle Editing`` (pencil icon).
+   c. Click then on the function ``Add Polygon Feature`` (yellow star icon) to create a new entity.
+   d. Click on the map to draw the limits of the polygon you want to map.
+   e. Save the entity by clicking on the function ``Save Layer Edits`` (floppy disk icon) to render the layer non editable.
+   f. If you want to modify the points/shape of your vector, use the function ``Vertex Tool`` (icon with a point and a line) and move/modify the points.
 
    .. _figure_vector_manual:
 
@@ -170,8 +167,120 @@ Change detection using optical images
 
       Create a vector file manually.
 
+   .. admonition:: Do it yourself
+
+      **Map manually** the fire extent(at least the eastern fire located north of Pasadena).
+
    3.2. Create a vector file from raster data
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
    Now, we are going to create a vector file from the NDVI change raster. The idea is to extract the area where the NDVI has decreased significantly (i.e. vegetation has been destroyed by the fire).
 
+   a. Determine what operation should be realized to extract the fire extent from the NDVI
+   raster files. Use the ``Raster Calculator`` to derive a raster with the fire extent.
+
+   b. Vectorize the resulting raster using the function ``Raster > Conversion > Raster to Polygon``. You should obtain a new vector layer that looks like :numref:`figure_raster_to_vector`. The spatial domain is correctly sampled into geographical entities but many geographical entities are not of interest for this study.
+
+   .. _figure_raster_to_vector:
+
+   .. figure:: /_static/change_detection/Fig6_raster_to_vector.jpg
+      :width: 100%
+      :align: center
+      :alt: raster to vector
+
+      Create a vector file from a raster.
+
+   .. question:: Questions for discussion
+      :collapsible: closed
+
+      - What entities should be filtered?
+      - What attribute/properties do we need to compute to it?
+
+   c. Use the function ``Vector > Geometry > add geometrical attributes`` to compute the area and perimeter of each entity of the vector layer ``Vectorized``.
+
+   d. Use the attribute table to filter entities with areas smaller than 1,000 m², remove them by editing the table ``Toggle Editing`` (pencil icon) and deleting the selected entities (red garbage).
+
+   e. Repeat the operation to remove entities with areas larger than 68,000,000 m².
+
+   f. Regroup the entities in one single entity ``fire extent`` by using the function ``Vector > Geoprocessing Tools > Dissolve``. Your final result should look like :numref:`figure_fire_extent`.
+
+   .. _figure_fire_extent:
+
+   .. figure:: /_static/change_detection/Fig7_fire_extent.jpg
+      :width: 100%
+      :align: center
+      :alt: fire extent
+
+      Fire extent vector file.
+
+   g. Create a map showing the extent of the fires in California in January 2025.
+
+   4. Quantifying impacts 
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   4.1. Count the number of buildings destroyed
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   To estimate the number of buildings destroyed by the fire, we are going to use a vector file containing the building footprints in California. The file is located in ``data/exercise_1_change_detection/buildings_CA.shp``.
+
+
+   a. Load the vector file ``buildings_CA.shp`` in QGIS.
+   b. Use the function ``Vector > Geoprocessing Tools > Intersection`` to extract the buildings that intersect the fire extent.
+   c. Open the attribute table of the resulting vector layer and count.
+
+   .. question:: Questions for discussion
+      :collapsible: closed
+
+      - How many building were impacted?
+      - Estimate the total surface of damaged building by performing an operation on the ``Attribute table``.
+      - Estimate the cost of the wildfire (price per square meter in California is ranging from 500$ to 700$).
+
+   4.2. Check our mapping
+   ^^^^^^^^^^^^^^^^^^^^^^^
+
+   We are now going to use `Open Street Map (OSM) <https://www.openstreetmap.org/>`_ to check our mapping. OSM data is a geographic database feed by a community of mappers that contribute and maintain data about roads, trails. It is therefore possible to download the raw data directly and reuse it as you wish, for cartographic or other purposes. Every week, a complete file called ``planet`` is generated and made available by the OpenStreetMap Foundation. This file is very large and growing fast (20 GB at the end of 2011, 63 GB at the beginning of 2018) because it contains all the data for the entire planet. Extracts by continent, country or region are also available and updated daily by Geofabrik. There are also tools for breaking down a file into smaller geographical areas.
+
+   There are several ways of viewing and downloading OSM data:
+
+   4.2.1. Viewing the 'static' OSM map
+   '''''''''''''''''''''''''''''''''''''
+
+   The 'static' OSM map represents OSM data in raster form. It is not possible to manipulate the information contained in this layer. However, it allows OSM information to be viewed and can be used as a background map. To download the OSM map into QGIS you need to use the `QuickMapServices <https://plugins.qgis.org/plugins/quick_map_services/>`_ extension. 
+   Display OSM from WMS layers already installed on your computer. Use the function ``Web > QuickMapServices > OSM > OSM Standard``. Look at the areas affected by the fires. What do you notice?
+
+   4.2.2. Download the OSM database for an area of interest
+   '''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+   You can download OSM data using `QuickOSM plugin <https://plugins.qgis.org/plugins/QuickOSM/>`_ to download the vector data from the OSM base maps.
+
+   - Click on the function ``Vector > QuickOSM > QuickOSM`` (green lupe icon).
+   - Click on ``Theme`` and select the default ``Urban`` theme. Define the geographical extent for which you want to download the data. You can use the ``Canvas extent`` option to download the data for the area currently displayed on your QGIS canvas.
+
+   .. important::
+      This area must not be too large, as this could create a memory problem in QGIS.
+
+   - Click on ``Execute query`` to download the data. Several layers should appear in your ``Layers`` section.
+
+   You can also use the ``OSMDownloader`` plugin to download OSM data. This plugin allows you to download OSM data in a specific format (shapefile, geopackage, etc.) and for a specific area of interest.
+
+   * Install the plugin `OSMDownloader <https://plugins.qgis.org/plugins/OSMDownloader/>`_ from the QGIS plugin manager.
+
+   * Open the plugin from the menu ``OSMDownloader``.
+
+   * Define the area of interest by drawing a rectangle.
+
+   * Save the data in a specific format (shapefile, geopackage, etc.) and download.
+
+   A number of vector layers should appear in your ``Layers`` tab. Manipulate these layers to
+   display the buildings mapped in OSM and compare with your result.
+
+   .. admonition:: Do it yourself
+
+      Draw a diagram that represents all the steps realised to answer the initial question.
+
+   5. References
+   ~~~~~~~~~~~~~~~~~~
+
+   .. bibliography::
+      :cited:
+      :style: unsrt
