@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-05 00:55+0200\n"
+"POT-Creation-Date: 2025-10-08 16:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,121 +32,121 @@ msgid "Practical sessions"
 msgstr ""
 
 #: ../../source/index.rst:12
-#: d9d57fe06bdb429db627398dc0f080b0
+#: 9619519464f04401b803d0006b0b9fa0
 msgid "Welcome to 'PSF TelRiskNat 2025 workshop documentation'"
 msgstr ""
 
 #: ../../source/index.rst:13
-#: 98d0c85b4eeb4e528124da368e15f140
+#: 27cb22e531894597914dc3e18fa2a752
 msgid "Regional workshop on \"Natural hazards in mountains: satellite monitoring and social impacts\""
 msgstr ""
 
 #: ../../source/index.rst:15
-#: a4204af946fd489898fc338a63fe272e
+#: c793133c5b1b4343b1da66eead0c7a59
 msgid "6–17 October 2025 Yachay Tech University, San Miguel de Urcuqui, Ecuador"
 msgstr ""
 
 #: ../../source/index.rst:17
-#: fc5e94e53b6c44debf4f5788f055309b
+#: 2483293ad98d4dc98ecfd5a60d15e4fb
 msgid "The workshop **Natural hazards in mountain areas: satellite monitoring and social impacts** aims to strengthen the technical and methodological capacities of local actors in the use of advanced optical remote sensing tools for better assessment of natural hazards in mountain areas. The workshop will not only examine threats in mountain environments from a physical perspective, but will also cover the fundamental principles of analysing the vulnerability of populations to natural disasters, giving participants an interdisciplinary view of risk management."
 msgstr ""
 
 #: ../../source/index.rst:19
-#: 06ab01de0f7d4966a1e58cdbb7de4207
+#: ba3bf85d45614b729b8c97d0e2438b70
 msgid "Note"
 msgstr ""
 
 #: ../../source/index.rst:20
-#: 011be7bae2054c08ae0cb5062f1560fd
+#: 7df2a5c9d12840f086f259df6d7ddcfa
 msgid "This documentation is a work in progress. Content will be added and updated regularly. However, the content will remain accessible even after the workshop."
 msgstr ""
 
 #: ../../source/index.rst:22
-#: da9a0dff06b04416861367771ba4e7e6
+#: ebf0712783d043079312f5990b101c3a
 msgid "If you find any issues, please report them on the `GitHub issue tracker <https://github.com/cusicand/psf_telrisknat_2025_docs/issues>`_."
 msgstr ""
 
 #: ../../source/index.rst:25
-#: 67ca08eeb47c4d11b933075b731ed79a
+#: 43c2fc421dc24035a3e088dc09b65477
 msgid "Contents"
 msgstr ""
 
 #: ../../source/index.rst:42
-#: 66c49368f60041478593e49a7ca79c32
+#: ad1711587e9a41fd9d59125e9f0564f0
 msgid "Partner Organizations"
 msgstr ""
 
 #: ../../source/index.rst:44
-#: 3ae794b568d741eca80faf7632c78e2a
+#: b3924d778bde4288b36774762a719814
 msgid "The workshop is organized within the framework of the IRD project “TelRiskNat: improving the use of remote sensing data for natural risk management.”"
 msgstr ""
 
 #: ../../source/index.rst:48
-#: 085c5286d209420f8678e44f4a40f630
+#: 84b5b0302aba468fbc7b35aa7bafb83d
 msgid "IRD | Francia"
 msgstr ""
 
 #: ../../source/index.rst:52
-#: 04abab4228844c84ae0cd7ddc41d1855
+#: 6920c84d09b140559819d92100257808
 msgid "Institut de Recherche pour le Développement"
 msgstr ""
 
 #: ../../source/index.rst:54
-#: 9b45beb22abe42f5b6f0c90ece4a36c7
+#: ff4223eb85604d7c88413505f6098755
 msgid "CNES | Francia"
 msgstr ""
 
 #: ../../source/index.rst:58
-#: ed9d4d82854a4229911dbff53c3bb776
+#: 511eb95f74c44faeafb9d2ce43960d98
 msgid "Centre National d'Études Spatiales"
 msgstr ""
 
 #: ../../source/index.rst:60
-#: 95c2a84f16804866a44333cbf8defbb1
+#: db5591eafad6430ead55813a3883872c
 msgid "LabEx OSUG | Francia"
 msgstr ""
 
 #: ../../source/index.rst:64
-#: 8eaa276a429044cfb85b82534e228b96
+#: 31a498e0bfab48df88f61ef656758d88
 msgid "Laboratoire d'Excellence de l'Observatoire des Sciences de l'Univers de Grenoble"
 msgstr ""
 
 #: ../../source/index.rst:68
-#: bc19931821b04c869890e2f0e2e5cad4
+#: 8472f9b5e24244e9b46d6f8eede20593
 msgid "UGA | Francia"
 msgstr ""
 
 #: ../../source/index.rst:72
-#: d532e1a553504de18278023d0ed090da
+#: a2f5184f6f254958b3e310ff7ea58cb6
 msgid "Université Grenoble Alpes"
 msgstr ""
 
 #: ../../source/index.rst:74
-#: f5c61ca96dd64be38edbf56716af03e3
+#: 148596c4729b4c1ea3a8b810a0fcbc5a
 msgid "UPPA | Francia"
 msgstr ""
 
 #: ../../source/index.rst:78
-#: b5eba1fd95f64787aeaa8be2f35b121c
+#: 51f7bf05005f4eabb592abe4f677f176
 msgid "Université de Pau et des Pays de l'Adour"
 msgstr ""
 
 #: ../../source/index.rst:80
-#: 97adeed3bb0e4b358490d49ff9fb4c24
+#: 7d0c86e99a0641078c93a48e9757c2ea
 msgid "Yachay Tech | Ecuador"
 msgstr ""
 
 #: ../../source/index.rst:84
-#: 4a8d7266e40044aaaa1403edef57d1f1
+#: b954e2397483474f83e77e8b225cc34f
 msgid "Universidad Yachay Tech"
 msgstr ""
 
 #: ../../source/index.rst:88
-#: 44bf5ded70cb4e748cb3106b5447e3a0
+#: f868c471c71d480faca6f1b46edf7820
 msgid "FLACSO | Ecuador"
 msgstr ""
 
 #: ../../source/index.rst:92
-#: c7034a69c1f8401bb7fd18fe9b79ee31
+#: 5b0655813b5749b2929891d4d4860367
 msgid "Facultad Latinoamericana de Ciencias Sociales"
 msgstr ""

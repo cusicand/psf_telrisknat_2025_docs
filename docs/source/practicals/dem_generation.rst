@@ -14,11 +14,11 @@ Automatic generation of Digital Elevation Models using ASTER images
 --------------------------------------------------------------------
 
 .. figure:: /_static/Fig0_patience.jpg
-   :width: 100%
-   :align: center
-   :alt: be patient
+    :width: 100%
+    :align: center
+    :alt: be patient
 
-   Advice from PSF TelRiskNat optical team.
+    Advice from PSF TelRiskNat optical team.
 
 ..
     **Diego CUSICANQUI**\ :sup:`1` & **Ruben BASANTES**\ :sup:`2`
@@ -147,8 +147,9 @@ Automatic generation of Digital Elevation Models using ASTER images
     In order to properly use the SRTM tiles as a seed DEM, we need to take some additional steps to prepare them: Extract the files inside the zip files. To do this, use the following commands:
 
     .. code-block:: bash
-
-        cd SRTM_DEM/CBLANCA # Change directory to SRTM_DEM/CBLANCA
+        
+        base_directory="~/05_Devs/psf_telrisknat_2025_docs/data/excercise_3_dems_generation"
+        cd $base_directory/SRTM_DEM/CBLANCA # Change directory to SRTM_DEM/CBLANCA
 
     .. code-block:: bash
 
@@ -167,6 +168,12 @@ Automatic generation of Digital Elevation Models using ASTER images
         gdalwarp -s_srs EPSG:4326 -t_srs EPSG:32718 -r bilinear -of GTiff merged_DEM.tif DEM_REF_for_ASP.tif # Merge all hgt files
 
     You can use the command ``gdalinfo`` command to check the results. If you dont feel confortably with comand-line interface, you can import the DEM into QGIS and then look at their properties.
+
+    Finally, go back to the base directory.
+
+    .. code-block:: bash
+
+        cd $base_directory
 
     3.3. Download ASER data
     ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -213,11 +220,33 @@ Automatic generation of Digital Elevation Models using ASTER images
 
     .. code-block:: bash
 
-        !cd ~/TELRISKNAT/DATA/DEM_GENERATION/ # Change directory to ~/TELRISKNAT/DATA/DEM_GENERATION/
+        cd $base_directory # Change directory
+
+    First, we will copy the ASTER images to a new directory called ``RAW_L1A``. This step is important as the ``aster2asp`` command will create several intermediate files in this directory.
 
     .. code-block:: bash
 
-        !aster2asp RAW_L1A -o RAW_L1A/out_first --min-height 100 --max-height 9000 # Run aster2asp command
+        mkdir RAW_L1A # Create directory called RAW_L1A
+
+    .. code-block::bash
+
+        cp IMG_CBLANCA/AST_L1A*20230731* RAW_L1A/ # Copy ASTER images to RAW_L1A directory
+
+    Then, you will decompress the files using the following command:
+
+    .. code-block:: bash
+
+        cd RAW_L1A # Change directory to RAW_L1A
+
+    .. code-block:: bash
+
+        unzip *.zip # Unzip all zip files
+
+    Now, you are ready to run the ``aster2asp`` command. This command takes as input the directory where the ASTER images are stored (i.e. ``RAW_L1A``) and creates a new directory with the formatted images. You also need to specify the minimum and maximum height of the area of interest using the parameters ``--min-height`` and ``--max-height``. For the Cordillera Blanca, we will use 100 m and 9000 m, respectively.
+
+    .. code-block:: bash
+
+        aster2asp RAW_L1A -o RAW_L1A/out_first --min-height 100 --max-height 9000 # Run aster2asp command
 
     As a result of the previous commands, the ``RAW_L1A`` directory is created. Within this folder, you will find the formatted stereo pair with the following names:
     - ``out-Band3B.tif`` & ``out-Band3B.xml``, corresponding to the backward image.
@@ -228,19 +257,24 @@ Automatic generation of Digital Elevation Models using ASTER images
     .. attention::
         Pay attention to correctly naming the output files on the parameter ``-o RAW_L1A/out_first``. In this command, you are naming the results as ``out-first`` to distinguish from the rest.
 
+    Finally, you can clean the ``RAW_L1A`` directory by removing the unnecessary files (i.e. ``*.txt`` and ``*.tif`` files).
+
+    .. code-block:: bash
+
+        rm RAW_L1A/AST_L1A*.txt RAW_L1A/AST_L1A*.tif # Remove unnecessary files
+
     3.4.2. Orthorectify images
     '''''''''''''''''''''''''''
 
     The next step is to orthorectify the formatted images to the seed DEM, e.g. the SRTM DEM we downloaded and prepared in :ref:`Section_3_2`. To do this, we will use the ``mapproject`` command within ASP, as shown below, for both nadir and backward images. The ``mapproject`` command takes several arguments such as the rpc session, the georeference option (WGS84 | UTM Zone 18S), the resolution of the map-projected images (i.e. 7.5m), and the seed SRTM DEM.
 
     .. code-block:: bash
-    
-    mapproject -t rpc --t_srs "+proj=utm +zone=18 +south +units=m +datum=WGS84" --mpp 7.5 SRTM_DEM/CBLANCA/DEM_REF_for_ASP.tif RAW_L1A/out_first-Band3N.tif RAW_L1A/out_first-Band3N.xml RAW_L1A/out_first-Band3N_proj_SRTM.tif
+        
+        mapproject -t rpc --t_srs "+proj=utm +zone=18 +south +units=m +datum=WGS84" --mpp 7.5 SRTM_DEM/CBLANCA/DEM_REF_for_ASP.tif RAW_L1A/out_first-Band3N.tif RAW_L1A/out_first-Band3N.xml RAW_L1A/out_first-Band3N_proj_SRTM.tif
 
     .. code-block:: bash
-
-    # Mapprojecting Band3B Backward image
-    mapproject -t rpc --t_srs "+proj=utm +zone=18 +south +units=m +datum=WGS84" --mpp 7.5 SRTM_DEM/CBLANCA/DEM_REF_for_ASP.tif RAW_L1A/out_first-Band3B.tif RAW_L1A/out_first-Band3B.xml RAW_L1A/out_first-Band3B_proj_SRTM.tif
+        
+        mapproject -t rpc --t_srs "+proj=utm +zone=18 +south +units=m +datum=WGS84" --mpp 7.5 SRTM_DEM/CBLANCA/DEM_REF_for_ASP.tif RAW_L1A/out_first-Band3B.tif RAW_L1A/out_first-Band3B.xml RAW_L1A/out_first-Band3B_proj_SRTM.tif
 
     3.4.3. Dense stereo matching
     '''''''''''''''''''''''''''''''
@@ -249,12 +283,12 @@ Automatic generation of Digital Elevation Models using ASTER images
 
     .. code-block:: bash
 
-    stereo -t astermaprpc --corr-kernel 7 7 --subpixel-kernel 13 13 \
-        --alignment-method none \
-        RAW_L1A/out_first-Band3N_proj_SRTM.tif \
-        RAW_L1A/out_first-Band3B_proj_SRTM.tif \
-        RAW_L1A/out_first-Band3N.xml RAW_L1A/out_first-Band3B.xml \
-        ASTER_DEM/out_run SRTM_DEM/CBLANCA/DEM_REF_for_ASP.tif
+        stereo -t astermaprpc --corr-kernel 7 7 --subpixel-kernel 13 13 \
+            --alignment-method none \
+            RAW_L1A/out_first-Band3N_proj_SRTM.tif \
+            RAW_L1A/out_first-Band3B_proj_SRTM.tif \
+            RAW_L1A/out_first-Band3N.xml RAW_L1A/out_first-Band3B.xml \
+            ASTER_DEM/out_run SRTM_DEM/CBLANCA/DEM_REF_for_ASP.tif
 
     This process creates a directory called ``ASTER_DEM`` which contains several intermediate files created by ASP. Please refer to the `ASP stereo documentation <https://stereopipeline.readthedocs.io/en/latest/outputfiles.html>`_ for more details. The most important file for this exercise is the one ending in ``*PC.tif``, which contains information about the point cloud created during the dense stereo matching process.
 
@@ -265,15 +299,15 @@ Automatic generation of Digital Elevation Models using ASTER images
 
     .. code-block:: bash
 
-    point2dem -r earth --t_srs "+proj=utm +zone=18 +south +units=m +datum=WGS84" \
-        --search-radius-factor 1.5 --tr 30. --nodata-value -9999 \
-        ASTER_DEM/out_run-PC.tif -o ASTER_DEM/out_run
+        point2dem -r earth --t_srs "+proj=utm +zone=18 +south +units=m +datum=WGS84" \
+            --search-radius-factor 1.5 --tr 30. --nodata-value -9999 \
+            ASTER_DEM/out_run-PC.tif -o ASTER_DEM/out_run
 
     An intermediate step with GDAL needs to be executed to correctly setup data type to Float32 bits.
 
     .. code-block:: bash
 
-    gdal_translate -ot Float32 ASTER_DEM/out_run-DEM.tif ASTER_DEM/first_DEM.tif
+        gdal_translate -ot Float32 ASTER_DEM/out_run-DEM.tif ASTER_DEM/first_DEM.tif
 
     3.4.4. Setting vertical datum (optional)
     '''''''''''''''''''''''''''''''''''''''''
@@ -282,11 +316,17 @@ Automatic generation of Digital Elevation Models using ASTER images
 
     .. code-block:: bash
 
-    dem_geoid ASTER_DEM/first_DEM.tif --geoid EGM96 -o ASTER_DEM/first_DEM_EGM96 # Setting vertical datum to EGM96
-    
+        dem_geoid ASTER_DEM/first_DEM.tif --geoid EGM96 -o ASTER_DEM/first_DEM_EGM96 # Setting vertical datum to EGM96
+
     .. code-block:: bash
 
-    gdal_translate -ot Float32 ASTER_DEM/first_DEM_EGM96-adj.tif ASTER_DEM/DEM_20230704.tif # Convert to Float32
+        gdal_translate -ot Float32 ASTER_DEM/first_DEM_EGM96-adj.tif ASTER_DEM/DEM_20230704.tif # Convert to Float32
+
+    Finally, you can clean the ``ASTER_DEM`` directory by removing the unnecessary files (i.e. ``*PC.tif``, ``*DEM.tif``, and ``*DEM-adj.tif`` files).
+
+    .. code-block:: bash
+
+        rm ASTER_DEM/out_run* ASTER_DEM/first_DEM*
 
     3.4.5. Visualize the results
     '''''''''''''''''''''''''''''''
@@ -303,21 +343,22 @@ Automatic generation of Digital Elevation Models using ASTER images
         DEM generated from ASTER images using ASP. Left: DEM visualisation; Right: DEM using hillshade effect; visualized in QGIS.
 
     .. question:: Questions for discussion
-    :collapsible: closed
+        :collapsible: closed
 
-    Based on your experience in this practice, answer the following questions:
+        Based on your experience in this practice, answer the following questions:
 
-    1. What is the noise level of your dataset ?
-    2. What do you think about the white holes in the upper right region?
-    3. Can you detect differences between ASTER DEM and SRTM DEM?
-    4. What do you think is the main limitation of ASTER images?
-    5. What are the advantages of using ASP for DEM generation?
+        1. What is the noise level of your dataset ?
+        2. What do you think about the white holes in the upper right region?
+        3. Can you detect differences between ASTER DEM and SRTM DEM?
+        4. What do you think is the main limitation of ASTER images?
+        5. What are the advantages of using ASP for DEM generation?
 
     3.6. Repeat the process with different ASTER images
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    .. important::
-    **Do it yourself!!** Repeat the previous steps using another ASTER image acquired on 12th, July 2020. The data are available in the directory ``RAW_L1A/out_second``. Name the output files as ``out_second`` to distinguish from the previous results. **This step is important as we will use this second DEM to compute the difference of DEMs (DoD) in the next section**.
+    .. admonition:: Do it yourself
+        
+        Repeat the previous steps using another ASTER image acquired on 13th, July 2003 (almost 20 years before). The data are available in the directory ``RAW_L1A/out_second``. Name the output files as ``out_second`` to distinguish from the previous results. **This step is important as we will use this second DEM to compute the difference of DEMs (DoD) in the next section**.
 
     .. _section_dems_dod:
 
@@ -328,25 +369,25 @@ Automatic generation of Digital Elevation Models using ASTER images
 
     .. code-block:: bash
 
-    cd ASTER_DEM
+        cd ASTER_DEM
 
     .. code-block:: bash
 
-    common_extent=169245.0 -1058745.0 223035.0 -989865.0
+        common_extent=169245.0 -1058745.0 223035.0 -989865.0
 
     .. code-block:: bash
-    
-    gdalwarp -r bilinear -te $common_extent -of GTiff DEM_20230704.tif DEM_20230704_crop.tif # Cropping first DEM
+
+        gdalwarp -r bilinear -te $common_extent -of GTiff DEM_20230704.tif DEM_20230704_crop.tif # Cropping first DEM
 
     .. code-block:: bash
-    
-    gdalwarp -r bilinear -te $common_extent -of GTiff DEM_20030713.tif DEM_20030713_crop.tif # Cropping second DEM
+
+        gdalwarp -r bilinear -te $common_extent -of GTiff DEM_20030713.tif DEM_20030713_crop.tif # Cropping second DEM
 
     Then, you will use the module of raster calculator ``gdal_calc.py`` within GDAL to compute the difference of DEMs.
 
     .. code-block:: bash
 
-    gdal_calc.py -A DEM_20030713_crop.tif -B DEM_20230704_crop.tif --outfile DoD_2023-2003.tif --calc="B-A"
+        gdal_calc.py -A DEM_20030713_crop.tif -B DEM_20230704_crop.tif --outfile DoD_2023-2003.tif --calc="B-A"
 
     The command ``gdal_calc.py`` will generate a new raster file containing the difference between the two generated DEMs. Open this raster in QGIS software. Modify the color scale values ``Min`` and ``Max`` values of the band between -50 and +50. You should obtain something similar to :numref:`fig-dod-2023-2003`.
 
@@ -360,15 +401,15 @@ Automatic generation of Digital Elevation Models using ASTER images
         Difference of DEMs (DoD) generated from ASTER images using ASP between 2003 and 2023. Visualized in QGIS.
 
     .. question:: Questions for discussion
-    :collapsible: closed
+        :collapsible: closed
 
-    Based on your experience in this practice, answer the following questions:
+        Based on your experience in this practice, answer the following questions:
 
-    1. What is the noise level of your dataset ?
-    2. What do you think about the white holes in the upper right region?
-    3. Can you detect differences between ASTER DEM and SRTM DEM?
-    4. What do you think is the main limitation of ASTER images?
-    5. What are the advantages of using ASP for DEM generation?
+        1. What is the noise level of your dataset ?
+        2. What do you think about the white holes in the upper right region?
+        3. Can you detect differences between ASTER DEM and SRTM DEM?
+        4. What do you think is the main limitation of ASTER images?
+        5. What are the advantages of using ASP for DEM generation?
 
     4. To go further (bonus)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -377,15 +418,14 @@ Automatic generation of Digital Elevation Models using ASTER images
 
     .. code-block:: bash
 
-    bash ./make_ASTER-DEM_ASP.sh RAW_L1A SRTM_DEM/CBLANCA/DEM_REF_for_ASP.tif
+        bash ./make_ASTER-DEM_ASP.sh RAW_L1A SRTM_DEM/CBLANCA/DEM_REF_for_ASP.tif
 
-    .. important::
-    **Do it yourself!!**
-    
-    **Congratulations!!** Now you have the basic knowledge on how to compute ASTER DEM automatically using ASP. To go further:
+    .. admonition:: Do it yourself!!
 
-    - Replicate the same process using other ASTER images available in the directory ``RAW_L1A``.
-    - Replicate the same process for another region. You can use the data provided in the directory ``IMG_MACA``.
+        **Congratulations!!** Now you have the basic knowledge on how to compute ASTER DEM automatically using ASP. To go further:
+
+        - Replicate the same process using other ASTER images available in the directory ``RAW_L1A``.
+        - Replicate the same process for another region. You can use the data provided in the directory ``IMG_MACA``.
 
     5. References
     ~~~~~~~~~~~~~~

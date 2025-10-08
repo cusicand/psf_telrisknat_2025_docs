@@ -30,7 +30,7 @@ htmlcov/
 .ipynb_checkpoints/
 
 #auto-published files
-auto_publish.sh
+auto_publish_sphinx.sh
 
 # Local envs
 .venv_psf/

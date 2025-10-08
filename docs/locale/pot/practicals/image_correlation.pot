@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-05 00:55+0200\n"
+"POT-Creation-Date: 2025-10-08 16:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/image_correlation.rst:14
-#: 710e9306ee584aef9cfb3af32516ccb4
+#: 84ecc48f351c478fb390d6ca552482c1
 msgid "Feature tracking image correlation"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:16
-#: a34736c004914c77940c3aad8a028f11
+#: 80e22054dc4841d6b12ce45a781e90ae
 msgid "be patient"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:21
-#: b8c79ab7e397433e97a06fea7902ba36
+#: 1f9c0836d2e0441486712598878e9d72
 msgid "Advice from PSF TelRiskNat optical team."
 msgstr ""

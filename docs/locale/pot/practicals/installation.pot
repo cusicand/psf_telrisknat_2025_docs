@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-05 00:55+0200\n"
+"POT-Creation-Date: 2025-10-08 16:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,228 +17,228 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/installation.rst:14
-#: d2163790e93845d3b10d0e3b9e860af0
+#: 395ceae1a12144e7a7f975e0b252ad0a
 msgid "Installation of necessary software"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:16
-#: 416d446cb5ae4bffbac4212e108d7ff3
+#: e3a4ef35032346678e13339cb17a4329
 msgid "For this workshop, we will rely on open-source software, mainly:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:18
-#: 050b089e60574f4a980ba48adc4605d3
+#: 81b93aabd4404765881b501fc3756405
 msgid "`Ames Stereo Pipeline (ASP) <https://stereopipeline.readthedocs.io/en/latest/introduction.html>`_ (to generate DEMs and correlate images)."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:19
-#: dc0a7153c9964cd29034a644f2e1f8cd
+#: 1f9e6c8ab6f04ab2b20d20873ba98051
 msgid "`QGIS <https://qgis.org/en/site/forusers/download.html>`_ (to visualize and analyze geospatial data)."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:20
-#: 7861194107aa443c991c11c51905492c
+#: f67957a297b247c4b73ba06b86519f80
 msgid "`Python <https://www.python.org/>`_ (version 3.7 or higher)."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:21
-#: 93f763517d0d4d049d88b018a572b014
+#: 11bb7f1bde004723b91af4ee79d14850
 msgid "`Jupyter Notebook <https://jupyter.org/>`_ (to run Python code in your browser)."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:22
-#: 9d46120f2ee54083be5b52e00901a2af
+#: 89b84e50e59a48cfbc9079491c5964d3
 msgid "`Geoutils <https://geoutils.readthedocs.io/en/stable/>`_ (to handle raster and vector geospatial data)."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:23
-#: 5a484772f5714f18bae828959a765132
+#: 9ef67f0726a3404c8609128d071c8fa9
 msgid "`xDEM <https://xdem.readthedocs.io/en/stable/>`_ (to handle DEM coregistration and perform DEM differencing)."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:25
-#: 2a47f84625df4f3188bc4970bdee9f91
+#: 34aac91de7cc412d8117805049c3fbd6
 msgid "However, ASP only run in Linux and MacOS. If you are using Windows, you have two options:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:27
-#: e35912f31e754f9d9d3647904b86cc50
+#: 17b4a60d69a842e39c63ca77437c97f0
 msgid "Use the Windows Subsystem for Linux (WSL) to run a Linux environment on your Windows machine."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:29
-#: bb5c54f1b29d4dd4b484736eba931451
+#: 5471f343b9fa4ffd911fa67df07631b3
 msgid "Set up a virtual machine with a Linux distribution."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:34
-#: a94812c498fe4a659a78a2749083f8b9
+#: bd589b07c1ca4dc5a931c3c241a8bec8
 msgid "Setting up WSL (lightest option if you have Windows 10 or higher)"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:36
-#: b2f2edc205e446e39a8f12ec5e2cefdd
+#: 4a3fa9e19990409491c115e6c867e2c3
 msgid "Enable WSL on your Windows machine by following the instructions in the official `Microsoft documentation: <https://learn.microsoft.com/en-us/windows/wsl/install-manual>`_"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:38
-#: aa84f5a87c524634a7deea32b19f39e1
+#: f713e1088fd14030a3042bbd77934332
 msgid "Restart your computer if prompted."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:40
-#: 9851367d206644e68aef016ce9511bb3
+#: fd0638fe4a1e4f85bfe35cbd2c7aa854
 msgid "Install a Linux distribution from the Microsoft Store (e.g., Ubuntu). `https://learn.microsoft.com/en-us/windows/wsl/install <https://learn.microsoft.com/en-us/windows/wsl/install>`_."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:42
-#: fc170690470542cfac77d742da206f70
+#: 57a99606bba344ca9f53448bff2a3fd2
 msgid "Once installed, launch the Linux distribution and follow the prompts to set up your user account."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:44
 #: ../../source/practicals/installation.rst:60
-#: c3d948f5cf0c4604a6fe23d97fd46082
-#: d19bc78bac5840d8b471e7f75653c6a0
+#: e07872c7a1be41e19a3f941ac6d281cc
+#: fd29842b4c794041a2fa0d68ddc5e2af
 msgid "Note"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:45
-#: 327b8e1efd404c23968772ffd8ed658e
+#: 494c9b34dd564246980589df129d641e
 msgid "In this `Youtube video <https://www.youtube.com/watch?v=zZf4YH4WiZo>`_ you can find a visual guide on how to set up WSL."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:47
-#: 8ccd3b5a88d640608aa8f6d8c4bbaef6
+#: 26d99bde5611489da92c0e56d3201afd
 msgid "Once installed, please follow the instructions in :ref:`install_packages` to install the necessary packages."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:52
-#: a30bf7ab24b2439bbe2a0941321f23c4
+#: ff157332fd3b403b90ec0606552e4500
 msgid "Setting up a virtual machine (more resource-intensive)"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:54
-#: d861f082f00d40968caa22297d4be560
+#: 99c74c0dae6f4584aa4a66985b83ff21
 msgid "Download and install a virtualization software like `VirtualBox <https://www.virtualbox.org/>`_ or `VMware Workstation Player <https://www.vmware.com/products/workstation-player.html>`_."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:56
-#: 88e9ecc58cc24e76a41cec90dabd34bc
+#: cc43f040efe0443595a8f75190c67e95
 msgid "Create a new virtual machine and install a Linux distribution (e.g., Ubuntu) on it."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:58
-#: b77342516f4c4a3393e6a3b9dcf3fc16
+#: 6aa1ce3527694fe6a766fea89b931012
 msgid "Once the virtual machine is set up, follow the instructions in :ref:`install_packages` to install the necessary packages."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:61
-#: 1d8f876108744055bed9e200b2c6557c
+#: 3ef061ac417d4c1db6390434ec9ab186
 msgid "This option requires more system resources (RAM, CPU) compared to WSL. Ensure your computer meets the requirements for running a virtual machine smoothly. You can follow this Youtube video on `How to install Linux distribution on virtual machine <https://www.youtube.com/watch?v=dKJ3Wee8w9w>`_ with more details"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:67
-#: 0c534d45272e4a71842206e89737afc2
+#: e1fa83ec93944b83979cafe3f9db5802
 msgid "Installation of necessary packages"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:69
-#: 65eb376aa1b3465b8a7ee43677680c9a
+#: 99decb4e8c274c67bbf61e1e84b70828
 msgid "First, update the package lists and install the necessary packages by running the following commands in the Linux terminal:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:75
-#: 9bab825df8044ecdbd6ee01925ba58b2
+#: bfca98253ae14374b4aaedf0cf88520a
 msgid "Then, you need to create a virtual environment with all the necessary packages. We will use ``miniconda`` from the official `Conda website <https://docs.conda.io/en/latest/miniconda.html>`_. Follow the installation instructions for your operating system."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:77
-#: 4e4d8bd937b342b68f15affc88007524
+#: 0c025f3c0b984f9f9242ac9fa9bc5817
 msgid "Open your terminal and run the following commands:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:87
-#: a059cb8bf7f54cf2a719490a1dce37a1
+#: 16e8c289fb8b4da7a35e0e40af7106d3
 msgid "Follow the prompts to complete the installation."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:89
-#: 2a3782769687432a9914c4c06ef38246
+#: 3c3e48bc26c04b60a699634e93f3a847
 msgid "Close and reopen your terminal to activate conda."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:91
-#: 0462dfbe704f430fb9ecd3284d013eba
+#: caeb9d08ee6f4a19afc5cdaab9a0147d
 msgid "Finally, you will install ``mamba`` to make package management faster:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:97
-#: 0aa1211fab9840eb9370e356055241dc
+#: c35f67f6691240829fb7f7e4f250b935
 msgid "Third, clone the PSF TelRiskNat 2025 repository. You can do this by running the following command in your terminal:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:103
-#: 897d052881ec44969210fa3c801b9f26
+#: 71fed40ac01b45399eb8053b1dc3b4a7
 msgid "Navigate to the cloned repository:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:109
-#: c859a4ea6767491e82976a1510b92331
+#: 2a187a2e3aad48c484b09675cb206f1f
 msgid "Now, you will install the Ames Stereo Pipeline (ASP). For this exercise, we provide a ``bash script`` for automatic installation. You can install it using conda with the following command:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:115
-#: be7816d504284cfda92318367748adaa
+#: 86a0690b5578473fa7ada7e9905ef049
 msgid "See also"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:116
-#: 9b0b629758964578957248dc78cfb2fa
+#: bdce387bf4b44f618703efbc3273d29b
 msgid "You can find all the instructions in the official `ASP documentation <https://stereopipeline.readthedocs.io/en/latest/installation.html>`_."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:118
-#: 77d2759285fd4ed38db593e7506b95bb
+#: 83ebbb6d52914fdc814baae99dcd2046
 msgid "Verify the installation by running. Execute the ``stereo --help`` command in the terminal. If you see the help message, the installation was successful:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:122
-#: 5f7d55c237da487f9b2161519ba26881
+#: 0e31ee165b4a40acb1b750310d0af7fe
 msgid "Next, create a new conda environment with all the necessary Python packages using the provided ``psf_env.yml`` file:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:128
-#: 55c81e4c096a4532a283e9791a8bac27
+#: 00897a8bfeea4a6591306fbaf07308ca
 msgid "Activate the newly created environment:"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:134
-#: 6b90f7d77b7d4ebdad952c4c03fb3420
+#: 8b836d7b7f5f4e3c885a32bdd009e996
 msgid "Hint"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:135
-#: 88de025f392142cfbd381f352991de6e
+#: e72f9d0bb9354532a4a7dc1fa8e66b39
 msgid "If the environment is activated, you have successfully installed all the necessary packages. You can now proceed to the practical sessions."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:140
-#: 829eeba98c734f54a087b29557ac9ef3
+#: 685d39029dbb4b719c4c9fe86cd34ca0
 msgid "Installation of QGIS for data visualization (windows or linux independently)"
 msgstr ""
 
 #: ../../source/practicals/installation.rst:142
-#: 917f62217a69454a9cb1868651263759
+#: f1b4f04ac8c54e54af3ff158879c2fd9
 msgid "Finally, you need to install QGIS for data visualization. You can download it from the official `QGIS website <https://qgis.org/en/site/forusers/download.html>`_."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:144
-#: a25fd678fb5c406a959d125b66104c78
+#: a33963c1edf74c949fb23e7e2edfdc8c
 msgid "Make sure to download the version compatible with your operating system (Windows or Linux)."
 msgstr ""
 
 #: ../../source/practicals/installation.rst:145
-#: b98db44d3f724f7299e66b694eae2baa
+#: 830849eef37b44dc87c14b826d04d0ee
 msgid "Make sure you install SAGA software during the QGIS installation process, as it is required for some geospatial analyses. See this video for more details: `How to install QGIS with SAGA <https://www.youtube.com/watch?v=Erwg2BRLnNA>`_."
 msgstr ""

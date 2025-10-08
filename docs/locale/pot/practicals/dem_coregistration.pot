@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-05 00:55+0200\n"
+"POT-Creation-Date: 2025-10-08 16:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/dem_coregistration.rst:12
-#: 707be958e86f4a928bf78263fa62dffe
+#: 4babf68c012c40bb9d5f46997aeb1009
 msgid "Manual and automatic DEM co-registration"
 msgstr ""
 
 #: ../../source/practicals/dem_coregistration.rst:14
-#: 0a67290ac3ad4a3091fd5c07b0bf6050
+#: 17278ab93d5d4865af1fa8d82caa6fa0
 msgid "be patient"
 msgstr ""
 
 #: ../../source/practicals/dem_coregistration.rst:19
-#: 75d1b9d0e47c47d8bd4fb595b1515c84
+#: d4586c01aeb6475c9fc29db9bfead892
 msgid "Advice from PSF TelRiskNat optical team."
 msgstr ""

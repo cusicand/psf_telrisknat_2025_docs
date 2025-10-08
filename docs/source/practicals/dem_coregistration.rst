@@ -107,13 +107,13 @@ Manual and automatic DEM co-registration
       Nuth, C. and Kääb, A. (2011): Co-registration and bias corrections of satellite elevation data sets for quantifying glacier thickness change, The Cryosphere, 5, 271-290, https://doi.org/10.5194/tc-5-271-2011.
 
    3. Practice
-   ^^^^^^^^^^^^^^
-
-   3.1. Manual co-registration
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+   3.1. Manual co-registration
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
    3.1.1. Data inspection
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ''''''''''''''''''''''''
 
    For the first part of the exercise, you will use QGIS and Excel as the main softwares.First of all, you will open the ``DoD 2023-2003.tif`` :numref:`fig-dod-bias` into QGIS and you will explore the data by looking at the histogram values of the DoD values :numref:`fig_dod-histogram`. To do this, open the Layer Styling toolbar and click on compute histogram. By analyzing the histogram, you will first note that the values of the DoD raster are concentrated around 0. However, when you zoom on the pic of the histogram, you can see that there is a slight shift of around **~10 m**.
 
@@ -127,7 +127,7 @@ Manual and automatic DEM co-registration
       Histogram of the DoD values ``Diff_2023-2003.tif`` file.
 
    3.1.2. Aspect and slope calculation
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   '''''''''''''''''''''''''''''''''''''''
 
    In order to be able to use the co-registration procedure, you need first to compute ``slope`` and ``aspect``. To do so in QGIS, please go to the toolbar section and within GDAL tools, you will find ``Aspect`` and ``Slope`` functions respectively. Since you are using the 2023 DEM as reference, for that procedure you will use the DEM corresponding to the 2003. The results should look very similar to :numref:`fig_slope_aspect`.
 
@@ -141,7 +141,7 @@ Manual and automatic DEM co-registration
       Slope (left) and aspect (right) maps calculated from the 2003 DEM.
 
    3.1.3. Random sampling of points
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   '''''''''''''''''''''''''''''''''''
 
    Once those results are generated, you will have to generate ``point samples`` from where coregistration will be calculated. To do so, you have to go to ``Vector -> Research Tools -> Random points in Extent``. By using this tool :numref:`fig_random-points_generation`, you will randomly generate 10 000 points shapefile based on the same extent of the Difference of DEM's. The results of this procedure should look like in :numref:`fig_generated_points`.
 
@@ -164,7 +164,7 @@ Manual and automatic DEM co-registration
       Generated random points over the DoD raster.
 
    3.1.4. Sampling the values of the rasters
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   '''''''''''''''''''''''''''''''''''''''''''''
 
    Once the points are generated, you will have to extract the values of the ``DoD 2023-2003``, ``slope`` and ``aspect`` rasters to the points. To do so, you will use the ``Point Sampling Tools plugin`` in QGIS.  If you don't have this plugin installed, please refer to the section ``Plugin -> Manage and Install Plugins, and type Point Sampling Tool``. This plugin takes one point vector shapefile and several raster files to extract the value of the overlaid pixel, from the selected rasters. More information on the `official webpage <https://plugins.qgis.org/plugins/pointsamplingtool/>`_. You have to select the ``Random_points.shp`` file as well the raster files :numref:`fig_point-sampling-tool`. Once the layers are selected, you can rename the columns to keep the column names clear and short :numref:`fig_point-sampling-tool`. As a result, you will obtain a new shapefile that you will rename as ``Random_points_sample.shp`` but this time, you will find in the attribute table the columns you modified previously containing the pixel values from raster files :numref:`fig_point-sampling-tool`.
 
@@ -178,7 +178,7 @@ Manual and automatic DEM co-registration
       Parameters on point sampling tool in QGIS.
 
    3.1.5. Filtering point data with null values
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ''''''''''''''''''''''''''''''''''''''''''''''''
 
    As you may notice in the :numref:`fig_generated_points` and :numref:`fig_point-sampling-tool`, there are several points which are located in empty areas, close to the image borders, for instance. These ``empty points`` or points containing ``missing (null)`` values, must be filtered/removed since they are not useful for the coregistration stage. To do so, you will open the attribute table of the ``Random_points_sample.shp`` and open the ``Select features using an expression tool``. This option allows us to select the features by filling certain conditions (e.g., between a range of values, if values exist or not, etc). For this case, you will search those values with missing or null values inside the three columns (i.e., aspect, slope, dod_23-03). Inside ``Select features`` windows, you can have access to the columns by clicking in the Fields and Values option as well as the ``Operators`` that will be used to meet the searched conditions :numref:`fig_filtering_points`. Inside the box expression type the expression written in :numref:`fig_filtering_points`.
 
@@ -197,7 +197,7 @@ Manual and automatic DEM co-registration
 
       Why do we use the ``OR`` operator instead of ``AND``?
 
-   By clicking on ``Select features``, QGIS will select all features who meet the conditions for the three columns. The selection returns ~ 3830 points features. Since the point features were generated randomly, the selected points may differ for you. Finally, once you have selected the points, the final step is to delete them. To do so, you will Edit the points features and click on ``Delete selected``. By doing so, we have reduced the initial point sample from 10 000 to 6 100 points. The results must look like :numref:`Fig7_filtering_points.jpg`.
+   By clicking on ``Select features``, QGIS will select all features who meet the conditions for the three columns. The selection returns ~ 3830 points features. Since the point features were generated randomly, the selected points may differ for you. Finally, once you have selected the points, the final step is to delete them. To do so, you will Edit the points features and click on ``Delete selected``. By doing so, we have reduced the initial point sample from 10 000 to 6 100 points. The results must look like :numref:`fig_filtering_points`.
 
    .. _fig_filtering_points:
 
@@ -209,7 +209,7 @@ Manual and automatic DEM co-registration
       Filtering points with null values using the expression tool in QGIS.
 
    3.1.6. Filtering point with glacier outlines
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
    Since the co-registration stage is based on those areas which have not suffered strong geomorphological changes (hereafter called as stable areas), you need to remove those points which are located within those areas which have strongly changed (i.e., glaciers, landslides, etc). So, you need to mask or remove those points within glacier outlines. To do so, you will use Randolph Glacier Inventory (RGI) version 7.0, as the main data source of glacier outlines. Please refer to the `RGI documentation <https://www.glims.org/RGI/>`_ for more details about worldwide glacier inventory.
 
@@ -225,7 +225,7 @@ Manual and automatic DEM co-registration
       Select points within glacier outlines using the Select by location tool in QGIS.
 
    3.1.7. Exporting the point data to Excel
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ''''''''''''''''''''''''''''''''''''''''''''
 
    As a final step, you will export the attribute table of the remaining points. To do so, you will make right click on the layer ``Random_points_sample.shp`` and you will click on ``Save Features As…``. Within the save vector layer menu you will change the format as ``MS Office Open XML spreadsheet [XLSX]``, which is the format excel. Finally, select the desired directory and click on OK; This procedure will export the entire attribute table in format excel.
 
@@ -239,7 +239,7 @@ Manual and automatic DEM co-registration
       Exporting point data to Excel from QGIS.
 
    3.1.8. Co-registration in Excel
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ''''''''''''''''''''''''''''''''''
 
    4. Make sure that Excel has ``Solver`` installed. For general instructions on how load the Solver `Add-in in Excel <http://office.microsoft.com/en-us/excel-help/introduction-to-optimization-with-the-excel-solver-tool-HA001124595.aspx>`_.
 
@@ -309,3 +309,29 @@ Manual and automatic DEM co-registration
 
    3.2. Automatic co-registration
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   In this second part of the exercise, you will learn how to apply the co-registration procedure in an automatic way using Python libraries. To do so, you will use the same data as in the previous section. The main advantage of using this method is that it is not necessary to extract random points, filter them, export them to excel, etc. Everything is done in a single script.
+
+   3.2.1. Activation of the conda environment
+   ''''''''''''''''''''''''''''''''''''''''''''''
+
+   First of all, you will activate the conda environment that you created in the practice :ref:`dem_generation_page`. To do so, open a terminal and type:
+
+   .. code-block:: bash
+
+      conda activate psf_env
+
+   3.2.2. Get familiar with ``Geoutils`` library
+   ''''''''''''''''''''''''''''''''''''''''''''''''
+
+   Before starting with the co-registration procedure, you will get familiar with the ``Geoutils`` library. To do so, you will open a jupyter notebook by typing in the terminal:
+
+   .. code-block:: bash
+
+      jupyter notebook
+
+   This command will open a new tab in your web browser. Open the scrip called ``geoutils_introduction.ipynb`` provided in the data folder. This script will help you to understand how to use the main functions of the ``Geoutils`` library. Please, follow all the steps of the script.
+
+   3.2.3. Co-registration procedure using ``xDEM``
+   ''''''''''''''''''''''''''''''''''''''''''''''''
+

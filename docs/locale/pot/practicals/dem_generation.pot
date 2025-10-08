@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-05 00:55+0200\n"
+"POT-Creation-Date: 2025-10-08 16:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/dem_generation.rst:14
-#: 8dfec2d9244d44cda9e14c67fa66f00c
+#: 01c89b009111496d9fd92864295e21a3
 msgid "Automatic generation of Digital Elevation Models using ASTER images"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:16
-#: 0e6119645fde42a98ddea9f96536587c
+#: 6a1ac989e9404e8a8d6b38560a487e39
 msgid "be patient"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:21
-#: f587ea32bec141b59e32a0102e411514
+#: e2befd837cf2497ca2abd9d71173870e
 msgid "Advice from PSF TelRiskNat optical team."
 msgstr ""
