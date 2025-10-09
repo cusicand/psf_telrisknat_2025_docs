@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-08 16:33+0200\n"
+"POT-Creation-Date: 2025-10-09 07:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,552 +17,552 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/change_detection.rst:12
-#: b2c7a19ef34d42d5b157c3966b658bb0
+#: 1fafce2a88a647e29f69a0f7f571f1f7
 msgid "Change detection using optical images"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:22
-#: d1c7d45d46904cfa8b8fe63ed9ffebb8
+#: 1c3cde05ed094d8fbdbc3c5da5b9bcfa
 msgid "**Floriane PROVOST**\\ :sup:`1`, **Pascal LACROIX**\\ :sup:`2` & **Diego CUSICANQUI**\\ :sup:`2`"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:24
-#: 8e7f18c307fd46ec98f9dc80d53faa03
+#: ddfebfb516104257a16e25da8552cf15
 msgid "\\ :sup:`1` Institut de Physique du Globe de Strasbourg, EOST/Université de Strasbourg, Strasbourg, France"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:26
-#: 4b0b799a5cb942029bd21f7d2520bdbc
+#: ff8c77dd09394ad2b058f893ea2f9730
 msgid "\\ :sup:`2` Univ. Grenoble Alpes, CNES, CNRS, IRD, Institut des Sciences de la Terre (ISTerre), Grenoble, France."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:30
-#: 516b096b67f24a41ae69e4e55aa2c899
+#: 07571dcb4afb449d9cd3ba4737d4bca8
 msgid "Copyright"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:32
-#: e801f76826744d06aa8c31dcbb7b8837
+#: 94fbd88c69b34a9f841080757ada0b9e
 msgid "*Document version 0.2, Last update: 2025-09-18*"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:34
-#: f2249c297ba44278b54ed41c1f20e655
+#: 77d528fc110240888f4da1beef2d4525
 msgid "|copy| *PSF TelRIskNat 2025 Optical team (D. Cusicanqui, R. Basantes & P. Lacroix)*. This document and its contents are licensed under the Creative Commons Attribution 4.0 International License (`CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:37
-#: b4662234601d4b868c0189e88d79e082
+#: fada8827f39e425a854056586f2fbf7e
 msgid "License: CC BY-NC-SA 4.0"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:44
-#: 7384b45e1f5540e7841aa21daf64b562
+#: 62e40461d78c4e0d89e08d9eadc5c6af
 msgid "Learning objectives:"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:46
-#: 9b30cd057e344f4399e941955017b4cd
+#: 33eb325ac647446f8e38613efe369c70
 msgid "Design a workflow to answer a question"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:47
-#: e42c6ed8955047aaae5a3443488400b2
+#: 952113b57073489e8414f089671ac88f
 msgid "Learn how to create RGB composite and to compute indexes"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:48
-#: 5ea8c2a8321343b08b2087a6aa23af18
+#: b612e556b7a7424c8df859c9144b5a15
 msgid "Learn how to create manually a vector file"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:49
-#: e0fad21709604c2881f4cfa4e3b578b9
+#: 3687ce4c68304ad69fc1b0b6179f6b4c
 msgid "Execute spatial/attribute operations to create a vector file"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:50
-#: fc0aa74911d14c00a116390d38d63da1
+#: 85b6dcc8f46c472ebfc3d03c158ddc54
 msgid "Create a map that summarise your results"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:54
-#: 44d03dcb17e747868a527d08f74dd6f1
+#: 79b762c42b0547f898f69bed14eea57e
 msgid "1. Introduction"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:56
-#: d0b9492c3d08478db4bf96290a0f52ca
+#: 6f73facccf074b46827bfd80ac372acb
 msgid "We are going to study the wild fires that impacted California in January 2025. The main goal of our study is to estimate **how many houses/building were destroyed by the 2025 wild fire?**"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:58
-#: 40bbef6d633745e5a588d2e3310966b5
+#: f66d8ead905e47c181ea5485910f1ed1
 msgid "Regarding the California wild fire event, In 2024, the San Francisco Bay Area experienced several notable wildfires around the region rather than inside the city itself. The **Corral Fire** near Tracy in the Diablo Range burned about 14,168 acres (≈ 57.34 km²) from June 1–6, while Sonoma County's Point Fire scorched ~1,207 acres (≈ 4.88 km²) from June 16–24. More infor in `CallFire <https://www.fire.ca.gov/incidents/2024/6/1/corral-fire>`_."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:60
-#: d8404934326d457bbdcaea58b1a95420
+#: 15476b4e53a84522a3fc9b86e6a91c04
 msgid "Smoke from these and other regional fires periodically drifted into San Francisco, prompting Bay Area Air Quality Management District advisories—especially in mid-June and again in August—due to hazy skies and particle pollution concerns :cite:`casey2025`. Overall, impacts in San Francisco were felt mainly through smoke and reduced air quality, while the largest burn areas were in surrounding counties `SFGATE <https://www.sfgate.com/weather/article/bay-area-air-advisory-smoky-skies-21071765.php>`_. More information about large California wildfires in :cite:`keeley2021`"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:64
-#: af0f68ee56a740689cb71d0db8f13681
+#: bf7d9751148b40ca96f4a1e293e6b0b3
 msgid "wildfire"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:69
-#: 3ae2ae2eeabc47a78c5ea68033725085
+#: 4d88a4b8b46d4f20946f3efaa5b62f93
 msgid "Wildfire in California, USA. Source: `NASA Earth Observatory <https://earthobservatory.nasa.gov/images/153831/the-palisades-fires-footprint>`_."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:71
-#: 26e66317d53942e1a7405fc2359fe2ad
+#: 5384e10c0c2d411e80c205ec75878e30
 msgid "First of all, try to draft a workflow/diagram describing the logical steps and operations needed to answer the question. For that, answer to these questions:"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:73
-#: dad695b7a4584feb9cf8a4e6a095ac8f
+#: 08818b7a595e4370996f787bc086713e
 msgid "What data do you need?"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:74
-#: ade70eadf023455eb031b3e5f513a237
+#: 38475b17283745b696ecbeefb9d87889
 msgid "What information do you need?"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:75
-#: 6540f534a55944938d6bfb1fe98c0e51
+#: f5a0eda768c0408a833e109424ae3a9f
 msgid "What operation do you need to execute to obtain the results?"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:77
-#: a9d63e5be8054d2bb94ec2ad046b4ffe
+#: d20cef333bdc4a759bb3f72a9905f7a1
 msgid "Once answered construct the diagram."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:80
-#: 1258e3c50e6943b69184a63bea7ebd6f
+#: dc863f77b6ee472bb32ab3b76073598b
 msgid "2. Raster data"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:82
-#: 451499272a644bf38e3850dbd69f6bb9
+#: 1f2584e4ef214968ba2f42bb3fc39c2a
 msgid "We need to map the wild fire extent. To do that we are going to use Sentinel-2 images and manipulate the bands in order to easily detect and map the fires."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:84
-#: 3358d07560834bf2ae24803ffb0956b1
+#: ce63063a62b7414fad9e2885b727b9b3
 msgid "For this practice, we are going to use `QGIS <https://qgis.org/en/site/>`_ independent of the operating system. If you have not installed QGIS yet, please refer to the practical `Installation <installation.html>`_."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:86
-#: 3a11d0ba25594f5c82094e60ed94bbad
+#: 4a93759023f848f7a07f61c3fab728b8
 msgid "Tip"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:87
-#: 2b350f881eeb4a23b0cdaf8c0bb92cd4
+#: cdc2e1b2c87b402bb6fc097e1778a2d7
 msgid "Download the data using the following link `RENATER <https://filesender.renater.fr/?s=download&token=5d771970-0380-4a37-902c-afc47719b665>`_ (valid until 2025-12-31)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:91
-#: 643d6410f7464f46bcaa7036f0750fed
+#: e2d3de5f689340c085f46e3181e8911f
 msgid "2.1. Sentinel-2 images"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:93
-#: bdffcf6f5ce24217877696e09ae88d8c
+#: 51a505c8c31747038bac7850e933b6e7
 msgid "The Sentinel-2 images are available on the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_ or `AWS <https://registry.opendata.aws/sentinel-2/>`_. For this practical, we provide you two Sentinel-2 images acquired before and after the fire event. The data is located in the two separate folders in ``data/exercise_1_change_detection`` named by their acquisition date."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:95
-#: 7755cacf679d4678a6ab6b3b58cce131
+#: d1b0bac5ddec4a93b58d93fd459506e9
 msgid "``S2_L1C_T11SLT_20250102T183751`` (before the fire event)"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:96
-#: 35f737dd864d42a28d9413f88b4126ae
+#: 26eae8deab9d4923916bbdc9523900dd
 msgid "``S2_L1C_T11SLT_20250112T183731`` (after the fire event)"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:98
-#: 71031dc6ec4f4932829f8ad3fc85b3c4
+#: bc17649ec5b24d298f4f6e647a294b73
 msgid "Note"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:99
-#: 8c145d00a06a4a7997a5b82f3d2b9f80
+#: 90c7a6e4205141fea175621429fe3684
 msgid "**Load all the bands on QGIS** and compare them. Do you see the wild fires?"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:102
-#: 9afd4d3619e94801b59691c28b62b437
+#: ff37a833572140308784a2b0b4dca90a
 msgid "2.2. Sentinel-2 RGB composite"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:104
-#: 2bf82be465cd48d9a15ea903d8336589
+#: c2ca435117e348c2bd283142c1435f3e
 msgid "Sentinel-2 images are multispectral images, meaning that they contain several bands acquired at different wavelengths. Visit: `Sentinel Hub <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/composites/>`_ to determine what RGB is more suitable to map wildfires."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:106
-#: 0ebc33aaf9d74e9ab655638738cca915
+#: e676b85197dd4909b45fc3b1f0dc5a7a
 msgid "Now, create a RGB composite for both dates (before and after the fire event). - Open the menu ``Raster > Miscellaneous > Create a Virtual Raster…`` - Define the bands composing the RGB composite. - Click on ``Place each input file into a separate band``. - Create the Virtual raster."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:114
-#: bf3db00b945744f3ac2217f9a0eefe86
+#: 8196f3bfaeb1428283443668ceab4c72
 msgid "rgb composite"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:119
-#: 63fa5278afc44b74b13f0302bcddfa03
+#: cc04a50fcf39460f845796fe6e95c1f6
 msgid "Sentinel-2 RGB composite."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:122
-#: aa5fed424e5b4d62a3a33546057da77c
+#: ac3a74a7ad1a4014889227b258e354a1
 msgid "2.3. Sentinel-2 band math"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:124
-#: 9deaf81b25244c3ba19cd360f7520d13
+#: ed207b6493f04720b5fab02376d13eb8
 msgid "As fires are burning the vegetation, another option is to compute the Normalised Different Vegetation index `(NDVI) <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/ndvi/>`_. This index is a widely used metric for quantifying the health and density of vegetation. Compute the NDVI by opening the function ``Raster > Raster Calculator``. This window should appear as :numref:`figure_ndvi`."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:128
-#: 72d2643e67e54f118eb5dad34e0611b1
+#: 1e9d696dba43455dac7f3d7f77909514
 msgid "ndvi"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:133
-#: c44b4952da4b454f8630d7931f191deb
+#: 05e90ed6bb6f427e85b2adc10baff96b
 msgid "Sentinel-2 NDVI."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:135
-#: 64b92fac2bae4e1e93babb9ba625b49b
+#: 12790d3d8c24485dbb4ad5e8a92f0517
 msgid "Define the mathematical operation you want to realize (here NDVI). Be careful, select bands of the same date."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:136
-#: 69303412b55f4ab3be714168e82bb5f2
+#: f01e37dd476443578b657eca8f576bd7
 msgid "Choose to ``create the raster \"on-the-fly\"`` or to save it in your project (preferred). If you choose to create the raster on-the-fly, the raster will appear in the project but will not be saved. If you save the project, close it and open it later, the raster will be empty (because it was not saved)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:137
-#: 8a3ebfc162b74b8d991d077e51ab2cbe
+#: c1cacac310f549698524ae53641b4db6
 msgid "Repeat the operation for the two dates of acquisition."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:139
 #: ../../source/practicals/change_detection.rst:265
-#: a75128c365fe43e59add49ce5b30c5a6
-#: 7fad49060c8f4ed9ab844b867bb0f2bd
+#: 17d36f3e781745a5beda6cca343b3275
+#: a54d16f83b834a0dac933e8c09ab4492
 msgid "Important"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:140
-#: d22d055568114b9bb0738397443fafb5
+#: 9dde605287cc45b59ecf6762013a5ce5
 msgid "It’s important that your data are well organised ! Both in your computer and in QGIS. For example, layers can be grouped together to organise the layer browser in QGIS."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:144
-#: 39ee7eedc3f14285b0e722ff0a645440
+#: c359bfa895114b639c62a653fc82b54e
 msgid "ndvi change"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:149
-#: 3e119d5d935445b8bf407bb80c34f5fd
+#: 14b7120e894c48d18c8e57b31b3e387c
 msgid "Sentinel-2 NDVI change."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:152
-#: c0f592cd6d49403bb9ac9063f82d4d0d
+#: 3c31175a8782423b9ef524d887b54063
 msgid "3. Vector data"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:155
-#: e62c8de75d304ef3a28826c170918357
+#: aad53d64a48b49a59d8e5c144232683e
 msgid "3.1. Manually create a vector file"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:157
-#: c05e7ef03b674965810975dbc60d14cc
+#: 05ecba4d69e9412e9004b3f2bc038dbd
 msgid "Vector files can be created manually with the function XXX The following window should appear like :numref:`figure_vector_manual`."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:160
-#: 4b6a953521e84b899fe58740f78c93b7
+#: aea0eb94bfdf4855884f63ecc52cd3e6
 msgid "Choose the name of the file, the extension (shapefile), and set up carefully the geometry (point, line or polygon) and the CRS. Click ``OK`` once all the options have been chosen. The layer should appear in the section ``Layers`` of the GIS environment."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:161
-#: 7f6a9fb6dd8a43259beda44e05f9a62e
+#: 7439ba3069aa43b2aa51cad9fcb25428
 msgid "To edit the layer, click on the created vector file and on the function ``Toggle Editing`` (pencil icon)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:162
-#: d95680d60a464c309a6d3b8cd8ce3b41
+#: afc8c272961a40c78718fb18ea83138d
 msgid "Click then on the function ``Add Polygon Feature`` (yellow star icon) to create a new entity."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:163
-#: 0e1044040935433e952820c58f451859
+#: 451aada344284e69b958b40d47756659
 msgid "Click on the map to draw the limits of the polygon you want to map."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:164
-#: 33a758125f254504a496356d46b87a33
+#: b3c4b5468687403193a8f8a0407de0d2
 msgid "Save the entity by clicking on the function ``Save Layer Edits`` (floppy disk icon) to render the layer non editable."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:165
-#: 5dc3820520c748319b8cb3038d8b39a3
+#: 6899ec5845b54548b0eee1d8ff86e997
 msgid "If you want to modify the points/shape of your vector, use the function ``Vertex Tool`` (icon with a point and a line) and move/modify the points."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:169
-#: 58b7a1f35d994deab1b123eab12f2576
+#: 2dfc20a1c7114a65ab7fe2ccd779cfc6
 msgid "vector manual"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:174
-#: cabe7ac388804cf18c5b891adba7c591
+#: 626f8679113e4008a97e9da44675b403
 msgid "Create a vector file manually."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:176
 #: ../../source/practicals/change_detection.rst:283
-#: 44ac9a618b4740b6b93f6ae965e7b96c
-#: 134a696e532b41c4ba6ae71d142dba29
+#: a2b35e096f83493fac7978bd5394db39
+#: bc465360466e4b76a64c7ebf1eb0e354
 msgid "Do it yourself"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:178
-#: 2f0de56c6cde46aca2051c7478bb7703
+#: 5800acff62a045c78e72ee4457414f2f
 msgid "**Map manually** the fire extent(at least the eastern fire located north of Pasadena)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:181
-#: d3bab361e25f4acea6c3c63729db4a71
+#: d5e31ffa9ed84ee3a62a7828f74492b1
 msgid "3.2. Create a vector file from raster data"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:183
-#: ee283ac15c84424083973c2a1e9ede47
+#: 97f45851f55c4c6f97a971a71d615c59
 msgid "Now, we are going to create a vector file from the NDVI change raster. The idea is to extract the area where the NDVI has decreased significantly (i.e. vegetation has been destroyed by the fire)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:185
-#: 9725f4e9fd5f4374b8e8d7f89fce2fec
+#: 9f91818c6fb845a99bf5d5ff41ab4d05
 msgid "a. Determine what operation should be realized to extract the fire extent from the NDVI raster files. Use the ``Raster Calculator`` to derive a raster with the fire extent."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:188
-#: 96af9744d53c40f398b6f2e3da170302
+#: 2fe1e07357d84aa796d51a13af7b703d
 msgid "Vectorize the resulting raster using the function ``Raster > Conversion > Raster to Polygon``. You should obtain a new vector layer that looks like :numref:`figure_raster_to_vector`. The spatial domain is correctly sampled into geographical entities but many geographical entities are not of interest for this study."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:192
-#: fcbbbd8e0e9e4769bd9606a866457c54
+#: d844540013ac4acba40f978c9808f5f1
 msgid "raster to vector"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:197
-#: 6cd20f10c3cc4f04b0b342a7462424fd
+#: 51e43961fadf4728acc106159531eb1b
 msgid "Create a vector file from a raster."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:199
 #: ../../source/practicals/change_detection.rst:237
-#: 62cb23c2237e4b3aadcb0855b313962a
-#: 753067e912494b368d96ed77303d5ca0
+#: 75b9ff449a944d3499b06add154a6b75
+#: 365ff4ba8f9d4b51945f1b0a3e531dd2
 msgid "Questions for discussion"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:202
-#: fc663a4d0a014827ba9ee4ce962f4d88
+#: ddb20fd73e6848b8a11d9517b0dbe255
 msgid "What entities should be filtered?"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:203
-#: f24601caf42e4da7b4dff3020cd33172
+#: fc032d2958b14e59a376de8225178cbf
 msgid "What attribute/properties do we need to compute to it?"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:205
-#: b2123b50aee4458599e35313e53d270d
+#: c10c44d3dd08401c85300fb55f966ec8
 msgid "Use the function ``Vector > Geometry > add geometrical attributes`` to compute the area and perimeter of each entity of the vector layer ``Vectorized``."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:207
-#: 372cc7bc96a142438cfd5c93752dc327
+#: 587ab19a2af443358492e4302710b49b
 msgid "Use the attribute table to filter entities with areas smaller than 1,000 m², remove them by editing the table ``Toggle Editing`` (pencil icon) and deleting the selected entities (red garbage)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:209
-#: f4bd1ef6738b4775925f83e6b839e301
+#: 517b9bdd5b5e434aa4a9e62a076a884f
 msgid "Repeat the operation to remove entities with areas larger than 68,000,000 m²."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:211
-#: 4314dabbb75945fb9c6c5c86f4149907
+#: df77bec89f94474f99fec9f68f19df88
 msgid "Regroup the entities in one single entity ``fire extent`` by using the function ``Vector > Geoprocessing Tools > Dissolve``. Your final result should look like :numref:`figure_fire_extent`."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:215
-#: cebef1233a3d4e979651ea7faf2976c1
+#: 7163ea654fbc4c8889072d5f9a94d0bd
 msgid "fire extent"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:220
-#: 44b7c6f571104eebb3b465872e73f768
+#: 661a45369d7b4c22bbd194d9e0a0f9c1
 msgid "Fire extent vector file."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:222
-#: d3ee2a681561419aa2f886035df345e0
+#: 84c752d25fba4637aa8e27b7c51b186a
 msgid "Create a map showing the extent of the fires in California in January 2025."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:225
-#: 9e7af732218b4b6480c45a8f2937cc74
+#: e68e762fbecd45c1addfd6814fea07cf
 msgid "4. Quantifying impacts"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:228
-#: d7c30d8095f34e8a946434ac68ed8aca
+#: 5bfcea08ea3a43dfb3f751945c1ecbbb
 msgid "4.1. Count the number of buildings destroyed"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:230
-#: 2261dc0a790d4a7f9bd5465e09c13eb9
+#: 316667b0c2104d8183e5a86e471069cc
 msgid "To estimate the number of buildings destroyed by the fire, we are going to use a vector file containing the building footprints in California. The file is located in ``data/exercise_1_change_detection/buildings_CA.shp``."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:233
-#: 7ad00c77648844278bfad11ae4eed167
+#: 09fa42959bf244cf93d881dfdc84d378
 msgid "Load the vector file ``buildings_CA.shp`` in QGIS."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:234
-#: 224ab5b983c344b0ad05661c4f1c159e
+#: e47f4679bd2d4ec18cb41d26d9b1322c
 msgid "Use the function ``Vector > Geoprocessing Tools > Intersection`` to extract the buildings that intersect the fire extent."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:235
-#: 41ef49a8003f4978ae99869a11d59d2c
+#: 647fbd350bcf4054a2e6a7c7f48c9625
 msgid "Open the attribute table of the resulting vector layer and count."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:240
-#: 5869367091da44ad8349344e98f1fc91
+#: 1aca7444728243bbbf45af4a1c841957
 msgid "How many building were impacted?"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:241
-#: f9245ca3f86140b494eb4e73f6347bb3
+#: a78857b297874df6b6ba51c5cf6be91b
 msgid "Estimate the total surface of damaged building by performing an operation on the ``Attribute table``."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:242
-#: 0cbe1ceed6174ea0b1b2bd56814f31d6
+#: 3fe7a08d38c54aedb1f12c43a634df8f
 msgid "Estimate the cost of the wildfire (price per square meter in California is ranging from 500$ to 700$)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:245
-#: 660739109d434b15b707d1a727923738
+#: 19f88f4a6fb1485f9a94920c9b1a347a
 msgid "4.2. Check our mapping"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:247
-#: 279007805afa455a8781fc277c40fadd
+#: e5ff5335793c437e9fefc2dae9fd96f8
 msgid "We are now going to use `Open Street Map (OSM) <https://www.openstreetmap.org/>`_ to check our mapping. OSM data is a geographic database feed by a community of mappers that contribute and maintain data about roads, trails. It is therefore possible to download the raw data directly and reuse it as you wish, for cartographic or other purposes. Every week, a complete file called ``planet`` is generated and made available by the OpenStreetMap Foundation. This file is very large and growing fast (20 GB at the end of 2011, 63 GB at the beginning of 2018) because it contains all the data for the entire planet. Extracts by continent, country or region are also available and updated daily by Geofabrik. There are also tools for breaking down a file into smaller geographical areas."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:249
-#: d2121e30b7874733bac29d048446ae73
+#: 0d05adc321424a1e88312aecafa0eeb5
 msgid "There are several ways of viewing and downloading OSM data:"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:252
-#: af5a682b158b440c9fd691e7a8a45b39
+#: 5871d382550e4ff19ecaacd82b8be132
 msgid "4.2.1. Viewing the 'static' OSM map"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:254
-#: 26a93bc6107e42b6ae75ac330dc54488
+#: 70a2a23403974bbd865f6228143cb3dc
 msgid "The 'static' OSM map represents OSM data in raster form. It is not possible to manipulate the information contained in this layer. However, it allows OSM information to be viewed and can be used as a background map. To download the OSM map into QGIS you need to use the `QuickMapServices <https://plugins.qgis.org/plugins/quick_map_services/>`_ extension. Display OSM from WMS layers already installed on your computer. Use the function ``Web > QuickMapServices > OSM > OSM Standard``. Look at the areas affected by the fires. What do you notice?"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:258
-#: 3a5b6a039c454bceac525aab58ee49ef
+#: 709185ea72464264b7367fb710c4c18b
 msgid "4.2.2. Download the OSM database for an area of interest"
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:260
-#: 04dc01478f174785ad26a3a212f8428b
+#: 82030de35ad444d8a5911d6106e1e4a7
 msgid "You can download OSM data using `QuickOSM plugin <https://plugins.qgis.org/plugins/QuickOSM/>`_ to download the vector data from the OSM base maps."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:262
-#: 70247d9f8164467596de3a216bcd4a16
+#: fb73cd84ba6243a9ae8e714085a6380e
 msgid "Click on the function ``Vector > QuickOSM > QuickOSM`` (green lupe icon)."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:263
-#: 51658fb7f51a4d12a34814f765580a2f
+#: 17263d66616a48abbe44607650067815
 msgid "Click on ``Theme`` and select the default ``Urban`` theme. Define the geographical extent for which you want to download the data. You can use the ``Canvas extent`` option to download the data for the area currently displayed on your QGIS canvas."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:266
-#: fac88986f1604903a878bfd4b8b8f1f4
+#: f0733cee041341ebbc456a117395fae4
 msgid "This area must not be too large, as this could create a memory problem in QGIS."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:268
-#: 3ad40a47d0454bc0a7979ec9727edded
+#: 82a11b7f041443858be1845207265c78
 msgid "Click on ``Execute query`` to download the data. Several layers should appear in your ``Layers`` section."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:270
-#: 0eb834facf9241f0a416e5648caaeb7d
+#: f66956ecceb64718b5040902c56c1b8d
 msgid "You can also use the ``OSMDownloader`` plugin to download OSM data. This plugin allows you to download OSM data in a specific format (shapefile, geopackage, etc.) and for a specific area of interest."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:272
-#: cb3d4be865ef4667a13ae0281744ea9c
+#: e1a07fb06e60460bacde5b3bd0115d95
 msgid "Install the plugin `OSMDownloader <https://plugins.qgis.org/plugins/OSMDownloader/>`_ from the QGIS plugin manager."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:274
-#: b7f7e5208cd14bf8acc0c8f491c446ea
+#: 3dc56c576d674f95bf9c3749345ab9ea
 msgid "Open the plugin from the menu ``OSMDownloader``."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:276
-#: 256d5f66175b4cd8b3c5af8316097a48
+#: af4a131e99284b8487de8cbf19afaf8f
 msgid "Define the area of interest by drawing a rectangle."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:278
-#: 91602bf9865e4ddb8f5a7143db1738cc
+#: dfb746a47c5c4909a83f63283355ad1f
 msgid "Save the data in a specific format (shapefile, geopackage, etc.) and download."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:280
-#: 75acffcf03cc412a96dc29056d775606
+#: 4aaea8a66c1e49c4ad47697e83ba7695
 msgid "A number of vector layers should appear in your ``Layers`` tab. Manipulate these layers to display the buildings mapped in OSM and compare with your result."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:285
-#: c107d307b9dc422da0d778783b7e7b49
+#: 436bdbee399e4ad6b858318f6e9da8c9
 msgid "Draw a diagram that represents all the steps realised to answer the initial question."
 msgstr ""
 
 #: ../../source/practicals/change_detection.rst:288
-#: 5a09cc6de1a1468e8e070f66b6e8d094
+#: 7bd08ad23cd7466db4e6ce563dd27cc7
 msgid "5. References"
 msgstr ""

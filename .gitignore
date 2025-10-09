@@ -43,7 +43,15 @@ env/
 .DS_Store
 
 # Project data (large datasets)
-data/
+data/*zip
+data/*tar.gz
+data/*tgz
+data/*.txt
+data/excercise_1_change_detection/
+data/excercise_2_image_correlation/
+data/excercise_3_dems_generation/
+data/excercise_4_dems_coregistration/
+data/excercise_5_landslides_prediction/
 *.tif
 *.tiff
 *.jp2
