@@ -2,6 +2,7 @@ Practical sessions
 ===================
 
 .. toctree::
+    :numbered:
     :maxdepth: 1
 
     practicals/installation

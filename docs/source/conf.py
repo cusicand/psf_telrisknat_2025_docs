@@ -49,6 +49,12 @@ source_suffix = {
 }
 
 numfig = True
+numfig_secnum_depth = 1  # Include only top-level section numbers
+numfig_format = {
+    'figure': 'Fig. %s',
+    'table': 'Table %s',
+    'code-block': 'Listing %s'
+}
 
 math_number_all = True
 
@@ -85,6 +91,7 @@ html_theme_options = {
     "repo_name": "PSF TelRiskNat 2025",
     "edit_uri": "edit/main/docs/source/",
     "globaltoc_collapse": True,
+    # "globaltoc_numbered": True,
     "features": [
         "navigation.expand",
         # "navigation.tabs",

@@ -24,22 +24,22 @@ For this workshop, we will rely on open-source software, mainly:
 
 However, ASP only run in Linux and MacOS. If you are using Windows, you have two options:
 
-1. Use the Windows Subsystem for Linux (WSL) to run a Linux environment on your Windows machine.
+a. **Use the Windows Subsystem for Linux (WSL)** to run a Linux environment on your Windows machine.
 
-2. Set up a virtual machine with a Linux distribution.
+b. **Set up a virtual machine** with a Linux distribution.
 
 .. _setring_wsl:
 
 Setting up WSL (lightest option if you have Windows 10 or higher)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Enable WSL on your Windows machine by following the instructions in the official `Microsoft documentation: <https://learn.microsoft.com/en-us/windows/wsl/install-manual>`_
+a. Enable WSL on your Windows machine by following the instructions in the official `Microsoft documentation: <https://learn.microsoft.com/en-us/windows/wsl/install-manual>`_
 
-2. Restart your computer if prompted.
+b. Restart your computer if prompted.
 
-3. Install a Linux distribution from the Microsoft Store (e.g., Ubuntu). `https://learn.microsoft.com/en-us/windows/wsl/install <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
+c. Install a Linux distribution from the Microsoft Store (e.g., Ubuntu). `https://learn.microsoft.com/en-us/windows/wsl/install <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
 
-4. Once installed, launch the Linux distribution and follow the prompts to set up your user account.
+d. Once installed, launch the Linux distribution and follow the prompts to set up your user account.
 
 .. note::
     In this `Youtube video <https://www.youtube.com/watch?v=zZf4YH4WiZo>`_ you can find a visual guide on how to set up WSL.
@@ -66,66 +66,106 @@ Setting up a virtual machine (more resource-intensive)
 Installation of necessary packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. First, update the package lists and install the necessary packages by running the following commands in the Linux terminal:
+a. First, update the package lists and install the necessary packages by running the following commands in the Linux terminal:
 
 .. code-block:: bash
    
    sudo apt update && sudo apt upgrade -y
 
-2. Then, you need to create a virtual environment with all the necessary packages. We will use ``miniconda`` from the official `Conda website <https://docs.conda.io/en/latest/miniconda.html>`_. Follow the installation instructions for your operating system.
+b. Then, you need to create a virtual environment with all the necessary packages. We will use ``miniconda`` from the official `Conda website <https://docs.conda.io/en/latest/miniconda.html>`_. Follow the installation instructions for your operating system.
 
-- Open your terminal and run the following commands:
+  - Open your terminal and run the following commands:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    bash Miniconda3-latest-Linux-x86_64.sh
+      bash Miniconda3-latest-Linux-x86_64.sh
 
-- Follow the prompts to complete the installation.
+  - Follow the prompts to complete the installation.
 
-- Close and reopen your terminal to activate conda.
+  - Close and reopen your terminal to activate conda.
 
-Finally, you will install ``mamba`` to make package management faster:
+  Finally, you will install ``mamba`` to make package management faster:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    conda install mamba -n base -c conda-forge
+      conda install mamba -n base -c conda-forge
 
-3. Third, clone the PSF TelRiskNat 2025 repository. You can do this by running the following command in your terminal:
+c. Third, clone the PSF TelRiskNat 2025 repository. You can do this by running the following command in your terminal:
 
 .. code-block:: bash
 
     git clone https://github.com/cusicand/psf_telrisknat_2025_docs.git
 
-4. Navigate to the cloned repository:
+d. Navigate to the cloned repository:
 
 .. code-block:: bash
 
     cd psf_telrisknat_2025_docs
 
-5. Now, you will install the Ames Stereo Pipeline (ASP). For this exercise, we provide a ``bash script`` for automatic installation. You can install it using conda with the following command:
+e. Now, you will install the Ames Stereo Pipeline (ASP). For this exercise, we provide a ``bash script`` for automatic installation. You can install it using conda with the following command:
 
 .. code-block:: bash
 
-    bash ./install_ASP.sh
+    bash ./scripts/install_ASP.sh
+
+To make ASP commands available in your terminal, you need to add the ASP binary path to your ``.bashrc`` file. You can do this by running the following command:
+
+.. code-block:: bash
+
+    echo 'export PATH=$HOME/ASP_install/StereoPipeline-3.5.0-2025-04-28-x86_64-Linux/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
 
 .. seealso::
     You can find all the instructions in the official `ASP documentation <https://stereopipeline.readthedocs.io/en/latest/installation.html>`_.
 
-6. Verify the installation by running. Execute the ``stereo --help`` command in the terminal. If you see the help message, the installation was successful:
+f. Verify the installation by running. Execute the ``stereo --help`` command in the terminal. If you see the help message, the installation was successful:
 
-.. command-output:: stereo --help
+.. code-block:: console
 
-1. Next, create a new conda environment with all the necessary Python packages using the provided ``psf_env.yml`` file:
+    $ stereo --help
+    usage: stereo [options] <images> [<cameras>] <output_file_prefix> [DEM]
+        Extensions are automatically added to the output files.
+        Camera model arguments may be optional for some stereo
+        session types (e.g. isis). Stereo parameters should be
+        set in the stereo.default file.
+    3.5.0
+
+    options:
+    -h, --help            show this help message and exit
+    -t SESSION, --session-type SESSION
+                            Select the stereo session type to use for processing. Usually the program
+                            can select this automatically by the file extension, except for xml
+                            cameras. See the doc for options.
+    -s STEREO_FILE, --stereo-file STEREO_FILE
+                            Explicitly specify the stereo.default file to use. Default:
+                            ./stereo.default.
+    --corr-seed-mode SEED_MODE
+                            Correlation seed strategy. See stereo_corr for options.
+    -e ENTRY_POINT, --entry-point ENTRY_POINT
+                            Pipeline entry point (an integer from 0-5)
+    --stop-point STOP_POINT
+                            Stereo Pipeline stop point (an integer from 1-6).
+    --sparse-disp-options SPARSE_DISP_OPTIONS
+                            Options to pass directly to sparse_disp.
+    --threads THREADS     Set the number of threads to use. 0 means use as many threads as there are
+                            cores.
+    --no-bigtiff          Tell GDAL to not create bigtiffs.
+    --tif-compress TIF_COMPRESS
+                            TIFF compression method. Options: None, LZW, Deflate, Packbits. Default:
+                            LZW.
+    -v, --version         Display the version of software.
+    --check-mem-usage     Check stereo_corr run time and memory usage.
+
+g. Now, you have create a new conda environment with all the necessary Python packages using the provided ``psf_env.yml`` file:
 
 .. code-block:: bash
 
     mamba env create -f psf_env.yml
 
-8. Activate the newly created environment:
+h. Activate the newly created environment:
 
 .. code-block:: bash
 
@@ -141,5 +181,5 @@ Installation of QGIS for data visualization (windows or linux independently)
 
 Finally, you need to install QGIS for data visualization. You can download it from the official `QGIS website <https://qgis.org/en/site/forusers/download.html>`_.
 
-1. Make sure to download the version compatible with your operating system (Windows or Linux).
-2. Make sure you install SAGA software during the QGIS installation process, as it is required for some geospatial analyses. See this video for more details: `How to install QGIS with SAGA <https://www.youtube.com/watch?v=Erwg2BRLnNA>`_.
+a. Make sure to download the version compatible with your operating system (Windows or Linux).
+b. Make sure you install SAGA software during the QGIS installation process, as it is required for some geospatial analyses. See this video for more details: `How to install QGIS with SAGA <https://www.youtube.com/watch?v=Erwg2BRLnNA>`_.

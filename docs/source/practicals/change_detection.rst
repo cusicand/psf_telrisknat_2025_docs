@@ -49,8 +49,7 @@ Learning objectives:
 - Execute spatial/attribute operations to create a vector file
 - Create a map that summarise your results
 
-
-1. Introduction
+Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 We are going to study the wild fires that impacted California in January 2025. The main goal of our study is to estimate **how many houses/building were destroyed by the 2025 wild fire?**
@@ -76,7 +75,7 @@ First of all, try to draft a workflow/diagram describing the logical steps and o
 
 Once answered construct the diagram.
 
-2. Raster data
+Raster data
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 We need to map the wild fire extent. To do that we are going to use Sentinel-2 images and manipulate the bands in order to easily detect and map the fires.
@@ -87,7 +86,7 @@ For this practice, we are going to use `QGIS <https://qgis.org/en/site/>`_ indep
    Download the data using the following link `RENATER <https://filesender.renater.fr/?s=download&token=5d771970-0380-4a37-902c-afc47719b665>`_ (valid until 2025-12-31).
 
 
-2.1. Sentinel-2 images
+Sentinel-2 images
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Sentinel-2 images are available on the `Copernicus Open Access Hub <https://scihub.copernicus.eu/dhus/#/home>`_ or `AWS <https://registry.opendata.aws/sentinel-2/>`_. For this practical, we provide you two Sentinel-2 images acquired before and after the fire event. The data is located in the two separate folders in ``data/exercise_1_change_detection`` named by their acquisition date.
@@ -98,7 +97,7 @@ The Sentinel-2 images are available on the `Copernicus Open Access Hub <https://
 .. note:: 
    **Load all the bands on QGIS** and compare them. Do you see the wild fires?
 
-2.2. Sentinel-2 RGB composite
+Sentinel-2 RGB composite
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sentinel-2 images are multispectral images, meaning that they contain several bands acquired at different wavelengths. Visit: `Sentinel Hub <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/composites/>`_ to determine what RGB is more suitable to map wildfires.
@@ -118,7 +117,7 @@ Now, create a RGB composite for both dates (before and after the fire event).
 
    Sentinel-2 RGB composite.
 
-2.3. Sentinel-2 band math
+Sentinel-2 band math
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As fires are burning the vegetation, another option is to compute the Normalised Different Vegetation index `(NDVI) <https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/ndvi/>`_. This index is a widely used metric for quantifying the health and density of vegetation. Compute the NDVI by opening the function ``Raster > Raster Calculator``. This window should appear as :numref:`figure_ndvi`.
@@ -148,10 +147,10 @@ As fires are burning the vegetation, another option is to compute the Normalised
 
    Sentinel-2 NDVI change.
 
-3. Vector data
+Vector data
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-3.1. Manually create a vector file
+Manually create a vector file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Vector files can be created manually with the function XXX 
@@ -177,7 +176,7 @@ f. If you want to modify the points/shape of your vector, use the function ``Ver
 
    **Map manually** the fire extent(at least the eastern fire located north of Pasadena).
 
-3.2. Create a vector file from raster data
+Create a vector file from raster data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now, we are going to create a vector file from the NDVI change raster. The idea is to extract the area where the NDVI has decreased significantly (i.e. vegetation has been destroyed by the fire).
@@ -221,10 +220,10 @@ f. Regroup the entities in one single entity ``fire extent`` by using the functi
 
 g. Create a map showing the extent of the fires in California in January 2025.
 
-4. Quantifying impacts 
+Quantifying impacts 
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-4.1. Count the number of buildings destroyed
+Count the number of buildings destroyed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To estimate the number of buildings destroyed by the fire, we are going to use a vector file containing the building footprints in California. The file is located in ``data/exercise_1_change_detection/buildings_CA.shp``.
@@ -241,20 +240,20 @@ c. Open the attribute table of the resulting vector layer and count.
    - Estimate the total surface of damaged building by performing an operation on the ``Attribute table``.
    - Estimate the cost of the wildfire (price per square meter in California is ranging from 500$ to 700$).
 
-4.2. Check our mapping
+Check our mapping
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 We are now going to use `Open Street Map (OSM) <https://www.openstreetmap.org/>`_ to check our mapping. OSM data is a geographic database feed by a community of mappers that contribute and maintain data about roads, trails. It is therefore possible to download the raw data directly and reuse it as you wish, for cartographic or other purposes. Every week, a complete file called ``planet`` is generated and made available by the OpenStreetMap Foundation. This file is very large and growing fast (20 GB at the end of 2011, 63 GB at the beginning of 2018) because it contains all the data for the entire planet. Extracts by continent, country or region are also available and updated daily by Geofabrik. There are also tools for breaking down a file into smaller geographical areas.
 
 There are several ways of viewing and downloading OSM data:
 
-4.2.1. Viewing the 'static' OSM map
+Viewing the 'static' OSM map
 '''''''''''''''''''''''''''''''''''''
 
 The 'static' OSM map represents OSM data in raster form. It is not possible to manipulate the information contained in this layer. However, it allows OSM information to be viewed and can be used as a background map. To download the OSM map into QGIS you need to use the `QuickMapServices <https://plugins.qgis.org/plugins/quick_map_services/>`_ extension. 
 Display OSM from WMS layers already installed on your computer. Use the function ``Web > QuickMapServices > OSM > OSM Standard``. Look at the areas affected by the fires. What do you notice?
 
-4.2.2. Download the OSM database for an area of interest
+Download the OSM database for an area of interest
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 You can download OSM data using `QuickOSM plugin <https://plugins.qgis.org/plugins/QuickOSM/>`_ to download the vector data from the OSM base maps.
@@ -284,7 +283,7 @@ display the buildings mapped in OSM and compare with your result.
 
    Draw a diagram that represents all the steps realised to answer the initial question.
 
-5. References
+References
 ~~~~~~~~~~~~~~~~~~
 
 .. bibliography::

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-09 07:09+0200\n"
+"POT-Creation-Date: 2025-10-10 06:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/lectures.rst:2
-#: 7aa6de2571694275ac69f2712781f4ef
+#: 73eb70ff87b34d41a4c09c9baa89420d
 msgid "Lectures"
 msgstr ""
 
 #: ../../source/lectures.rst:4
-#: 6472a468299f470da260e2ee3c61ff25
+#: d0b61851ec75403698bf3440f7d06868
 msgid "be patient"
 msgstr ""
 
 #: ../../source/lectures.rst:9
-#: 4ab6bbfab8814fe2afab2aa93f65e0ca
+#: 63f1f67517b5458f970e7a0a980a672e
 msgid "Content will be soon available. Advice from PSF TelRiskNat optical team."
 msgstr ""
