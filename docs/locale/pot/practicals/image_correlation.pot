@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-10 06:56+0200\n"
+"POT-Creation-Date: 2025-10-13 05:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,57 +17,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/image_correlation.rst:14
-#: c210dcd16c4c436ba87871fcbb2906b0
+#: cbaa1225a6c74babbdc951069628cef1
 msgid "Feature tracking image correlation"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:24
-#: acff5cdd2d604503a9d9cf8d36a6d7c6
+#: 5b447fd4d0924534b8256248307a8fbd
 msgid "**Diego CUSICANQUI**\\ :sup:`1` & **Pascal LACROIX**\\ :sup:`1`"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:26
-#: 5b8355228ccf46fb9d2b9b963c4dc342
+#: 534eacc0a5e44ed99527bb2342218283
 msgid "\\ :sup:`1` Univ. Grenoble Alpes, CNES, CNRS, IRD, Institut des Sciences de la Terre (ISTerre), Grenoble, France."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:30
-#: 68aea4c507274642aa6816c937501b23
+#: 31a72737866f463d847197e6f2a970e0
 msgid "Copyright"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:32
-#: edf3a5fac298478e9057bba2d0aa872a
+#: 26edf2eeda354925ba2dca2847cf8540
 msgid "*Document version 0.2, Last update: 2025-09-18*"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:34
-#: e3e29cf107dc4bcd9b28106d31f973d7
+#: 670e1fa029014415b63c7cb0b9adc9e8
 msgid "|copy| *PSF TelRIskNat 2025 Optical team (D. Cusicanqui, R. Basantes & P. Lacroix)*. This document and its contents are licensed under the Creative Commons Attribution 4.0 International License (`CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_)."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:37
-#: 3604285c4aed4910a772592a45487b73
+#: b582a14736f448a3b7d2c8650b87879b
 msgid "License: CC BY-NC-SA 4.0"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:45
-#: 4adea824ed164fa5bb21902e0fafdeab
+#: d21a8de2ef49464f8b71312adf3e3b8e
 msgid "Learning objectives:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:47
-#: 6d1df8668f274af69ef25f218629b534
+#: fa58c95eed324680ae024c7e81e09dfe
 msgid "Understand the principles of image correlation for measuring surface displacements."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:48
-#: 3a3de61afa2843e6bc55b8c97893d66a
+#: e5e4841cb0e84784958f72030f245f64
 msgid "Learn how to apply image correlation techniques using the ASP software."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:49
-#: a085923fabfb401dade457a79622b7df
+#: cdc843f5907b4c8584fb07f2a2555bf5
 msgid "Analyze and interpret displacement fields obtained from image correlation."
 msgstr ""
 
@@ -75,200 +75,200 @@ msgstr ""
 #: ../../source/practicals/image_correlation.rst:71
 #: ../../source/practicals/image_correlation.rst:161
 #: ../../source/practicals/image_correlation.rst:194
-#: 2d8017e8f0ee4f5ba9458bc7719966a9
-#: cdc70b20111444eba3a232d327373edd
-#: 862981dd82114c599be9e0ef2de60c2c
-#: 401dcffc25994563a576ad32f62c6e6d
+#: f86605c4ae394ae986d4727b35ed2edb
+#: 153ea1c2e91d471d9fc3230780b9c6ec
+#: fe231a08d21744d19fef4f494e0de32c
+#: 053f5523a93b43dc99951e3f0977a275
 msgid "Note"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:52
-#: 7659d9e9198b441da6595dda4aa118e0
+#: 61a17cef70d4424da138bc7ff710af22
 msgid "This exercise focuses on optical remote sensing data from different sensors at different spatial resolution i.e. Planet (3m) or Sentinel2 (10m) or LandSat8 (15m). These remote sensing datasets have the greatest advantages of being **free and available worldwide**. For this practice, we will focus in the **Maca Landslide** in Peru using PlanetScope data."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:56
-#: 5465710d6c1f4991929ad9330b1c067e
+#: ba9ab286161d422098aacedf00227bac
 msgid "INTRODUCTION"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:58
-#: f059fab517c5491fb3cba06378587f2c
+#: 87a17db80ebe48ca8d7e847374230a65
 msgid "Landslides are a major threat in most mountainous areas of the world, causing  nearly 10000 casualties every year. It has been observed that landslides can be preceded by a phase of acceleration, emphasising the interest in detecting slow ground-movements and monitoring their evolution through time. Knowing how the ground moves is essential to understanding the physical mechanisms controlling movement :cite:`lacroix2019`. Landslide displacement can be measured from space by two techniques: first, by Interferometric Synthetic Aperture Radar (InSAR) and then, by feature-tracking image correlation applied either to SAR or optical images :numref:`fig_surf_disp_optic_sar`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:60
-#: 4e76b55f6cbe4b0eb359a37c2d8ae186
+#: 2624fdb0c265444ba6c491f3201c7939
 msgid "On one hand, surface deformation obtained from InSAR is now being used to measure very small displacements (e.g., < 1 cm) and detect new unstable zones. Although this technique offers the possibility to map very large areas (up to 400 km for Sentinel-1), this kind of data has a complex data processing and encounters different limitations related with the unwrapping of the signal that makes it not fully adapted to small objects like landslides or fast objects like glaciers :cite:`garcia2024`. On the other hand, optical image correlation is an appropriate technique for monitoring large displacements or long-term displacements of small objects :cite:`cusicanqui2021_JGRES`. Although freely available data exist worldwide (Section 2), the main limitations for this data are the presence of snow at the surface, clouds and strong changes in contrast caused by shadows. These two techniques have become the main means of studying natural hazards that produce deformations of the earth's surface on different spatio-temporal scales :cite:`zhu2022`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:64
-#: 2c54cfe0f76f4f6eae92e5280cf045f4
+#: 77114ea93bb943469274d6322cf7afed
 msgid "Domain of applicability of different techniques and satellite data"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:69
-#: 040116544fb64f7ca05e774d1b4c8970
+#: 1087538cec06412ea6087e1e0b58a276
 msgid "Domain of applicability of different techniques and satellite data as a function of the landslide size and velocity :cite:`lacroix2020` ."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:72
-#: a7cd6c723d6147b88322d5e627546588
+#: 285bd9c7be8e4e41ace2e1fedb80cc00
 msgid "In this practice, we will focus only on optical remote sensing data, at different resolutions."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:75
-#: 034f98f8f4d2432f85a467a29b97d7d7
+#: d763a5de220c431a829a92fb5a5c02a4
 msgid "REMOTE SENSING DATA"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:77
-#: 0b18b4ad3d6a4b519b150a391b316ea6
+#: 894c10c79ea3488eaa9445afc73cfa63
 msgid "There are several possibilities to get freely available optical remote sensing data and many online services which offer access to the data worldwide. In this practice, we won't cover all possible sources, but rather the most popular ones (i.e. Landsat 5/7/8, Sentinel-2 and Planet). For a comprehensive introduction you can see the `Spatialpost <https://www.spatialpost.com/free-satellite-imagery/>` webpage."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:80
-#: e19cdcb7770a42dba6b5590584f5e66a
+#: 9fba632bfd494c9098fa4c98a718784e
 msgid "Landsat 4/5/7/8 legacy"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:82
-#: 7f954e5305004fcf8030581d1ba048fb
+#: 6bf4f8e65851476a82299c74d55c50a6
 msgid "The landsat program has been mapping earth since the early ~1970's until now. Landsat satellites have continuously acquired space-based images of the Earth's land surface, providing uninterrupted data to help land managers and policymakers make informed decisions about our natural resources and the environment. From a general point of view, this enormous dataset covers earth surface worldwide with a relatively medium spatial resolution 30 m and 15 m for multispectral and panchromatic bands, respectively. Landsat legacy has also a very good radiometric resolution between 5 to 11 bands depending on the landsat mission, as well as a good temporal resolution, one image each 16 days at equator and 2-3 days in the north pole. Landsat tiles cover a large spatial extent, with a 185 kilometres wide footprint. more information on `USGS-landsat mission <https://www.usgs.gov/landsat-missions/landsat-satellite-missions>`_ webpage."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:84
-#: 9da4d853716642bb829173c0bd71ebd5
+#: cad57514696e469aa02eac3dcfc2887e
 msgid "Accessing LandSat7/8 data (Since 1999, 15m resolution, 16 days revisit time) could be possible though the following links:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:87
-#: efa6f63617d04332a04efa1c10799a74
+#: 1c82b3e9359849e59a5433f61bafcac7
 msgid "`USGS Earth Explorer <https://earthexplorer.usgs.gov/>`_."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:88
-#: f4ebaaa8c5024198925d3284834750c6
+#: eee0049d153e46018be76f58da59c3fa
 msgid "`Landsat look <https://landsatlook.usgs.gov/viewer.html>`_."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:91
-#: a8f84768dc874d4d913f287a61c9cf38
+#: fa674e8e3df8483e94bdc083cea231d9
 msgid "Sentinel-2"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:93
-#: 8abdad29023843fda87a4e1fc299650a
+#: 0d404e8f005b40b49b5256b34fb83f1f
 msgid "The Copernicus SENTINEL-2 mission comprises a constellation of two polar-orbiting satellites placed in the same sun-synchronous orbit, phased at 180° to each other. It aims at monitoring variability in land surface conditions, and its wide swath width (290 km) and high revisit time (10 days at the equator with one satellite, and 5 days with 2 satellites under cloud-free conditions which results in 2-3 days at mid-latitudes) will support monitoring of Earth's surface changes. More technical information though `Copernicus Sentinel-2 <https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2>`_ program."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:95
-#: 47dfd520198c4f0ba1abd3fc8ba7c9aa
+#: 8af04cc4fd224282a1216d20b3363e86
 msgid "Accessing Sentinel-2 data (since December 2015, 10m resolution, 5 days revisit time) could be possible though the following links:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:98
-#: 9be65532884d4ce5877f6e577c56e4f6
+#: 82bcd3c5c34a45deab77ff1f407dc1b3
 msgid "`Copernicus Open Access Hub <https://dataspace.copernicus.eu/data-collections/copernicus-sentinel-data/sentinel-2>`_."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:101
-#: 4df6b824d3fc46d994e8d654d5bc1060
+#: f8947a3971f74a0b9cd5f73f97e8699d
 msgid "PlanetScope"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:103
-#: 2e00193e3ab04ece8aa02ec869a8804b
+#: c5f42b1796614fb4bdc2438f24523e7a
 msgid "PlanetScope, operated by Planet, is a constellation of approximately 130 satellites, able to image the entire land surface of the Earth every day (a daily collection capacity of 200 million km²/day, :numref:`fig_planetscope_revisit_time`). PlanetScope images are approximately 3 metres per pixel resolution with 4 spectral bands Blue, Green, Red and IR bands. The data can be downloaded for free, within a certain quota, on the `Planetscope <https://docs.planet.com/data/imagery/planetscope/>`_ website."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:105
-#: f2761aff35a84699b74301ffdb30248d
+#: f83d9e0242df42f094dfa2576a539ddb
 msgid "Accessing Planet data (Since ~2016, 3m resolution, ~1day revisit time):"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:108
-#: 0689e841db2d4f8ba7fdd7ae736ead4b
+#: 53c483cc29f548b8a3c3539f63a4897e
 msgid "`Planet Explorer <https://www.planet.com/explorer/>`_."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:112
-#: 95b7164ecddd4c06bc6077bd3fdbed65
+#: cf6e9d402a274a10b6fa2610c16c2cc0
 msgid "PlanetScope constellation"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:117
-#: 9401b75743c94481af7dd5fc62773a4e
+#: 90421587b4d44e9fac933e0fa347ddda
 msgid "Average revisit time between 2 Planet acquisitions (2019-2020), :cite:`roy2021`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:120
-#: 53985732b7b840849fb1aa2bd10b088f
+#: 68b5d7caeb50498a8875a903b13d499b
 msgid "PRACTICE"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:123
-#: 8f6e86631e964b65a21b43c336a2ee4f
+#: 33cb1700d1e94b90b7399f716896a02d
 msgid "About the study site - Maca Landslide, Peru"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:125
-#: 9ec4de6803d04f9fbbc71d78c33296a4
+#: 4976bf2324e141c28271e0db665aa61c
 msgid "The `Maca landslide <https://goo.gl/maps/LnyEkErxexKkSHRW8>`_ :numref:`fig_maca_landslide` is situated in the Colca valley in Peru which is a wide depression filled with lacustrine sediments deposited over the last 1M yr, after a major debris avalanche coming from the “Hualca Hualca” volcanic complex dammed the valley. After the breaching of the dam, Colca river started to incise the soft clayey sediments and initiated landsliding in the whole area. Its historical activity can be traced back to the 1980's, when the Lari landslide pushed the river down to the Maca side, and started to erode the Maca side. Several large reactivation occurred in 1990's, 2000's, 2012-2013, and 2019-2020 :cite:`lacroix2019`, :cite:`zerathe2016`, :cite:`bontemps2018`. Examples for this practice will be taken during the last stage of reactivation, which produced major damages."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:129
-#: d4a83e4b172348d7ae636e558b5c7006
+#: 9bdeca35ff304cbaa3d3013ea418d200
 msgid "Maca Landslide"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:134
-#: 18a2563374df4513a9d8012b3fda1a85
+#: f02390f2077743d896fb710255379b6e
 msgid "Picture of the Maca landslide."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:136
-#: dd45e887f92143f2a3028fd011c668f9
+#: 28180eadd1d64eab986b3f639b1060c8
 msgid "For this practice, landslide motion will be retrieved from correlation of optical images. The specific goal is to be able to produce maps such as the one shown in :numref:`fig_landslide_displacement`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:140
-#: 199c0121ddf4448c85da6bcdd5fa0d18
+#: 3cf045faa3a0416f9ed7cb72b0f64a8a
 msgid "Maca Landslide Displacement"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:145
-#: 94eef99a75974e2ab03ce82153b4f4d6
+#: 67548bca8cb54c4fba43f70840fb4c5c
 msgid "Surface displacement field of the Maca landslide between 2003 and 2013 :cite:`bontemps2018`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:148
-#: d53fdb0de9da49369c4b1fa9d927c310
+#: 3121bdc560704282bedb2e76ec7ba59e
 msgid "Download PlanetScope data"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:150
-#: 46604c814db84f54972046fe824db68f
+#: 90645bfb23014ec4b3cb3abe07d8eb26
 msgid "Log on the `Planet server <https://www.planet.com/explorer/>`_, select your area of interest (not too large, typically 4x3km, that includes the landslide and stable areas) and download at least 2 images (you can even select one per year 2017-2022), taken at the same season, without clouds. If possible select images that are not a mosaic of several images but only one single image. The image download is done with the “order scenes” blue button at the bottom left of the browser :numref:`fig_planet_download`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:154
-#: 8f9e02826dd4416486e7b46dc5d0271e
+#: 0cac5f50dbfe411e9f91d72877ff2306
 msgid "Planet download"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:159
-#: bef6d11457d646259242e889a6795031
+#: 0604b369026a43118cbc9347009fb9a2
 msgid "Planet download interface centered on Maca landslide."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:162
-#: 75e5206c6de540e586f68a4ac4cd0bd1
+#: 77fa9abfa1c04aab9d9a637f8a95663d
 msgid "Since the activation of the Planet account could take long-time, for this practice we already provide a set of images."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:164
-#: 088e518247994688934085adcdbc7187
+#: 0963676734274ae28fa6c282e7287f07
 msgid "Now, open two images (those furthest back in time, 2018-2022). Open both images by clicking on ``Layer -> Add Raster Layer`` play with them by turning them on and off."
 msgstr ""
 
@@ -276,35 +276,35 @@ msgstr ""
 #: ../../source/practicals/image_correlation.rst:265
 #: ../../source/practicals/image_correlation.rst:407
 #: ../../source/practicals/image_correlation.rst:463
-#: 8b69a09f4da744dba59789f6cf36de08
-#: 941212e2e26449d68867ec63f97b42cc
-#: feb83beda5a6463da2e4cc1b0b145907
-#: a8270ee5a0e941f69339547824401132
+#: b5350d6f8cfa48ebbcb5cdb3afdd6e69
+#: fe19932e73964ded9872797a37f52af1
+#: ac754034f28745c996ea0461f5dd65c4
+#: 216c0a9be88f41da9942fb2c8cfd38cc
 msgid "Questions for discussion"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:169
-#: 1bf46cc19c924bd8a11c64aa8a792a66
+#: cfdfaa160dd042ecbe9ff2d195e0e18b
 msgid "Can you tell if the landslide faced any changes during your period of study?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:170
-#: 81d22d0bbd8349e4a2dbf44c5ab51490
+#: f8d957fe3fb146efae0409405fb69ed5
 msgid "Are you able to track any displacement by eye?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:173
-#: 3a264d2cf60748cf9d9f2e02f0b4777d
+#: 2a934b50c53e44948e143f04b953ca79
 msgid "About surface displacements and image correlation"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:175
-#: 29dedc2eb8344769944560d98666e260
+#: b10db7da01234a9d955519577366dd23
 msgid "Surface displacements are defined as the movement of the ground surface between two dates. They can be measured in different ways, either in-situ (e.g., GNSS, total station, extensometer, etc.) or remotely (e.g., optical or SAR image correlation, InSAR, LiDAR, etc.). In this practice we will focus on surface displacements measured from optical image correlation."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:177
-#: ba5cf9c9fa574bab83fe1ca1bb7d11c1
+#: 31ce32cdf9ab4a4893d9cf19bed5fefc
 msgid "Surface displacements from image correlation are obtained by tracking the translation of small, textured pixel windows between two accurately co-registered, orthorectified images acquired at different dates. A similarity metric—typically normalized cross-correlation—yields sub-pixel offsets for each window; these offsets are converted to map-plane displacement vectors using pixel size. The method delivers dense 2-D horizontal motion fields (magnitude and direction), with uncertainty controlled by image texture, window size, co-registration accuracy, and radiometric changes :cite:`ayoub2008`. The main principle of image correlation is to divide the first image into small windows (or chips) and then search for the best matching window in the second image. However, modern softwares have implemented different strategies and algorithms to improve the accuracy, robustness and speed of the correlation process."
 msgstr ""
 
@@ -313,53 +313,53 @@ msgstr ""
 #: ../../source/practicals/image_correlation.rst:223
 #: ../../source/practicals/image_correlation.rst:292
 #: ../../source/practicals/image_correlation.rst:501
-#: aeb308b70c324721b74885dcdd6f6b3d
-#: a5495fcbc90b46d9b375278146329559
-#: d220fee93f0949f2abbe648312d6a9c9
-#: 60315f37cad54255aba579cbd973b28b
-#: c99bb3fad5aa4f61b6bb6868ff46aba9
+#: b5bcdd28a10b412ea2fc6573c5910a66
+#: 55bcd6d73c754d7b9d7cfb177b628dc6
+#: 26b1d22f4d594c40864f0546609f6cf7
+#: dacc38c868804799949f95d4a3768f65
+#: a9fdedf61af345f9b4522c4331271414
 msgid "Important"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:180
-#: 98e319c4b91440f5a84217f252718d47
+#: b800d38692164fa1b8d730ffd2a14b69
 msgid "For the following exercise we will use two different algorithms to compute surface displacements: (1) IMCORR (SAGA-QGIS) and (2) ASP. We propose to compare both algorithms and discuss their advantages and limitations."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:184
-#: 9353ae88665947699e11f8a3f915ede9
+#: fed5a09e56234cb0aa43726b6d6f6657
 msgid "Compute surface displacements with IMCORR (SAGA-QGIS)"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:186
-#: 3378f66bf60f4a809fcdba2b901116b3
+#: ed5fc5235618426784aea791508ae4d2
 msgid "This first part of the exercise will be done using QGIS software with the SAGA plugin. This exercise can be done on any operating system (Windows, Linux or MacOS)."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:190
-#: 366ed1c8353a44e191b1ee71b94f992b
+#: 626b0f031063476e98941d95e647e0d9
 msgid "Download a pair of Planet images (2018-2021) over the Maca landslide using this `RENATER link <https://filesender.renater.fr/download.php?token=918a226e-0b42-4b88-93dc-f5025228d703&files_ids=60469767>`_."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:192
-#: 1d0363d1b9394cd0b4a13feea9732ba6
+#: f19121194a524e028dc4d133fe9a353f
 msgid "Once images loaded in QGIS, we will use the SAGA plugin to compute surface displacements with the IMCORR algorithm. If you don't have SAGA installed, please follow the instructions in the :ref:`install_qgis` section of the installation guide."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:195
-#: a2996bdc56834b6580f336ce1dbc3662
+#: 62539385fd2d40e49447566dc6c5af94
 msgid "IMCORR algorithm is on of the first image correlation algorithms developed in the early 90's :cite:`scambos1992`. It is now implemented in the SAGA GIS software and can be used through the QGIS interface. It has been widely used in glaciology to measure glacier surface displacements from optical images :cite:`scambos1992`. As this algorithm is no longer maintained, **we will use only for academic purposes**. It is therefore recommended to use more recent algorithms such as the one implemented in the ASP software (see :ref:`compute_surf_disp_asp`)."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:199
 #: ../../source/practicals/image_correlation.rst:309
-#: 1c52589d20f447e183dd0087c4fcdc5f
-#: 8bf7dac7c4f744f8b33418d4b4fc1e7c
+#: eda4bd84ada041bca4008e4f382233ac
+#: d3a853ca01a647de957870df01835201
 msgid "Prepare the images"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:201
-#: e7bd6775c72c4a489a8f7eb697b39ee7
+#: b48c18f93b054cff9ac3ab0f9e32d44b
 msgid "IMCORR algorithm accepts **single band images** with the **same number of columns** (``width``) **and lines** (``height``). So, you will need to first extract the red band (band 3) from both Planet images and then clip them to the same extent. As this is a common processing step, we wont detail it here."
 msgstr ""
 
@@ -367,468 +367,468 @@ msgstr ""
 #: ../../source/practicals/image_correlation.rst:239
 #: ../../source/practicals/image_correlation.rst:460
 #: ../../source/practicals/image_correlation.rst:481
-#: d387d0a319c94c1c8b57424e74043309
-#: 603fdd2cdea44765b7634dd65b9b9e63
-#: 41c781117e22425dabe9ae88aeadfd42
-#: 0432f47994734cb9bdf25caa14ef9d85
+#: 105fb9229b2d44128643e38d05a51c11
+#: 185cca1005444d9fa28fafafc2a155f8
+#: 483c387c9b964899b9142836317c21ba
+#: d4eb7759a7e44c3687923b2c2d8d3c99
 msgid "Tip"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:205
-#: 529bb1310b3b47f5b754269a553e9dd5
+#: 6043dfc1ee404da8abc83db18807d185
 msgid "For extract single band, you can use ``GDAL -> Raster conversion -> Rearange bands`` within QGIS."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:206
-#: c269f114c8b2477e9d957b6fc21ba95b
+#: 4d60dc4c3b9749d2b057ab1fbbdd2e27
 msgid "For clipping images you can use the ``Clip Raster by Extent`` tool in QGIS to clip both images to the same extent. Make sure to check the option ``Use Layer Extent`` and select one of your two images as the layer to define the extent."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:207
-#: 60385a0bffaf48fe9e2e31f362d8a88c
+#: 0f5610ace6b84211890a18584defbd39
 msgid "You can check the number of columns and lines of your images by right-clicking on the layer and selecting ``Properties -> Information`` tab."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:210
-#: 5a202ec86d6244f5b26cf7860fafc12b
+#: 3e31dc8976c54eeb881a2d203ba88a48
 msgid "Image correlation and outputs"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:212
-#: 75fb84d87b584d61b0ccb87194ab49de
+#: 774a22853b8040ad92b19fcd752fa6b4
 msgid "Now, in the ``Processing Toolbox`` of QGIS, search for ``IMCORR`` and open the ``Image Correlation (IMCORR)`` tool. Fill the parameters as :numref:`fig_imcorr_parameters` and run the tool."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:216
-#: 55608ac205a141e7b05fd4e7889b8088
+#: 3b86bc9981fe41b9947773374fd4c833
 msgid "IMCORR parameters"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:221
-#: c2b766c4ec864a74937688ccda20760b
+#: 6efa28cb36144270986d6393d790818b
 msgid "IMCORR parameters in QGIS. 1 and 3) Input images (single band, same size), 2) ``IMCORR`` algorithm, 4) Correlation parameters (Search chip size, Reference chip size, Grid spacing)."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:224
-#: 0c94f54725454cb1b70526f1f9dcfe23
+#: e7f59f0a337a4db5aca760bd44ca0a05
 msgid "The choice of the parameters is crucial to obtain good results. Here are some advices:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:226
-#: cd43c8032891479499e4b68b4631cd8e
+#: b27a16ecf26e44b3ab43eb4d764b8645
 msgid "``search chip size (pixels)``: Chip size of search chip, used to find correlating reference chips in the second image. A larger chip size will increase the chance of finding a match, but will also increase computation time. A typical value is 64x64 pixels."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:228
-#: 49959a8b23114cb189a2021f3179ac73
+#: e6844a2237cf4612bc89802cafe887a6
 msgid "``reference chip size (pixels)``: Chip size of reference chip to be found in search chip. used to find correlating search chips in the first image. A larger chip size will increase the chance of finding a match, but will also increase computation time. A typical value is 32x32 pixels. This parameter can be equal or less to the ``search chip size``."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:230
-#: 4e4a9edb2fe2489b984a2d9a28ad3164
+#: b487f05ddaf14ea5b663ccdaafa0cb1f
 msgid "``Grid spacing (Map units)``: Spacing between grid points where displacements are calculated. A smaller spacing will give a more detailed displacement field, but will also increase computation time. A typical value is 10 pixels."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:232
-#: 7f239946bdb240d0bc18b176884e0b93
+#: 568237c9503e4dc9b032ed0afe1df39f
 msgid "The output of the IMCORR tool are two ``vector files``: ``Correlated points`` and ``Displacement vectors``. You can load them in QGIS and visualize them as :numref:`fig_imcorr_outputs`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:234
-#: 85088cc369554b869bdbd004b2468eeb
+#: 3a4dbf3330994f8f8599102dc2568714
 msgid "The ``Correlated points`` layer contains all details about the correlation process (i.e. displacemets along columns (EW) and rows (NS), correlation coefficient, pixel coordinates, displacement in pixels, etc) for each grid point :numref:`fig_imcorr_outputs`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:235
-#: 627b23feafcd4f1d8fd7e486fe7ba0af
+#: 42c3257a603b4938b191ec32d02522ec
 msgid "The ``Displacement vectors`` layer contains only the displacement vectors for each grid point oriented though the direction of the displacement. THe lenght of the vectors is proportional to the displacement amplitude :numref:`fig_imcorr_outputs`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:237
-#: acae7de3847a452ba7526a3a6aade657
+#: 27ec2dac75b14deca789a8a1d2296357
 msgid "Within the correlated points, you can visualize the ``DISP`` column that contains the total displacement amplitude (in meters) for each grid point :numref:`fig_imcorr_outputs`. You can also visualize the ``STRENGTH`` column that contains how the correlation is between pixels (greater values means better correlation). In addition to these two important columns, you can also visualize the ``XERR`` and ``YERR`` columns that contain the uncertainty of the displacement along columns (EW) and rows (NS), respectively."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:240
-#: e09ab2e911eb481ca2003132b5e4ba04
+#: 2f527863237f445384273167e45cb8fd
 msgid "You can filter the correlated points by the ``STRENGTH``, ``DISP``, ``XERR`` and ``YERR`` columns to keep only the best correlated points (e.g. STRENGTH > 6 or 2 pixels) or those points with low uncertainty (e.g. XERR < 1 or YERR < 1) :numref:`fig_imcorr_outputs`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:244
-#: 763864de93fe4022a68de960b72aee37
+#: 2fbbdb8f3e3d476aad5ea8bff96b1ad6
 msgid "IMCORR outputs"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:249
-#: fc481f05e36a484d9dfc9779c31c2118
+#: d4741db742a148a2ae6f442edd66e2a8
 msgid "IMCORR outputs in QGIS: 1) ``Correlated points`` and ``Displacement vectors`` layers. 2) and 3) Important outputs within the ``Correlated points`` layer, 4) ``Correlation points`` coloured by displacements (``DISP`` column). Background image corresponds to Maca landslide in Planet 2021 image."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:252
-#: 521fe418aa1740cba7f209057444e954
+#: ba54543e1dce44bcb80bf9795b862726
 msgid "Interpolation of surface displacements"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:254
-#: c92864c9cabf4455a7af5f93f2ba280a
+#: f8e3116496ac4f50927a0a6f75c2afb7
 msgid "To visualize the displacement field as a raster, you can interpolate the ``DISP`` column of the ``Correlated points`` layer using the ``IDW interpolation`` or ``Heatmap`` tool in QGIS. You can also interpolate the ``DX`` and ``DY`` columns to obtain the displacement along columns (EW) and rows (NS), respectively. The result should be similar to :numref:`fig_imcorr_interpolation`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:258
-#: b74f92897b334764ab75520eb00e44a0
+#: fdaf875127ea449ba9c24de61a7b4936
 msgid "IMCORR interpolation"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:263
-#: 125bb332d6774ddaad58813936ad7004
+#: 097d74146db040819b635071cbdc9472
 msgid "Interpolation of the ``DISP`` column of the ``Correlated points`` layer using the ``Heatmap`` tool in QGIS. Background image corresponds to Maca landslide in Planet 2021 image."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:268
-#: 7cd69fbe6c1d44ad9aed23667113a5c7
+#: b064ad6bc7e146d29f673590937f5bdf
 msgid "What do you think of the results obtained with IMCORR?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:269
 #: ../../source/practicals/image_correlation.rst:413
 #: ../../source/practicals/image_correlation.rst:469
-#: 7957096f440e4703b74b256a0afe0af7
-#: 90f6dc536f5046cfb235073214024839
-#: d73330e8267f4bf6a378f0a74668cb37
+#: a2f4e3057ea7498e89d47c2035ae81c1
+#: e1e75513271745919cf7a4a8e7a53bc9
+#: 6fccbceddfcd4e62beb01196814dcd13
 msgid "What are the main patterns of displacement that you can observe?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:270
 #: ../../source/practicals/image_correlation.rst:414
 #: ../../source/practicals/image_correlation.rst:470
-#: b7157c80c811420f83bedad4b3437cbd
-#: f22cbfd6039b4bbcb44b64b7f04e4806
-#: e45973d1b10f48f8bfbd504d87031239
+#: 0c97fdf3a4474f3cb45885e2b17bf785
+#: faa763ae8ea24a75bda77c3591943ca9
+#: edac8e1453ea4df09f5c79e056b328a8
 msgid "What do you think about the noise-level of the displacement field?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:271
 #: ../../source/practicals/image_correlation.rst:415
 #: ../../source/practicals/image_correlation.rst:471
-#: 87f26c18171b409cb6684670349fd663
-#: 37a7643c054549078593769e5e826785
-#: 5e64f3e932f34f92a7bbc2a3289382a2
+#: 92e4c1e5de2247e6a09824e76f92457c
+#: 6c7d2e3419fa454981fab48c8d097c3c
+#: 47f1c348c6eb4378ada08fb90195fb20
 msgid "What are the main sources of errors?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:272
-#: 490daaae8faf420d9b621234b54208ff
+#: 0b7858f1c8c94c3ea47947bc666e3362
 msgid "What are the advantages and limitations of the IMCORR algorithm?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:273
-#: 22b7d3d88a014f70a541f30d421b0a1b
+#: fc28f6e44e154d47a51b500e762c7449
 msgid "How would you improve the results obtained with IMCORR?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:278
-#: 1224bdfa0f3046de8b5984b3919be6a5
+#: b6144b51509e4ed1899c9160d99cce10
 msgid "Compute surface displacements with ASP"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:280
-#: 92e988ff132a4492944839b32e7997b8
+#: 0ff478256bac46a2a4ed9b830d96db3b
 msgid "To measure surface displacements field using Ames Stereo Pipeline (ASP), you will use the different correlator strategies developed in the ASP software. Among them, the classic Block Matching (BM) algorithm and the Normalised Cross Correlation (NCC) cost-function (for correlation quality) are the most commonly used. The process initially requires 2 images as main input data. However, there is several parameters that can be tuned to improve the quality of the results. For instance, the size of the correlation window (or kernel), the type of correlation algorithm (BM, Semi-Global Matching (SGM), etc), the refinement of the correlation function (subpixel-mode). In this practice, we will use the ``parallel_stereo`` command to compute the displacement fields and the ``corr_eval`` command to compute a quality metric (NCC) of the correlation process."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:282
-#: 4375575dd1fe40bb8c3ef8450d8ac945
+#: 474f592ca15747ab99cce8c5f85252ad
 msgid "The window size is fixed to 21x21. It can be tuned by using the option --corr-kernel. Other parameters, like the type of correlation algorithm or the refinement of the correlation function, can also be tuned. For instance the refinement mode 2 (Bayes mode) is the slowest one, but also the most precise. If you want a more rapid evaluation of your displacement fields, use subpixel-mode 1 (parabola fitting)."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:284
-#: eb588147420d4a6f881454d4bf603f9a
+#: a622322184284de687ee91522b477f74
 msgid "See also"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:284
-#: dcb554f8094f4a24b994a1ffecd8ad87
+#: cc173827d92b42d3898a5dd710b05bcb
 msgid "Ames Stereo Pipeline (ASP) The NASA `Ames Stereo Pipeline (ASP) <https://stereopipeline.readthedocs.io/en/latest/introduction.html>`_ is an open-source photogrammetric software, to generate DEM from either multiple satellite, airborne or ground-based images on the Earth and other planetary bodies (Mars, Moon, etc). This software is designed to produce DEM's using stereo or multiple-stereo pairs of optical images. For more detailed and complete information please refer to NASA ASP web page. Read on Ames Stereo Pipeline: :cite:`beyer2018` & :cite:`shean2016`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:288
-#: 894b5e96449d477c9decd32dfd177b9f
+#: 8350b12d9e3f4612b0869106f4060394
 msgid "Download the data"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:290
-#: 0866d6a3bc8a43d29d8234081742cb74
+#: a8372300f51b41f69b4512aec54fdbd4
 msgid "This second part of the exercise will be done using ASP software. This exercise will be run on Linux (e.g. WSL or Virtual Machine) or MAC operating system."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:294
-#: 06477d0372a1476b9e1056241d996181
+#: c3551f0ed9d643b68cdcdc667be0487c
 msgid "Download a set of Planet images (2018-2025) over the Maca landslide. You can use the provided script located in ``/psf_telrisknat_2025_docs/data/download_excercise_2_data.sh`` as follow:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:296
-#: 23e772b9c6eb4f3ea34cd7e3733bc025
+#: ec8acf2f6ac04029974753270d167677
 msgid "Open a terminal and navigate to the ``/psf_telrisknat_2025_docs/data/`` directory."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:302
-#: c9814c23e2724c35a94d3904f19d30c1
+#: e9869acc9cee4cb1af18f33e1af03457
 msgid "Run the following command:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:311
-#: c97acaaa74cd4f5eb7a28de98ce66dd9
+#: 850291e9d3b74c4187e4f3ab4041b81f
 msgid "As for IMCORR, ASP requires **single band images** with the **same number of columns** (``width``) and **lines** (``height``). So, you will need to first extract the red band (band 3) from both Planet images and then clip them to the same extent. As we provide the data ready for processing, we wont provide the details here:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:319
-#: 6b526171d1b04167823db37d63cdfeb2
+#: 0c6bdf11c98d4095bd7396b83fd72995
 msgid "Image correlation using ``parallel_stereo``"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:321
-#: 958d693743cf4ac0acf033102ae43279
+#: 82ead12e957e420885de946aadcd57e8
 msgid "Now, you can run the ``parallel_stereo`` command with the following parameters:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:329
-#: cce357f5e4604334add2d82b08942fad
+#: 59fdb64887fd4a1fbeccc62fbd97ec53
 msgid "The output directory ``run`` contains ``run-corr-20180805-20210805-F.tif`` (3 bands):"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:331
-#: d5e2379dd95e407491f5767ea4c315dd
+#: 4abc18f726af44c4b7b568816ec84a8f
 msgid "Band 1: **EW** (column) displacement (pixels)"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:332
-#: 16bb303049f9434080c25fa81c3387d6
+#: d6755ee58de0408fa5dfe1c23a8cede7
 msgid "Band 2: **NS** (row) displacement (pixels)"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:333
-#: 4f6c58cc47744b7d95bd4b32b4c58164
+#: c94264ac3129432db2368c8e6acf1b29
 msgid "Band 3: **GoodPixelMap** (raster mask of valid pixels)"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:336
-#: 8cdbdc82c5254444ae99d5b9a04a4489
+#: 81906da910304cb2bf6ee535ffdd6e44
 msgid "Quality metric (NCC)"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:337
-#: f303f40d160e45558dd14841a2a41bd7
+#: 3a1700aa42194fa1a3d02cc987416066
 msgid "To evaluate the quality of the correlation process, estimated by the cross-correlation coefficient (CC), you must run the following command:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:344
-#: be44a856c5e646688c8a33a271fcee88
+#: 646e37296cc3491db2b6d7b0d1ac3d9d
 msgid "This comand creates a raster file named ``run/run-corr-20180805-20210805-ncc.tif`` with values in **[0, 1]**. The NCC files contain a raster where their values are coded between 0 and 1, where values close to 0 have low correlation and values close to 1 have good correlation."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:347
-#: 5f8003fd3d2846f1a22889f2eab0376d
+#: 71ebc18e7e4a43908b31d18073e6daf0
 msgid "Harmonizing data for better analysis and visualization"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:349
-#: 196b70bb5aaa4d43bb8ac7ee1952ab83
+#: bb0b638088b3448c82a58a5a33e8f5eb
 msgid "Now you will separate first band and second, which corresponds to ``EW`` and ``NS``. Run the following commands:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:366
-#: 119fdc736b8a4af9b1787cda93eca6b8
+#: 6536ebccb3224130af2eb52d3f1f2193
 msgid "Convert from pixels to metres"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:368
-#: ae2981ceee054bfda4d92c441b29b7a2
+#: 3fe8193be0724b3dad5727334c206d29
 msgid "Note that contrary to ``IMCORR`` algorithm, ASP provides surface displacement in pixels. To convert it into meters, you must multiply by the pixel resolution (in this case 3m). You can use the raster calculator of QGIS to do so, or directly with the gdal library. Run the following commands:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:378
-#: 93e3a957169a4e798bc7fd9b05d60408
+#: 27efdee0a4c24ed6ba370e05247b2cfe
 msgid "Once the results are converted, you can use QGIS environments to visualise the results ::numref:`fig_asp_outputs`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:382
-#: 1084d6af7175421c8f29df34962be155
+#: 7cb7e3bb66c84437986172a949fb3c23
 msgid "ASP outputs"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:387
-#: 559e7a74e78b45cba1ec86c1112c3fb9
+#: fde4851547384b5aa3130e476cd12ba6
 msgid "ASP outputs in QGIS: Left: ``EWm_20180805_20210805.tif``, Right: ``NSm_20180805_20210805.tif``. Background image corresponds to Maca landslide hillshade."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:389
-#: ad557b87c6b2417fb0a03fec90364ea6
+#: 70e3901f7d294180bb282382151292aa
 msgid "We will now compute the total displacement field (See :eq:`eq-disp`). For that, we will use the output of the previous results using the following formula:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:393
-#: cad2def0f22b4c54be35234a711dc236
+#: 8a0aa60c332c4a549403dcbcf59b9222
 msgid "\\mathrm{d} = \\sqrt{\\mathrm{EWm}^2 + \\mathrm{NSm}^2}"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:398
-#: 6cbea497937d4d1f8ef8e67487639aab
+#: fdf441064a1f48d9869d3f7ba346d4a9
 msgid "where ``d`` is magnitude displacements in meters, ``NSm`` is raster displacements of the North-Sud component in meters, ``EWm`` is raster displacements of the East-West component in meters."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:400
-#: cfa9dc2a11f64a33bba91cc24f142286
+#: ebedf72fecc64e60b751934e658c3525
 msgid "You can use the raster calculator of QGIS to do so, or directly with the gdal library. Run the following command:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:410
-#: 309b9f2e4ae94beca8961d2f641ace06
+#: 98578ee76f17479ea885f12999d0f229
 msgid "Load the ``EW_20180805_20210805.tif``, ``NS_20180805_20210805.tif`` and ``CC_20180805_20210805.tif`` files in QGIS to visualize them."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:412
-#: 2266c6fe814b40d498c5ae44e752b3bb
+#: cc56c646fdf44870af9a62c2a62fb42c
 msgid "What do you think of the results obtained with ASP?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:416
 #: ../../source/practicals/image_correlation.rst:472
-#: a6e77b8251be4ce8bb666bf9e9c85c36
-#: 481c95975dbf420883de502cf07b887f
+#: e0e0277a6df5424b96d8c197d2ee7fec
+#: e9daa6d42076454797c066e823429931
 msgid "What are the advantages and limitations of the ASP algorithm?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:419
-#: e21c4b83d8e84daca07cef54723781fc
+#: bf56e680b6e245e2bd6dd20155f96ace
 msgid "Bias correction in surface displacements"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:421
-#: 8e029fcb38824b7183cbaf34d96a937b
+#: 7369a89e08434926892c3510c79ec001
 msgid "When inspecting the images in QGIS, you may notice that two of them are not perfectly georeferenced due to gyroscope errors on the satellite. There may be a bias of up to 10 m between them. This bias is clearly visible in stable areas where motion should be **close to zero**. However, as can be seen in :numref:`fig_asp_outputs`, this is not the case. To remove this bias, we need to visualise the east-west (EW) and north-south (NS) histograms in QGIS :numref:`fig_asp_bias_correction`, evaluate the value at the peak and subtract it separately for the EW and NS bands."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:425
-#: cc23550133ad4097a5074e1e7cf967ae
+#: 7f9486bf445e49e293950f2bcd33a500
 msgid "ASP bias correction"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:430
-#: 1cb55f62148748469738cdbcced6faed
+#: 3a68d718007c4c53a74850a6ebffc36b
 msgid "Surface displacement histograms in QGIS: Left: ``EWm_20180805_20210805.tif``, Right: ``NSm_20180805_20210805.tif``."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:432
-#: dfef0e20254f458b943c902aca78a9df
+#: f377419a96574a52986274222fe24b69
 msgid "In order to correct this bias, you can use either the ``raster calculator`` in QGIS or directly with the gdal library to do this subtraction. Run the following commands:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:442
-#: 6df9b90f05d846b29f1d59b328db25e1
+#: a5acc899ceae4666bd5d59ad87c954ae
 msgid "Finally, you can compute the total displacement and surface velocity as follows:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:449
-#: e169f8868a4d48b1bba84bdc1aa3d02a
+#: f3cffc36d21142fe86c1ccc22da1c499
 msgid "Visualize the displacement field overlayed over a hillshade DEM (if you have one, either over the satellite image in B&W). Adjust the transparency of the displacement ``layer right-clicking on the layer -> Properties``. The results should be similar to :numref:`fig_asp_bias_corrected_outputs`."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:453
-#: af11d611260646f2be381a8977c91b2f
+#: c59f1bc725ad4bf6960dc2ca7b2c0568
 msgid "ASP bias corrected outputs"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:458
-#: fbb6f68194c9427b86c55cf996ba92e6
+#: dd3c054ded1345f28f4d385c93d5806f
 msgid "ASP bias corrected outputs in QGIS: ``DISPm_20180805_20210805_bc.tif``. Background image corresponds to Maca landslide hillshade."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:461
-#: bac218d6c7b54efeaf6b23e76210138a
+#: 4340ffbb9b1c4298b01f2d6532f7079c
 msgid "ASP do not provide the displacement vectors as IMCORR. However, you can create them in QGIS. Take a look `at this tutorial <https://www.youtube.com/watch?v=y2b7URF8lZg>`_."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:466
-#: 04f1a05524f34c779d1872a7b4e848de
+#: 77746518c605412aaa89372e18914b16
 msgid "Load the ``DISPm_20180805_20210805.tif`` and ``DISPm_20180805_20210805_bc.tif`` files in QGIS and compare them."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:468
-#: fc0f5bc67afd4755979b59e285ecee66
+#: 484bd47a394149d9bf88a68e2f63f0b1
 msgid "What do you think of the results obtained with ASP after bias correction?"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:475
-#: c957e46f137e4dba8379eac8a410cfa0
+#: 34b2c0ecd270461ab12372715a9c7387
 msgid "Evaluation of the data quality"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:477
-#: 8a460627fcf64133be2d4840de65ff95
+#: d07831a7fba440638d49baba77a2c5c2
 msgid "Once you have obtained the displacement fields with both IMCORR and ASP (or any other algorithm), the questions is **How to evaluate the data quality?**"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:479
-#: 80850f269b4f40099b577008b80502b2
+#: 30f7ecbbeb604807818e9e0f8a8b34eb
 msgid "Some aspects to consider include:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:483
-#: 3251f71081504a8ba91e826b965a9f21
+#: 02c78039ca674b3295e4d37613b4ede1
 msgid "**Comparison with ground truth data**: If available, compare the displacement fields with in-situ measurements or other reliable data sources to assess accuracy. For instance on the Maca landslide, 3 permanent GNSS enabled this comparison :numref:`fig_data_quality_evaluation`. This point-to-point evaluation allows us to give confidence to feature tracking results."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:484
-#: 15a9166a40844fa4876ff016bca6ae12
+#: 8f3a59a9a2b64bd39b89a51dc5387b59
 msgid "**Statistical analysis**: Calculate statistics such as mean, median, standard deviation, and interquartile range to quantify the displacement field characteristics. This can be done using **stable areas** where no displacement is expected (e.g., areas with no known ground movement :cite:`cusicanqui2025_LandsatImagery`). However, you should pay attention on how those **stable areas** are defined."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:485
-#: 6450e59795894dedb08fdc0a1c59773c
+#: 63fd76d16f15488da1e47872c0b731c5
 msgid "**Uncertainty estimation**: Assess the uncertainty associated with the displacement measurements, which can be influenced by factors such as image resolution, correlation window size, and image quality. For instance a standard deviation (STD) of the EW and NS measurements component on a stable area can be used to evaluate the uncertainties."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:486
-#: 6e6f2990a40a4468998a3c00de8ee35a
+#: 6da72310c4e74ae2a1acf257c1949274
 msgid "**Visual inspection**: Look for obvious errors, such as unrealistic displacements or patterns that do not make sense given the context of the study area."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:487
-#: c5105a80d629440cbd204fe046c5b892
+#: 40f41fb434f849b488c7f4def0ae914c
 msgid "**Cross-validation**: If multiple displacement fields are available (e.g., from different algorithms or time periods), compare them to identify consistent patterns and potential biases."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:491
-#: 262629784580463ab49efd3bea3a33e3
+#: ab121229dd8e4f3ba1c2dec80186fa2a
 msgid "Data quality evaluation"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:496
-#: c126d0930e994d82aa328a6bc3991195
+#: d000e84993e0423f9c53432037335a2b
 msgid "Example of data quality evaluation using in-situ GNSS data on the Maca landslide :cite:`lacroix2020`. Time-series of displacement measured by a GNSS installed on the Maca landslide."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:499
-#: 34821f04599e42c9a5de56849ac3eaf4
+#: 795bfdebff51476fb591f053de78d7ca
 msgid "To go further"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:502
-#: 8ed45257ffbd414185c642f40e7355af
+#: 7e7add1c53244d899dcdd5ec74132b1c
 msgid "**Do it yourself!!**"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:504
-#: c6727dd8e440455ebe910aa64ffcb585
+#: 451c50abfd904ec88625d12a10c5eb3f
 msgid "**Congratulations!!** Now you have the basic knowledge on how to compute surface displacement using both IMCORR algorithm in QGIS and ASP. To go further:"
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:506
-#: ec9d76ee69e54ec1826ca41ba8b88b32
+#: bbdca396a79c497b9250ecbfcda7f5b5
 msgid "Replicate the same process using other PlanetScope pair images available in the directory ``data/excercice_2_image_correlation/maca_planet``. For instance, you can use the 2021-2025 pair."
 msgstr ""
 
 #: ../../source/practicals/image_correlation.rst:509
-#: 234d2cee9bfb4b74b546346fcd81c48b
+#: 4fe9028f339543e1a7e89ed51f1c0e62
 msgid "References"
 msgstr ""

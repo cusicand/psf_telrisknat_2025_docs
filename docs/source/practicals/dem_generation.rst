@@ -391,7 +391,7 @@ Once the second DEM is processed, you will now compute the **Difference of DEMs 
 
 .. code-block:: bash
 
-    common_extent=169245.0 -1058745.0 223035.0 -989865.0
+    common_extent='168757.0 8940932.0 222493.0 9010173.0' # Define common extent
 
 .. code-block:: bash
 

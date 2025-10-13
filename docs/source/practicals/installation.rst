@@ -82,7 +82,7 @@ b. Then, you need to create a virtual environment with all the necessary package
 
   .. code-block:: bash
 
-      bash Miniconda3-latest-Linux-x86_64.sh
+      bash ./Miniconda3-latest-Linux-x86_64.sh
 
   - Follow the prompts to complete the installation.
 
@@ -92,7 +92,7 @@ b. Then, you need to create a virtual environment with all the necessary package
 
   .. code-block:: bash
 
-      conda install mamba -n base -c conda-forge
+      conda install -n base -c conda-forge mamba
 
 c. Third, clone the PSF TelRiskNat 2025 repository. You can do this by running the following command in your terminal:
 

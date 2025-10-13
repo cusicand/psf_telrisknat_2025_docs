@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"POT-Creation-Date: 2025-10-13 05:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -22,17 +22,1000 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../source/practicals/dem_coregistration.rst:12
-#: 92dd216bd5b846fcb2a850fb2d9d0bae
+#: 1878a2e63c264627a50dbb047ef42464
 msgid "Manual and automatic DEM co-registration"
 msgstr ""
 
-#: ../../source/practicals/dem_coregistration.rst:14
-#: 31ce113a81484533ac05f23f6b3043bb
-msgid "be patient"
+#: ../../source/practicals/dem_coregistration.rst:23
+#: b343f47e6af64777869daf24eabf7376
+msgid "**Diego CUSICANQUI**\\ :sup:`1` & **Ruben BASANTES**\\ :sup:`2`"
 msgstr ""
 
-#: ../../source/practicals/dem_coregistration.rst:19
-#: 731f620b6bb34f5988e37936bebe2137
-msgid "Advice from PSF TelRiskNat optical team."
+#: ../../source/practicals/dem_coregistration.rst:25
+#: d51656ba77334b6eb48b90d19483d8bb
+msgid ""
+"\\ :sup:`1` Univ. Grenoble Alpes, CNES, CNRS, IRD, Institut des Sciences "
+"de la Terre (ISTerre), Grenoble, France."
 msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:27
+#: 400cebbe56b44305802a3b66a55d90b5
+msgid ""
+"\\ :sup:`2` Universidad Yachay Tech, Escuela de Ciencias de la Tierra, "
+"Energía y Ambiente, San Miguel de Urcuquí, Ecuador"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:31
+#: 70574a1aa59f45d3bc00a4b85904bee2
+msgid "Copyright"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:33
+#: d1a8fa56d16341b58f9de09e8a7a9534
+msgid "*Document version 0.2, Last update: 2025-09-18*"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:35
+#: 49f770ab684d41e5bb6e9de5d4ea927b
+msgid ""
+"|copy| *PSF TelRIskNat 2025 Optical team (D. Cusicanqui, R. Basantes & P."
+" Lacroix)*. This document and its contents are licensed under the "
+"Creative Commons Attribution 4.0 International License (`CC BY-NC-SA 4.0 "
+"<https://creativecommons.org/licenses/by-nc-sa/4.0/>`_)."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:38
+#: e44920ffd4c94ec4b800bbae2ff7bf94
+msgid "License: CC BY-NC-SA 4.0"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:45
+#: 003314298c084effba9987df41f27c6c
+msgid "Learning objectives:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:47
+#: ca675438f62547a08a4b8e06b289bcd2
+msgid "Understand the principles of co-registration technique."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:48
+#: 061cb9d1161646ebb2bcb6ea4180cedc
+msgid ""
+"Learn how to apply image co-registration techniques manually and "
+"automatically."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:50
+#: ../../source/practicals/dem_coregistration.rst:197
+#: ../../source/practicals/dem_coregistration.rst:350
+#: 29f9921b05da4e0981f51af630723515 2a57aabd8404450f93230fcc46124420
+#: 492229685b3b4374ad7ca70d2ca0c5e5
+msgid "Note"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:51
+#: 75bfe9585202441e85abbd06bdd70dbe
+msgid ""
+"For this practice, you will use ASTER derived DEMs produced during the "
+"practice of :ref:`dem_generation_page` to study the region of Cordillera "
+"Blanca"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:54
+#: 3eb0c175f3fe45a888b3c11049d48fad
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:56
+#: a2df7d0971cd48bbb5c1ffc93a82badc
+msgid ""
+"As mentioned previously in the practice :ref:`dem_generation_page`, "
+"quantification of mass changes is crucial to understand the fundamental "
+"processes that trigger mass-wasting events. Thus, a comparison of two or "
+"more 3D surfaces (e.g. Digital Elevation Models) could help to quantify "
+"these mass changes. However, DEM quality is highly dependent on several "
+"parameters, such as camera resolution, height flight, image quality, "
+"percentage of stereo coverage, etc., which play a major role in the "
+"quality of the DEMs and how they represent the 3D relief. Nowadays, there"
+" are several tools to generate DEMs, most of them in an automatic way. "
+"Because DEMs are the primary source for mass changes estimations, it is "
+"very important to assess the quality of DEMs, to avoid misinterpretations"
+" on the results."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:58
+#: 32eef89a2c0446faac6fc93c1dcebaa7
+msgid ""
+"During the automatic DEM generation, there are several sources of error "
+"that can affect the final DEM, for example translation and/or rational "
+"displacements on the spatial reference, as well as scale variations. In "
+"this practice, you will focus on the ``co-registration`` procedure used "
+"to adjust geometrically a pair of a DEMs. This method fits all DEMs "
+"regardless of the technique by which they were generated. For our "
+"example, we will use two DEMs automatically generated from ASTER optical "
+"images acquired on two different dates. After a brief description of the "
+"theoretical basis of the methodology, you will carry on in two hands-on "
+"co-registering exercises, the first based on an excel worksheet that will"
+" help you understand **how the co-registering works**, and the second "
+"will teach you **how you can automate the co-registration procedure** "
+"based on the application of Python libraries."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:63
+#: bfc2661cc6214327b00ba537fffb394e
+msgid "About DEM co-registration"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:65
+#: ec1e064e8edb4c74b2cf5952bd59d263
+msgid ""
+"Based on the results of the practice :ref:`section_dems_dod`, you may "
+"notice that all east- and northeast (southwest)-facing slopes have strong"
+" positive (negative) differences in surface elevation :numref:`fig-dod-"
+"bias`. This indicates some kind of systematic bias between the two DEMs "
+"used to calculate the DEM difference. This type of bias is usually due to"
+" slight horizontal (EW or NS) and vertical shifts in one or both of the "
+"DEMs :numref:`fig-dod-bias`, which cause misleading elevation changes, "
+"especially on steep slopes where you can have strong elevation "
+"differences in a few meters. In short, this means that the DEMs are "
+"spatially inconsistent."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:69
+#: 57e048b16fba41e4a266a4e376db93bf
+msgid ""
+"Difference of DEMs (DoD) generated from ASTER images using ASP between "
+"2003 and 2023."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:74
+#: f6ba8f9e15c7418e9d887167f9effdaf
+msgid ""
+"Difference of DEMs (DoD) generated from ASTER images using ASP between "
+"2003 and 2023. Visualized in QGIS."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:76
+#: 7ff2271f20e2407e9ab3b36873541fcf
+msgid ""
+"To ensure a precise xyz alignment between the DEMs, an iterative method "
+"called co-registration proposed by :cite:p:`nuth2011` is commonly "
+"applied. This method is based on the elevation differences of the two "
+"misaligned DEMs, and it assumes that the surface elevation change is a "
+"function of the slope and the aspect of the terrain :numref:``."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:80
+#: 285cd37bcde94d2e84fc93031f5ec578
+msgid "Systematic slope bias due to misregistration"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:85
+#: c20271edadff4551bb41582fcb7bd07f
+msgid ""
+"Systematic bias in elevation due to slight shifts in one or both DEMs "
+"(from :cite:`nuth2011`)."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:87
+#: ec32498ed3df46a6b2d704ca2cb3ea80
+msgid ""
+"This 3D spatial correction takes the most accurate DEM as a geodetic "
+"reference, whereas the second DEM is compared with the reference and co-"
+"registered (i.e. shifted) according the follow relationship:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:89
+#: 1d73d5d46abc4c93bb9112a1440da3df
+#, python-brace-format
+msgid "\\frac{dh}{\\tan(\\alpha)} = a\\,\\cos\\!\\bigl(b - \\omega\\bigr) + c"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:94
+#: 6f359338cc9b4a3aa2998553ee4aa029
+msgid ""
+"where ``a`` is the magnitude of the misalignment, ``b`` is the direction "
+"of the misalignment, and ``c`` is the mean elevation bias. Then, the  "
+"adjustment factors are computed as follow:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:96
+#: 44b6f2434951491f94c85452f5a18a87
+msgid ""
+"\\begin{aligned}\n"
+"\\Delta x &= a\\,\\sin(b),\\\\\n"
+"\\Delta y &= a\\,\\cos(b),\\\\\n"
+"\\Delta z &= \\frac{c}{\\tan(\\bar{\\alpha})}.\n"
+"\\end{aligned}"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:105
+#: 917afebe51e046e9835307bf364c6fcb
+#, python-brace-format
+msgid ""
+"where ``Δx``, ``Δy``, and ``Δz`` are the horizontal (East-West and North-"
+"South) and vertical shifts, respectively, and ``\\bar{\\alpha}`` is the "
+"mean slope of the terrain. The process is repeated iteratively until the "
+"adjustment factors converge to zero (i.e., no further improvement in the "
+"alignment). The method assumes that the horizontal shifts are small "
+"compared to the pixel size of the DEMs, and that there are no significant"
+" elevation changes between the two acquisition dates."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:107
+#: ../../source/practicals/dem_coregistration.rst:123
+#: ../../source/practicals/dem_coregistration.rst:323
+#: 09bfbb4ebfc54fba8485992959aac3d3 370ed0c555a348ba977e2519f3454fae
+#: 481654e590324ff199c31714ac3bee73
+msgid "Important"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:108
+#: 9d0a350b5a5b47c2a573690322be7909
+msgid "For a detailed explanation of the method:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:110
+#: a072cb9aefcb44d3ba0596f8ebb4711d
+msgid ""
+"Nuth, C. and Kääb, A. (2011): Co-registration and bias corrections of "
+"satellite elevation data sets for quantifying glacier thickness change, "
+"The Cryosphere, 5, 271-290, https://doi.org/10.5194/tc-5-271-2011."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:113
+#: 9f41ad9fda334bffb1a26cedbe6f209d
+msgid "Practice"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:116
+#: cccc6abfc66f4d1394c5f9ffb6b2f918
+msgid "Manual co-registration"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:119
+#: 5f89285aa7f64b95b01dbe26a6649a41
+msgid "Data inspection"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:121
+#: 904c1c1f507941bcb80587f587dad377
+msgid ""
+"For the first part of the exercise, you will use **QGIS and Excel** as "
+"the main softwares. This practice should be done in a computer with "
+"**Windows OS**."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:124
+#: 14776cf135f845989c9cfb2d875f2097
+msgid ""
+"Download the data provided for this practice here `Download data exercise"
+" 4 <https://filesender.renater.fr/download.php?token=ea958f24-271a-447d-"
+"993a-25e668f9df63&files_ids=60632668>`_."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:126
+#: 64270dc2eb004a218972db6fc6eb30a7
+msgid ""
+"First of all, you will open the ``DoD 2023-2003.tif`` :numref:`fig-dod-"
+"bias` into QGIS and you will explore the data by looking at the histogram"
+" values of the DoD values :numref:`fig_dod-histogram`. To do this, open "
+"the ``Layer Styling toolbar`` and click on ``compute histogram``. By "
+"analyzing the histogram, you will first note that the values of the DoD "
+"raster are concentrated around 0. However, when you zoom on the pic of "
+"the histogram, you can see that there is a slight shift of around **~10 "
+"m**."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:130
+#: 301456cc9bb444aaa2f63b86832ec457
+msgid "Histogram of the DoD values."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:135
+#: 34c2aec45e7a444fb9998b708beb6005
+msgid "Histogram of the DoD values ``DoD_2023-2003.tif`` file."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:138
+#: e4ca872b05ef4dea84ca66696897e692
+msgid "Aspect and slope calculation"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:140
+#: 2a510facf18246fe8ba2313d7161caba
+msgid ""
+"In order to be able to use the co-registration procedure, you need first "
+"to compute ``slope`` and ``aspect``. To do so in QGIS, please go to the "
+"toolbar section and within GDAL tools, you will find ``Aspect`` and "
+"``Slope`` functions respectively. Since you are using the 2023 DEM as "
+"reference, for that procedure you will use the DEM corresponding to the "
+"2003. The results should look very similar to :numref:`fig_slope_aspect`."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:144
+#: 308150551f49495c8cfb5dc084b1ca15
+msgid "Slope and aspect maps."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:149
+#: 5162cbecf61548709f73d0cefed6726e
+msgid "Slope (left) and aspect (right) maps calculated from the 2003 DEM."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:152
+#: dc26c533b55244f1a42f592472971c3d
+msgid "Random sampling of points"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:154
+#: b101b6cd34624da182a532bd8a8f2917
+msgid ""
+"Once those results are generated, you will have to generate ``point "
+"samples`` from where coregistration will be calculated. To do so, you "
+"have to go to ``Vector -> Research Tools -> Random points in Extent``. By"
+" using this tool :numref:`fig_random-points_generation`, you will "
+"randomly generate 10 000 points shapefile based on the same extent of the"
+" Difference of DEM's. The results of this procedure should look like in "
+":numref:`fig_generated_points`."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:158
+#: c1befc291cb142a69cadd720aad08ab0
+msgid "Random points generation."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:163
+#: 5fb6265ee865451f8265fa737c593124
+msgid "Random points generation using QGIS."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:167
+#: 33355a52be14437f913d99fc9e614965
+msgid "Generated random points."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:172
+#: 25367f3585e440719f7198b9a14ee12e
+msgid "Generated random points over the DoD raster."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:175
+#: de60811ec0d444a3a37de87bd5e944bd
+msgid "Sampling the values of the rasters"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:177
+#: bc8f17535f1d4ebd9975ad280e898993
+msgid ""
+"Once the points are generated, you will have to extract the values of the"
+" ``DoD 2023-2003``, ``slope`` and ``aspect`` rasters to the points. To do"
+" so, you will use the ``Point Sampling Tools plugin`` in QGIS.  If you "
+"don't have this plugin installed, please refer to the section ``Plugin ->"
+" Manage and Install Plugins, and type Point Sampling Tool``. This plugin "
+"takes one point vector shapefile and several raster files to extract the "
+"value of the overlaid pixel, from the selected rasters. More information "
+"on the `official webpage "
+"<https://plugins.qgis.org/plugins/pointsamplingtool/>`_. You have to "
+"select the ``Random_points.shp`` file as well the raster files :numref"
+":`fig_point-sampling-tool`. Once the layers are selected, you can rename "
+"the columns to keep the column names clear and short :numref:`fig_point-"
+"sampling-tool`. As a result, you will obtain a new shapefile that you "
+"will rename as ``Random_points_sample.shp`` but this time, you will find "
+"in the attribute table the columns you modified previously containing the"
+" pixel values from raster files :numref:`fig_point-sampling-tool`."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:181
+#: 134efec2907144ef8324112d6c1f3506
+msgid "Point Sampling Tool plugin."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:186
+#: c00d0d8469d84472b6d09666ab189bb1
+msgid "Parameters on point sampling tool in QGIS."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:189
+#: ce511b083ca74e2b9033223849d46434
+msgid "Filtering point data with null values"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:191
+#: 0c111595bcdd4b6eafbab9e80accf3e4
+msgid ""
+"As you may notice in the :numref:`fig_generated_points` and :numref"
+":`fig_point-sampling-tool`, there are several points which are located in"
+" empty areas, close to the image borders, for instance. These ``empty "
+"points`` or points containing ``missing (null)`` values, must be "
+"filtered/removed since they are not useful for the coregistration stage. "
+"To do so, you will open the attribute table of the "
+"``Random_points_sample.shp`` and open the ``Select features using an "
+"expression tool``. This option allows us to select the features by "
+"filling certain conditions (e.g., between a range of values, if values "
+"exist or not, etc). For this case, you will search those values with "
+"missing or null values inside the three columns (i.e., aspect, slope, "
+"dod_23-03). Inside ``Select features`` windows, you can have access to "
+"the columns by clicking in the Fields and Values option as well as the "
+"``Operators`` that will be used to meet the searched conditions "
+":numref:`fig_filtering_points`. Inside the box expression type the "
+"expression written in :numref:`fig_filtering_points`."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:198
+#: 5fdc9f221ff5413985a3123e607dcd91
+msgid ""
+"``aspect``, ``slope`` and ``dod_23-03`` = the fields or columns to be "
+"evaluated."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:199
+#: d005dd58aadd4981be8875e752bbf225
+msgid ""
+"``is`` = in the operator/evaluator which compares each row of the columns"
+" selected previously."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:200
+#: a5db178222c849c4b484c468035c3407
+msgid "``NULL`` = is the value of the expression to be fulfilled."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:201
+#: 42d3429158c74f49ba1a672038f492c0
+msgid ""
+"``OR`` = is the logical operator to allow us to select several columns "
+"and check if the condition is filled in one column in any column."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:203
+#: ../../source/practicals/dem_coregistration.rst:502
+#: ../../source/practicals/dem_coregistration.rst:542
+#: 587cbf7483a74689818fc07fdcb7d5fe 7ed795503e4248c7a2a5275e9956bf94
+#: cf98f49c16e84cddaea76d5849180e61
+msgid "Questions for discussion"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:206
+#: cfd56498e2194512b148f964b8f4d0c4
+msgid "Why do we use the ``OR`` operator instead of ``AND``?"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:208
+#: ca29cc14abf94ef1a163faa0db4e267c
+msgid ""
+"By clicking on ``Select features``, QGIS will select all features who "
+"meet the conditions for the three columns. The selection returns ~ 3830 "
+"points features. Since the point features were generated randomly, the "
+"selected points may differ for you. Finally, once you have selected the "
+"points, the final step is to delete them. To do so, you will Edit the "
+"points features and click on ``Delete selected``. By doing so, we have "
+"reduced the initial point sample from 10 000 to 6 100 points. The results"
+" must look like :numref:`fig_filtering_points`."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:212
+#: 7b6b3ebcabd647a0b01fbc2d808b2198
+msgid "Filtering points with null values."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:217
+#: 56ed893798f14772a40ee2784d5ca25c
+msgid "Filtering points with null values using the expression tool in QGIS."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:220
+#: 2929c842b57f4f7bb180b2a71e3a9c2c
+msgid "Filtering point with glacier outlines"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:222
+#: adc0fd013d2649828c9d5363c7db2220
+msgid ""
+"Since the co-registration stage is based on those areas which have not "
+"suffered strong geomorphological changes (hereafter called as stable "
+"areas), you need to remove those points which are located within those "
+"areas which have strongly changed (i.e., glaciers, landslides, etc). So, "
+"you need to mask or remove those points within glacier outlines. To do "
+"so, you will use Randolph Glacier Inventory (RGI) version 7.0, as the "
+"main data source of glacier outlines. Please refer to the `RGI "
+"documentation <https://www.glims.org/RGI/>`_ for more details about "
+"worldwide glacier inventory."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:224
+#: fcb3a07703c64992a2d145b8ec764e18
+msgid ""
+"Once you have downloaded the shapefile of the glacier outlines, you will "
+"open it in QGIS and you will check that the coordinate reference system "
+"(CRS) is the same as your other layers. If not, you will have to "
+"reproject it to the same CRS (i.e. ``WGS84 UTM Zone 18S``). Then, you "
+"will use the ``Select by location`` tool in QGIS to select those points "
+"within the glacier outlines :numref:`fig_select_by_location`. In this "
+"case, you will select features from ``Random_points_sample.shp`` that "
+"intersect with features from ``rgi60_SouthAmerica.shp``. By clicking on "
+"``Run``, QGIS will select all points within the glacier outlines. "
+"Finally, you will delete those selected points by editing the layer and "
+"clicking on ``Delete selected``. The final result should look like "
+":numref:`fig_select_by_location`."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:228
+#: dfa54907bb9e458197c9b42f7ef165d9
+msgid "Select points within glacier outlines."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:233
+#: 4554487080104042a2b3ea26bedd18c2
+msgid ""
+"Select points within glacier outlines using the Select by location tool "
+"in QGIS."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:236
+#: 0d3e8c62cc714114ac9403613f0e2398
+msgid "Exporting the point data to Excel"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:238
+#: f9ebcf169d894c84af6d5ffa2f40d091
+msgid ""
+"As a final step, you will export the attribute table of the remaining "
+"points. To do so, you will make right click on the layer "
+"``Random_points_sample.shp`` and you will click on ``Save Features As…``."
+" Within the save vector layer menu you will change the format as ``MS "
+"Office Open XML spreadsheet [XLSX]``, which is the format excel. Finally,"
+" select the desired directory and click on OK; This procedure will export"
+" the entire attribute table in format excel."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:242
+#: 0190496a7eac44cea58078d0212901d8
+msgid "Exporting point data to Excel."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:247
+#: 33c092b4f50d411db7e807fe40c8e22e
+msgid "Exporting point data to Excel from QGIS."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:250
+#: 4cc0474d0013418d9f91ebdf5e1b1096
+msgid "Co-registration in Excel"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:252
+#: 08a66ada0cbf44ad8da803fb29a0f5db
+msgid ""
+"Make sure that Excel has ``Solver`` installed. For general instructions "
+"on how load the Solver `Add-in in Excel <http://office.microsoft.com/en-"
+"us/excel-help/introduction-to-optimization-with-the-excel-solver-tool-"
+"HA001124595.aspx>`_."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:254
+#: 6c094fccc244416f99ba01956c180832
+msgid ""
+"Then open the ``DEM Co-Registration Excel Tool`` provided by Nuth and "
+"Kaab (2011). Can be downloaded here:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:256
+#: 5e31a5ce0ddb42088997aa423ec25c29
+msgid ""
+"Thirdly, open the random point sample excel file. **Remember, for each "
+"record an elevation difference, and its corresponding slope and aspect "
+"values are mandatory**. Copy the corresponding values and paste them in "
+"the columns A, B and C ``INSERT RANDOM SAMPLE HERE``. It might be "
+"necessary to adjust the formulas in columns D, E, F and RMSE in cell C6 "
+"to account for the size of the sample you have pasted."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:260
+#: 14d0cb6191f74d36808134b4912433de
+msgid "DEM co-registration Excel tool."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:265
+#: 71893ca106de40048898b9e68cf209c0
+msgid ""
+"DEM Co-Registration Excel Tool. The blue box shows the columns where the "
+"data input should be inserted."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:267
+#: 6d536501cf064a48ae89aa3772110676
+msgid ""
+"Fourthly, use Solver to determine the co-registration parameters ``a`` in"
+" cell ``C3``, ``b`` in cell ``C4``, and ``c`` in cell ``C5``. To do so, "
+"set the parameters equal to 1 (initial value)."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:271
+#: 9debced2269a4dfca2fb605a778bd519
+msgid "Solver parameters."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:276
+#: 9eb03375c0354bdaa5a94ebffb104ba8
+msgid "Solver parameters to be set in the DEM Co-Registration Excel Tool."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:278
+#: 873231055e9b4316b5669e5ba61f0fc3
+msgid ""
+"Then, open solver configure the parameters as follows "
+":numref:`fig_solver_configuration`, Set ``Target Cell = C6``, ``Equal to "
+"= Min``, By Changing Cells ``C3:C5`` and finally click on ``Solve``."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:282
+#: 6329c90cd145484697c025e796c049a6
+msgid "Solver configuration."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:287
+#: 2f3a9ebf035a49ea9c2a908f1c27695c
+msgid "Solver configuration to be set in the DEM Co-Registration Excel Tool."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:289
+#: cbff250615074c4891eed9b94aca797d
+msgid ""
+"The minimized solution is located in ``C3``, ``C4``, and ``C5``. And the "
+"displacement values for geometrically adjustment are in ``K4``, ``K5`` "
+"and ``K6``."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:293
+#: 907a2a995665439b89d711441967b0eb
+msgid "Solver results."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:298
+#: eba903e557ea4b29a01dfb3837ba189d
+msgid "Solver results in the DEM Co-Registration Excel Tool."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:300
+#: 0bce6d4c0e644fe9ba596c1ec168efd3
+#, python-format
+msgid ""
+"Finally, displacement ``x``, ``y``, ``z`` vector of correction is applied"
+" to the corner coordinates of the un-registered DEM. To this end you can "
+"use any QGIS through the translate tool. As we mention before, this is an"
+" iterative process, so repeat all the procedure until the red line fits "
+"through the points (:numref:`fig_iteration_process`). A good proxy to "
+"choose to stop the iteration is when the ``RMSE`` is improved up to 2% or"
+" if the magnitude of the displacement vector is less than 0.5 m."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:304
+#: 5eb80b793ed84ebc9b965351f0e237d5
+msgid "Iteration process."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:309
+#: 64db847abf9e46a1af9f3958e2637719
+msgid ""
+"Comparison of the elevation difference by the tangent of the slope, "
+"before and after coregistration, and the fitted cosine curve (red line). "
+"Example of the resulting histograms of the residuals after adjustment for"
+" bias."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:311
+#: a99b8ba70fbc41b4a2c21210063decb3
+msgid "Tip"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:312
+#: 9ada842f7565490b8d8a9c012bd2d032
+msgid ""
+"Dem co-registration must be applied over stable rocky areas, so unstable "
+"areas should be removed."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:313
+#: f1a2a00ecd03419b97d3bc023326cbea
+msgid ""
+"The solution is most well defined for sample points on steeper slopes. "
+"Since ``dh/tan(slope)`` cannot be defined flatted areas, zero slopes must"
+" be eliminated."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:314
+#: 658805653267449c9596d889b1925f5c
+msgid ""
+"A conic structure such as volcanos are perfect because it covers all "
+"terrain aspects as long as there is a sufficient amount of elevation "
+"difference samples."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:315
+#: 3e5a7be09a4241d086acac553ee0f36c
+msgid ""
+"Usually, less than 10000 samples are sufficient, although for the DEM Co-"
+"Registration excel tool it is possible to have up to 65000."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:316
+#: 8452be3776144bf8ba5fb470bd5e4147
+msgid ""
+"Using this tool, convergence is commonly obtained with less than ten "
+"iterations, depending the samples (number and distribution) and the "
+"fitting algorithm."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:319
+#: a82f81570051473889c67611a2ae04f9
+msgid "Automatic co-registration"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:321
+#: 54b1ec3171304a62a7bfcb3f322d40f7
+msgid ""
+"In this second part of the exercise, you will learn how to apply the co-"
+"registration procedure in an automatic way using Python libraries. The "
+"main advantage of using this method is that it is not necessary to "
+"extract random points, filter them, export them to excel, etc. Everything"
+" is done in a single script."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:324
+#: 25643b03135f4f7bafbdd3e874b1a9e6
+msgid ""
+"Download the data provided for this practice by running the following "
+"commands in your terminal:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:326
+#: c2ff3a894fc146309998061ff58370ff
+msgid "Go to the ``/psf_telrisknat_2025_docs/data/`` folder and run:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:333
+#: 624b80c18cc144609b2e8a76dc912da6
+msgid "Activation of the conda environment"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:335
+#: 53829043fdbd43c5a1dd793813c4de6c
+msgid ""
+"First of all, you will activate the conda environment that you created in"
+" the practice :ref:`dem_generation_page`. To do so, open a terminal and "
+"type:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:342
+#: 88ee05f045c040b4a726041a5cbd4008
+msgid "Get familiar with ``Geoutils`` library"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:344
+#: 0c63336296344bd6bbbe4577a40bff43
+msgid ""
+"Before starting with the co-registration procedure, you will get familiar"
+" with the ``Geoutils`` library. To do so, you will open a jupyter "
+"notebook by typing in the terminal:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:351
+#: 54e0464a06ca4ccf8c3bb3ea27e288d7
+msgid ""
+"If you have some problems to open the jupyter notebook or is not "
+"installed, just run in your terminal:"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:357
+#: 38fe0688ef054746828ca8bd3b407a2f
+msgid ""
+"This command will open a new tab in your web browser. Open the scrip "
+"called ``geoutils_introduction.ipynb`` provided in the data folder. This "
+"script will help you to understand how to use the main functions of the "
+"``Geoutils`` library. Please, follow all the steps of the script."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:360
+#: cb9db0b84a1c42bca32e3346b65f18bf
+msgid "Co-registration procedure using ``xDEM``"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:362
+#: eb5c67604d21431a8dd25f8e543b6aa8
+msgid ""
+"Now, you will learn how to apply the co-registration procedure using the "
+"``xDEM`` library. For this practice, you will use the same DEMs generated"
+" in the practice :ref:`dem_generation_page`. The entire procedure is "
+"explained in the jupyter notebook called ``dem_coregistration.ipynb`` "
+"provided in the data folder."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:365
+#: 789816393976493ba5ff563eacaf2af1
+msgid "Importing libraries and loading data"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:367
+#: 16e2ce4b65b84472a6f45f153c5b468c
+msgid "First, you should import the necessary libraries."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:380
+#: de93c38cf5f24ab2b66930d106e378c8
+msgid ""
+"Then, you will load the DEMs at once, croppping them to the same and "
+"reprojecting them to the same CRS."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:390
+#: a6deac883ac947d482eda505eb3cb56a
+msgid "You can use the following code to visualize the DEMs."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:404
+#: c0e93b183dc9489facbf50cabad1b356
+msgid "Comparison of the three DEMs showing elevation data."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:406
+#: 746364f54ca7407e89ddae6faa1eccb9
+msgid "Then, you will also load and plot the glacier outlines."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:413
+#: 56cf289b14114934a4db8fff4980f26f
+msgid ""
+"You may note that the ``Glaciares_Peru.shp`` layer contains nation-wide "
+"glacier inventory. However, glacier inventory uses different projection "
+"systems (e.g. WGS84). To solve this, you have to reproject the shapefile."
+" In addition, we are working in the Cordillera Blanca region. So, you "
+"have to crop the shapefile to be compatible with the raster extent."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:425
+#: a1fc068872424d7baaffc1c94c884cef
+msgid "Glacier outlines of the Cordillera Blanca region."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:428
+#: 0900fa8722e3413eb5680694ac563538
+msgid "Computting the difference of DEMs (DoD)"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:430
+#: 2265a86243364ee19d8dc69522b21bc9
+msgid ""
+"Now, you will calculate the difference of DEMs (DoD) between the two DEMs"
+" and plot it."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:451
+#: d5f43d0be6cf4cd0a6b702d99c83d388
+msgid "Difference of DEMs (DoD) between 2023 and 2003."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:454
+#: 2ddb63faa72a4ad19c7148d426678c11
+msgid "Generating stable areas mask"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:456
+#: cd653d37d72a484190784d830c396dc9
+msgid ""
+"Now, you have to select stable areas to compute the co-registration "
+"parameters. The selection os stable areas is done by masking everything "
+"that is not stable, i.e., glaciers and steep slopes. Regarding glacier "
+"mask, you can use the glacier outlines loaded previously to mask all "
+"glaciers."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:462
+#: 24457696ed26445b825cfefa0b6779b2
+msgid ""
+"Regarding slopes, you will use the reference DEM (``COPDEM_30m.tif``) to "
+"compute the slopes as it does not contain large voids. In this case, you "
+"will mask all slopes larger than 40 degrees."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:470
+#: 4dd0d4e9def94698b5ee636de9a3b975
+msgid "Finally, you will combine all masks to get the stable areas."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:483
+#: d7cd2b93918e45219e060f2ac6ea046b
+msgid "Stable areas (True values) used for the co-registration procedure."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:486
+#: f474dc3a8a604b109ca04a3033eb20df
+msgid "Applying the co-registration"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:488
+#: b112282995c0488f99cf5a53c2d1e00d
+msgid ""
+"Now, you are ready to apply the co-registration procedure. For this "
+"excercise, you will use Nuth and Kaab (2011):cite:`nuth2011` method "
+"implemented in the ``xDEM`` library. First, we need to define the "
+"coregistration function. Then we estimate the coregistration needed "
+"between our two ASTER DEMs. Finally, we apply that coregistration to the "
+"2003 DEM."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:496
+#: b66eb8966ee6488285409be76a7404fe
+msgid ""
+"You can visualize the results of the co-registration procedure by "
+"inspecting metadata of the coreg object."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:505
+#: 15b074e416364ba595381b7de9699777
+msgid "What are the estimated shifts in x, y and z?"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:506
+#: 2446b20c505e4e02b520f3f74031cfbe
+msgid "How many iterations were needed to converge?"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:508
+#: 5cb13db05ddc4719a73f455c59a14e41
+msgid ""
+"Now, you can compute the DoD between the co-registered 2003 DEM and the "
+"2023 DEM and plot it."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:540
+#: 383ee3dac89d46bf88b4e439722efd4b
+msgid ""
+"Comparison of the DoD before (left) and after (middle) co-registration, "
+"and the histograms of the DoD values (right)."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:545
+#: be70f90f218b4bd4b797458968291929
+msgid "How has the DoD changed after co-registration?"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:546
+#: 5b509fd3f23842aa8a1ce0a243bbb518
+msgid "How has the distribution of DoD values changed after co-registration?"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:549
+#: 7c434d4b68ae4a7b87b42a603342d1f3
+msgid "Computting statistics on stable areas"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:551
+#: 2246d750e5f940e4ad3ed2660ea82982
+msgid ""
+"You can also compute some statistics on the stable areas before and after"
+" co-registration."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:573
+#: c2e73d27f5554c5ab2d0ffebd54369c5
+msgid "Saving the results"
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:575
+#: de27e11a1fb9468eac493e0b1ddab20e
+msgid "Finally, you can save the co-registered DEM."
+msgstr ""
+
+#: ../../source/practicals/dem_coregistration.rst:583
+#: fe441000b5a24361bbf78e74e247179c
+msgid "References"
+msgstr ""
+
+#~ msgid "be patient"
+#~ msgstr ""
+
+#~ msgid "Advice from PSF TelRiskNat optical team."
+#~ msgstr ""
 
