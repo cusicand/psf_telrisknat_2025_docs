@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-13 05:03+0200\n"
+"POT-Creation-Date: 2025-10-14 06:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,731 +17,731 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/practicals/dem_generation.rst:14
-#: 59dedef07c7049509010787e110b2e45
+#: da02b69682d645d0808062a05c5e7e40
 msgid "Automatic generation of Digital Elevation Models using ASTER images"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:24
-#: 1a3df8db848a4030ad9db2d77aaca846
+#: 619fcc160bea4b5b8be5a48ca44e75ef
 msgid "**Diego CUSICANQUI**\\ :sup:`1` & **Ruben BASANTES**\\ :sup:`2`"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:26
-#: af8de8d998224705bdb9d4abe287af77
+#: 1bbb5304c66b41ae99949b94d98978b7
 msgid "\\ :sup:`1` Univ. Grenoble Alpes, CNES, CNRS, IRD, Institut des Sciences de la Terre (ISTerre), Grenoble, France."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:28
-#: 810f12f3da9e422595e0fbe0509c8d23
+#: acc2b554278d4222a06a6544ab1b5baa
 msgid "\\ :sup:`2` Universidad Yachay Tech, Escuela de Ciencias de la Tierra, Energía y Ambiente, San Miguel de Urcuquí, Ecuador"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:32
-#: c0fe10099b6d490f9b6e801ace117d41
+#: 82a6321590b04bb4922a2974f9eef8a2
 msgid "Copyright"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:34
-#: dd0547c51ca44cbe9cc9d1c295117856
+#: d274f5cff69e4e9bbf8fb52ebc1a4e07
 msgid "*Document version 0.2, Last update: 2025-09-18*"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:36
-#: adddc1b8624547b3911312023262e23f
+#: ea9a4a23f41345b583c0aea53e46efd7
 msgid "|copy| *PSF TelRIskNat 2025 Optical team (D. Cusicanqui, R. Basantes & P. Lacroix)*. This document and its contents are licensed under the Creative Commons Attribution 4.0 International License (`CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_)."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:39
-#: b26f3318a7fa4a8992e566d43d7a4e60
+#: 8f5ef4a1c3ec49b48fab592601e342c6
 msgid "License: CC BY-NC-SA 4.0"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:46
-#: 3c05609a98194b96840722dc1e66016a
+#: 03c01d87d892449ba3c5a3c6e2fdd104
 msgid "Learning objectives:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:48
-#: 6b5d884df0c745a6ad0211097b91e6ac
+#: 1e06ec3e33f64969beaab348c72dfb05
 msgid "Download, visualize, and automatically generate digital elevation models (DEMs) from ASTER optical images."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:49
-#: 9549594a1cb946c2921861dcba54202e
+#: d4c32d09308644849aa0e1d45bd283b2
 msgid "Compare multiple DEMs and compute volumetric changes (DoD)."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:50
-#: fb0433553c284a1b830025a7c5b78a1e
+#: 56cdc19f4c6c43fcb987b72f1edd255a
 msgid "Use open‑source tools—**QGIS**, **GDAL**, and **Ames Stereo Pipeline (ASP)**—for satellite-image processing and analysis."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:52
 #: ../../source/practicals/dem_generation.rst:121
-#: 9bdfbd7b5fc94b9d820589fcdf55d79e
-#: a6e33d5e736042118f86e7e2e4714933
+#: 6fe82f43cf17497da63c38664ebc73a8
+#: f755df2693a24ae19b63a2c2ace0bfaf
 msgid "Note"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:53
-#: 57dac4f08b0d4e42ab0d1635b18dbba1
+#: 325a08db8951498685c4256d9116c316
 msgid "This exercise focuses on medium‑resolution ASTER imagery (15 m in VNIR). ASTER data are free and globally available, which makes them ideal for teaching and regional studies. For this practice, we will focus in the **Cordillera Blanca** in Peru."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:56
-#: 77cf0d64f1494d77adaa53032593f328
+#: 8f8a86d5861c46f195e4e4f00844734a
 msgid "Introduction"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:58
-#: 2ab54207a5ab45e69af2b74a7520516f
+#: d97d868867ca408eab26b9958819e950
 msgid "In mountainous regions, mass-wasting events can be triggered by several processes.Quantifying terrain change is essential to understand triggers, assess hazards, and support risk reduction :cite:`mergili2018`. Surface elevation change between two (or more) DEMs is a standard approach used widely—for example, to estimate glacier mass balance :cite:`dussaillant2019` and to map the geomorphic imprint of glacier lake outburst floods (GLOFs) :cite:`schneider2014`."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:60
-#: 71a443bdcf98478f9f59ef864b72334b
+#: 9b68a00743764ae59eb85e62c9e47cca
 msgid "DEMs can be produced from aircraft (airborne photogrammetry), uncrewed aerial vehicles (UAVs), terrestrial cameras, and satellites using passive (e.g., Pléiades, WorldView, ASTER) or active sensors (e.g., SRTM, TanDEM‑X, Sentinel‑1). Each source has trade‑offs in spatial coverage, resolution, cost, and revisit; nevertheless, stereo‑photogrammetry has become a cornerstone of natural‑hazard research. For a quick summary, see Table 1 below. For an accessible overview of photogrammetry's history, see `DariaTech <https://teach.dariah.eu/mod/hvp/view.php?id=860>`_."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:62
-#: 3a733a47db4c4df39a3bbe8bd0ab75b5
+#: 845d6b086ae049a887f431bec727fb72
 msgid "Characteristics of different types of photogrammetry :cite:`cusicanqui2019_webinar2020`."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:67
-#: adf0dfe454624220ba56ec1b8aa78e9a
+#: b31a53621341403a81cc1c4a8c7f0560
 msgid "PHOTOGRAMMETRY"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:69
-#: 6f0688682f474210a440b1ad3f19ddd8
+#: cea6066e437b461f9b730b20dcd1c743
 msgid "Satellite"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:69
-#: a6fd2048c5d740e3a85b3c6fdbbaae94
+#: 5cc97f043f4f4195a38eaa625a4d10d1
 msgid "Aerial"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:69
-#: 2fa22f4e14964357ab8e1e0d8b9bbaa1
+#: d90b40809fcc45dea849ecc9879faa35
 msgid "UAV"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:69
-#: 138e9854bb134dbcb1f1b1590e1ce15a
+#: b0c0a48497114d3cbdc2098cfb5946c1
 msgid "Terrestrial"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:69
-#: 988133f91708487ea585eec603b56de0
+#: 3d9d83dabb4a4de2afb8acc2671e3955
 msgid "Time-lapse"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:71
-#: 7f6a1f25f8a44242adef9ca0a6e3a763
+#: 8adbafc7b3644959b7a87dc07765b1be
 msgid "Revisite period"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:71
-#: 887cd75c4fa24397ad5385cfb0fc0415
+#: 7a3fd74f41b94d1fb4710144ccdaeabb
 msgid "1 jour"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:71
-#: ad471b6c7b064463a6d221189c4f55fa
+#: 61ce9ce16e864548bb7b1563b73ea328
 msgid "5 – 10 ans"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:71
-#: 8576efb50d084b01871a920fc5949299
+#: 3abdbf1e19b6470bb06f106cb9803bf5
 msgid "2-3 mois"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:71
-#: f5ab4341267743f18e3baffe69e2e7cd
+#: 90b774f0bc254cd0ada711134ead39ca
 msgid "1 mois"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:71
-#: 2cfec5156c394ab58465ec8d0e24362e
+#: 0ddb68a9131c41ccb896db8726135881
 msgid "< 1 jour"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:73
-#: 2e44d64334bc498ca2c8ee2d315f5fa2
+#: 80b9c25ea67d41af819cae792c629010
 msgid "Spatial coverage"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:73
-#: 16a10cdb16f347b1be71a25903eab54e
+#: 3fd61633c6d04b7db15dccab9ec7c741
 msgid "100 - 1000 km2"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:73
-#: 0a271a68ffde46ab9b468dfe8e351909
+#: c087d441ecd7434c99472ce4a20a235b
 msgid "10-100 km²"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:73
-#: b05acdf142c5405a917e23cbd857e52a
+#: 070dac62f60e467b9bd8a8feb32dadc6
 msgid "0.1 - 5 km²"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:73
-#: 658dcf2576844edb94b948dd87801a1e
+#: 4e3919a36e874a039a5a4e592cfc3bc7
 msgid "0.1 - 1 km²"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:75
-#: 19456823597c4e66a3fa62da6bffe621
+#: 0e2b196703fa49c6aeef66d18cf0b915
 msgid "Resolution"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:75
-#: b4b89df03915446eae318f470fc8f8dd
+#: e058aa469b9141d78f8c3f7f21375d73
 msgid "0.3 (Worldview). 0.5 (Pléiades), 1.5 (SPOT)"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:75
-#: adc291db9b454ef3852600bc975e03b0
+#: e46951adff7843b78d17098265a1b78d
 msgid "0.3 – 2m"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:75
-#: b58efdfd7f17497191cf86c150b74ef6
+#: bacdea2a753f4cc78995666334bbad4c
 msgid "0.1 – 1m"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:75
-#: 8d0b0af9c58a445b8903c55d08e81192
+#: f84962d5c9694a86885a41aaf710c679
 msgid "0.2 – 2m"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:75
-#: c3a127392c82473d836dd39825f62484
+#: a0467601194a4b6a846f42fe0cee638d
 msgid "< 1m"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:77
-#: 7d9846d07fc94713be9ba6a590fddb29
+#: bd881feef61e473d99aea5cce7e13399
 msgid "Georeference"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:77
-#: a66340307478425bac7f7068c5521aee
+#: 3ca2908715514a8cbd4be3b203518125
 msgid "RCP / GCP"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:77
-#: a396e623bc2b4ca6b62940471b3f1755
+#: d79be3d18e0b4c4d98a9eb18609d8837
 msgid "GCP / RTK"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:77
-#: 1a38f8a701904641b570b62544f97b99
+#: 60587188149440faa464ad8080430375
 msgid "GCP"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:79
-#: 47b698125bc9435fb8ad5ee6cf30f165
+#: 0a9f444c844d4e798bbde4d1d3ebf786
 msgid "Software"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:79
-#: ec59782044de421fad51f5c2782678ea
+#: 4adc2a0353934ec5ae9d1e6d8deccc5d
 msgid "Automatique : ASP, MicMac. Semi-automatique: Erdas Imagine, ENVI, PCI Geomatica"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:79
-#: ae8bf94d13c748fc8fab00d86306f211
+#: 5bef6e9acd39410096ea7b844f1c6b32
 msgid "Open-source: OpenCV License: Agisoft Metashape, Pix4D, OpenDroneSurvey"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:79
-#: c657c5b598554eb0806bcc204deb9a4e
+#: ac3f571dbfda4919ad4a155b8a79df9c
 msgid "Private pipeline USMB/TENEVIA"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:84
-#: 1a07d335bbd7447e9879397bd5beac4c
+#: 4d41c74837fe4dadb8e5b05d29bd0f8e
 msgid "Stereo remote sensing data"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:86
-#: e6be55a5b5d44da9b5cd14f5681fd9cf
+#: e3fd5cf912cd480490505f5ff3e3d653
 msgid "There are several ways to generate DEMs from optical remote sensing data which have stereo capabilities (Table 1). However, these sources has several limitations, for instance they are commercial datasets (accessibility often requires purchase) or they are limited spatial coverage (Table 1). We demonstrate DEM generation from **ASTER L1A** stereo imagery, the most popular and freely available option for global studies. Commercial very‑high‑resolution sensors (e.g., Pléiades, WorldView) and UAV imagery are beyond the scope of this tutorial."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:91
-#: ac17a7bfe0684120a119ae483718df70
+#: 3ad6a186d83344108e574d4729983875
 msgid "ASTER L1A overview"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:93
-#: 2c06242567b042779eba43454659c650
+#: f841327c4be14d3ea49e0eb3b7685374
 msgid "The **Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)** aboard NASA’s **Terra** satellite (launched December 1999) acquires 14 spectral bands from visible to thermal infrared. A backward‑looking VNIR band (3B) paired with the nadir VNIR band (3N) enables stereo DEM generation. Spatial resolution is **15 m** (VNIR), **30 m** (SWIR), and **90 m** (TIR); each scene covers **60 × 60 km**. ASTER acquires up to ~650 scenes per day globally :numref:`fig-aster-clear-scenes`. For technical details, see the `ASTER User Handbook <https://lpdaac.usgs.gov/documents/262/ASTER_User_Handbook_v2.pdf>`_."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:97
-#: 100276062b48430d86671bb9d13cfd59
+#: 888cc06eb4944fb89440c47f1056965d
 msgid "Daytime and nighttime maps of the number of clear scenes with a CC of 20% or less over 10 × 10 degree grids in 19.5 years from March 2000 to August 2019."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:102
-#: fca05e175a844120849d6770058f78d8
+#: 677b998cf0364b7499353e3c772d436f
 msgid "Daytime and nighttime maps of the number of clear scenes with a CC of 20% or less over 10 × 10 degree grids in 19.5 years from March 2000 to August 2019 :cite:`tonooka2019`."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:104
-#: 175281f74c4b40ccbab8d6282f9e385d
+#: bbd48106056c4d399f3aec6f47da7d51
 msgid "Tip"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:105
-#: 41c82c5d61f34edb95ae736a05498ed2
+#: c172605349bc438cac98633d36367c19
 msgid "Accessing ASTER L1A data (Since 2000, 15m resolution, 16 days revisit time) could be possible though the following link: `https://www.earthdata.nasa.gov/ <https://www.earthdata.nasa.gov/>`_."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:108
-#: 9e97cc359ca84baaa6efd0954483e103
+#: 89f24ba536ad48a4a4a0c6e16d498630
 msgid "About the study site - Cordillera Blanca"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:110
-#: 4c09c8b7a51a43458c79c034d709688c
+#: 6a5576446e6b400abc1658fabc76af1b
 msgid "The **Cordillera Blanca** (:numref:`fig-cordillera-blanca`) is a 200-km-long tropical mountain range in the Peruvian Andes (8°08'-9°58' S; 77°00'-77°52' W). The Cordillera Blanca is the most extensive tropical ice-covered mountain range in the world and has the largest concentration of ice in Peru. It hosts several >6,000 m peaks and hundreds of glaciers (area ~723 km²). Most glaciers (530) draining westward covering an area of 507.5 km², while 192 glaciers drains eastern convering 215.9 km² :cite:`inaigem2023`. Like other Andean glaciers, it has experienced pronounced 20th-21st century retreat :cite:`hugonnet2021`."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:114
-#: bda01b19d1274a5cbffc240ac4593887
+#: a02905f1fc004b57affb12e597ddbdcd
 msgid "Aerial view of Cordillera Blanca on 24 August 2020."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:119
-#: c2dcefdce5ce4a388b938d80d2235db3
+#: ed3a6eddef4f4267b47b903d86dbf3c2
 msgid "Aerial view of Cordillera Blanca on 24 August 2020. Source: `ESA Multimedia <https://www.esa.int/ESA_Multimedia/Images/2014/05/Mount_Huascaran_Peru>`_"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:122
-#: c96d92a251b04fb9a242bdeeaea7d1b6
+#: 6714457e53ce4f878d1eef6c68fa68e7
 msgid "In this practice, we will learn how to automatically generate DEM's by using ASTER images. In order to improve the quality of the results, we will use a SRTM DEM as base to improve uncertainties."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:127
-#: b45873cca48545c2a1f07caa8a50e1df
+#: 0b0751f8a1b045829b7a31b0561dd65d
 msgid "Download SRTM data"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:129
-#: 8801e5ab6bc240b0a9d5a68e86fbfec2
+#: 150def4cd033498eacb15c9da2f6a4de
 msgid "First we need to download SRTM tiles (:numref:`fig-srtm-downloader`). To download SRTM tiles, you need to create an account on the `NASA Earthdata web portal <https://www.earthdata.nasa.gov/>`_. Once you have access to NASA Earthdata, go to the 30-meter SRTM tile downloader and select the tiles you are interested in. Select the tile and click the green download button."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:133
-#: 30e087581d464d06a12566d26d824914
+#: c4bfa138803b4ced85053864d0285908
 msgid "Download SRTM tiles from 30-Meter SRTM Tile Downloader."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:138
-#: 84e9a234fc6847c28c081280cc87411c
+#: fee8d672bb484bc1927574c8e1ddb0ac
 msgid "Download SRTM tiles from `30-Meter SRTM Tile Downloader <https://dwtkns.com/srtm30m/>`_."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:140
 #: ../../source/practicals/dem_generation.rst:148
 #: ../../source/practicals/dem_generation.rst:213
-#: 17bb822b24314efc9fbbe9bf32950eda
-#: 3335d85627a3425980d3bd9caab4c4a7
-#: a6ecf8d697194aa6b3ae525dc047db45
+#: a6ee703542ce44a78d2bde0d8252899c
+#: 7b44d9101fc94de495fa08a943394763
+#: a5f27e91221e4adaa3d4840a13000498
 msgid "Important"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:141
-#: 5705ed2e8fc04bf38a1b1fdb1e849135
+#: 1bef8e0837814f8883216575cd816304
 msgid "As the activation of EarthData can take a long time, **we already provide SRTM tiles**. for this excersice  we will use two tiles with codes 'S09W078' and 'S10W078' :numref:`fig-srtm-downloader`. You can find the data in the directory ``DATA/DEM_GENERATION/SRTM_DEM``."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:144
-#: 669d071924b1454881ea8b86b4296481
+#: 54a7a057f0d34d71beac20fe927ca436
 msgid "Hands-on"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:147
-#: a20460eaa53c4f35afd5e2c261a5e6e9
+#: b3ebf0eec5c64a5982d3233fc61322f0
 msgid "Download data for exercise"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:149
-#: 1b489ce00a3243059147f71f753a3895
+#: c72fbb1299654e308a1f344ad711862c
 msgid "Download the data for this exercise from the following commands:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:159
-#: 23bd73eefd2a4864b6ce198ef49eda75
+#: 7319b4fd2ccb438e97a0ca36183d97f7
 msgid "In order to properly use the SRTM tiles as a seed DEM, we need to take some additional steps to prepare them: Extract the files inside the zip files. To do this, use the following commands:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:162
-#: c06457e4fef64342ad8ecd3fb0bbf6d5
+#: 8e22fee85b284cf19f7df9e2da27fe1a
 msgid "Prepare SRTM data"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:176
-#: 7bcef874079b42e18bbd44030e9c1583
+#: 2ea6bee29d0b417db4e11e8d5aa6f577
 msgid "Once the data extracted, you will notice that the tiles use a **Hierarchical Data Format (HDF)**. You can import the files into any GIS software (QGIS for instance). For this exercise, we need to merge all the ``*.hdf`` files to have a single ``GeoTIFF`` raster file. To do this we will use the `Geospatial Data Abstraction Library <https://gdal.org/index.html>`_, commonly known as **GDAL**. To do this, run the next command:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:182
-#: e0dfd527fa0c4339801d4f94ac775909
+#: 7874a696802d43938fa9db58155101b5
 msgid "By default, the merged DEM has the standard **WGS84 georeference**. You need to set it up correctly by using a metric georeference (i.e. WGS84 | UTM 18S for the Cordillera Blanca). To do this, run the next command:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:188
-#: abb8a6eccc2e400fbbf95ebb274d7be3
+#: bc5dfec6ea9c43e8b8e81de8b96aa98a
 msgid "You can use the command ``gdalinfo`` command to check the results. If you dont feel confortably with comand-line interface, you can import the DEM into QGIS and then look at their properties."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:190
-#: 472bc8c9ec454b0a9b906daea2a05827
+#: 8c4924c7bb4c49b0b5280ac5c9759468
 msgid "Finally, go back to the base directory."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:197
-#: 1999e270af4943bc89a48b8cffca2dba
+#: 33ae409829f541bfa09b87bdd2871384
 msgid "Download ASTER data"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:199
-#: 9da3e1cd497f492d8734bf99011ebd94
+#: 93156e5ad6194a68bfaa47408f58752a
 msgid "Now we will know how to download ASTER images. First you need to create an account on the `NASA Earthdata portal <https://www.earthdata.nasa.gov/>`_. Go to the `NASA Earthdata data search portal <https://search.earthdata.nasa.gov/search>`_ and log in. Using the map background, locate your area of interest and place a marker on the map using the tools on the right. Then search for the collection ``ASTER L1A Reconstructed Unprocessed Instrument Data V003`` and click on it (Figure 4). There are several options available on the toolbar, but a single point-marker is sufficient to select our area of interest (:numref:`fig-aster-download`)."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:201
-#: 8d6c56d0527d48db81593adeef5fbc91
+#: 42a83343dc144e3da582d4e57ed38bae
 msgid "Once the collection is open and the marker placed, you have access to the tiles that intersect the marker. You are able to filter the data by granule ID (if you know it previously), date range, cloud cover, and so on. You can now select the image of interest. Once you have selected the images, you can add them to the cue and download them all (green button in :numref:`fig-aster-download`). In the 'Processing Options' section, make sure the data format is set to GeoTIFF. Once the download is started, the EarthData web portal will prepare your data and you will receive an email with the download link."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:205
-#: 09fa84967330443db536caa39b781806
+#: 61f06e768d5f4694938984c56dfdc6c2
 msgid "Downloading ASTER images from NASA Earthdata portal."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:210
-#: 7707107030c94f64b65739d14e2d5200
+#: b630fedc35ca4d389665cdd2f7a443e4
 msgid "Download ASTER images from the `NASA Earthdata <https://www.earthdata.nasa.gov/>`_ portal."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:214
-#: 35fca8617c20413fa0fed92bf05b0372
+#: b10fd121f1814a43bbf61c7b1f2b142a
 msgid "Depending on the amount of granules selected, data preparation can take a long time. For this practice, **we already provide several pairs of images** over the Cordillera Blanca and Maca region."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:217
-#: 421b40f7c8994837a7ac20979bba1d32
+#: a90f762e877a482dba8fc45c30c30949
 msgid "Step-by-step automatic DEM generation using ASP"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:219
-#: e1da617b7ac5488b9e1f71a01167e023
+#: 74ad152afb314199a1314010913d7747
 msgid "For this first part of the exercise, you will work using a recent ASTER image acquired on 4th, July 2023. The ASTER sensor has 15 bands in different spectral ranges. Please refer to the `ASTER User Handbook <https://lpdaac.usgs.gov/documents/262/ASTER_User_Handbook_v2.pdf>`_ for more detailed and complete information. You can use QGIS software to visualize each one of these bands by clicking on ``Layer -> Add Raster Layer``."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:221
-#: b375156a56a448e1a7e1ed08701be322
+#: aabcc1c7291c407c9f7fa9eaf06d4b93
 msgid "See also"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:221
-#: 884e407ce0a94adda60b2a1339ed5e42
+#: 5c6da513ceb14bbc85671299dae353e7
 msgid "Ames Stereo Pipeline (ASP) The NASA `Ames Stereo Pipeline (ASP) <https://stereopipeline.readthedocs.io/en/latest/introduction.html>`_ is an open-source photogrammetric software, to generate DEM from either multiple satellite, airborne or ground-based images on the Earth and other planetary bodies (Mars, Moon, etc). This software is designed to produce DEM's using stereo or multiple-stereo pairs of optical images. For more detailed and complete information please refer to NASA ASP web page. Read on Ames Stereo Pipeline: :cite:`beyer2018` & :cite:`shean2016`."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:224
-#: da92ed5fad7848e4aab4fe5372d5e6cf
+#: d2af9d3f4521457ba0176405d8eabfa2
 msgid "However, for the automatic DEM generation process, we only need the visible and near infrared (VNIR) nadir (Band3N) and backward (Band3B) bands (i.e. stereo pair images). Since processing ASTER images is a common task nowadays, the ASP team has developed several tools that allow us to prepare and process this type of sensor automatically."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:226
-#: 31bf78e087d741089140544164d9e9c8
+#: 388ec8a8d4df44289e715188161ccdea
 msgid "Briefly, the steps to generate a DEM using ASP are:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:228
-#: 4aceb4cd1149451cb121c3790126ae3d
+#: 8e83bd92bb834da5961a37fe01674edc
 msgid "Prepare the ASTER images using the ``aster2asp`` command."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:229
-#: fc2454e44fa840efaa314a5ecbdad414
+#: d46150217dbf48bc8e512133f9850de2
 msgid "Image orthorectification using the ``mapproject`` command."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:230
-#: e65145d210c64da69016c1d59ff5ba7c
+#: 4ffd8125dfc24686b612d872609e7377
 msgid "Image correlation process using ``stereo`` for dense stereo matching."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:231
-#: 0cccaebf76c044519d09e3abc3a991d1
+#: 145581b2f5824e41bf018e30f8d7ae78
 msgid "Convert the point cloud into a DEM using the ``point2dem`` command."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:232
-#: 25016eae64b4455aa473d485adc6e347
+#: 4eac6acfe1ad4fc68e645881bc32aea5
 msgid "Setting vertical datum (optional)."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:235
-#: bc9a8bc852384bcc8460f59715f771a4
+#: 3874c58b468c489fb96142b51990afa5
 msgid "Prepare ASTER images"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:237
-#: da686927def24508addc199cc6c18c78
+#: ad47e3ec6b384d598e446973a097cc9a
 msgid "We will first use the ``aster2asp`` command to prepare the ASTER images. This command takes an input directory of ASTER images and associated metadata, and creates ``GeoTIFF`` and ``XML`` files that can then be passed to ``stereo`` to create a point cloud. The tool can only handle Level 1A ASTER images."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:243
-#: 230d56773b5c4d3e8614c9fa75dd0aa3
+#: 32ae8d078ab24d3b8844f3d452612085
 msgid "First, we will copy the ASTER images to a new directory called ``RAW_L1A``. This step is important as the ``aster2asp`` command will create several intermediate files in this directory."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:253
-#: bbf767bd6e264e1586584a6d7afcf39a
+#: c352bfb21bb848679d088fa3e619bc63
 msgid "Then, you will decompress the files using the following command:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:263
-#: 88e5ce99a7e64c1f994c43172f56084f
+#: 4e27d001a0a44ee795dbaabe32b35cdd
 msgid "Now, you are ready to run the ``aster2asp`` command. This command takes as input the directory where the ASTER images are stored (i.e. ``RAW_L1A``) and creates a new directory with the formatted images. You also need to specify the minimum and maximum height of the area of interest using the parameters ``--min-height`` and ``--max-height``. For the Cordillera Blanca, we will use 100 m and 9000 m, respectively."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:269
-#: 37fd2489a9d24d81bd3e5050462f182c
+#: 82686b71f6834eec9317fba297021dc9
 msgid "As a result of the previous commands, the ``RAW_L1A`` directory is created. Within this folder, you will find the formatted stereo pair with the following names: - ``out-Band3B.tif`` & ``out-Band3B.xml``, corresponding to the backward image. - ``out-Band3N.tif`` & ``out-Band3N.xml``, corresponding to the nadir image."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:273
-#: adf9d995756247588f1f994d65d22d21
+#: 0fb49679e011469b866cecce9b3eee23
 msgid "The process takes a few seconds (~8'') for the current tile (5000x5400 pixels)."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:275
-#: 76bdfbe11b604c16b3e727001169b3ec
+#: da9cfaaefd8e4cc0b22bc0518a1f9630
 msgid "Attention"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:276
-#: 3bed10a95fe64f28a477698ed699fc30
+#: 3f45d01b39b34d1eae0d7562f52c519f
 msgid "Pay attention to correctly naming the output files on the parameter ``-o RAW_L1A/out_first``. In this command, you are naming the results as ``out-first`` to distinguish from the rest."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:278
-#: f98fa9d13b7a46a69914bec4b9091144
+#: 13ef2f7d2e2e410b8f69663a3142f762
 msgid "Finally, you can clean the ``RAW_L1A`` directory by removing the unnecessary files (i.e. ``*.txt`` and ``*.tif`` files)."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:285
-#: e104ad8e7e674e64b495cf9be79e67a8
+#: 1907c8e27b774657b7a27debeb7c1ade
 msgid "Orthorectify images"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:287
-#: dda13d8027ff440dac26f44273531ecf
+#: 0499ab295ba548af8705a0e27a8a25e8
 msgid "The next step is to orthorectify the formatted images to the seed DEM, e.g. the SRTM DEM we downloaded and prepared in :ref:`Section_3_2`. To do this, we will use the ``mapproject`` command within ASP, as shown below, for both nadir and backward images. The ``mapproject`` command takes several arguments such as the rpc session, the georeference option (WGS84 | UTM Zone 18S), the resolution of the map-projected images (i.e. 7.5m), and the seed SRTM DEM."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:298
-#: 5e385702e5824c588a522836e4f8656d
+#: b203bfd348b34d03bf7a816449694bea
 msgid "Dense stereo matching"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:300
-#: a9d1de14d0a1454788ea405859557a10
+#: 3edc51974e394fbd97a17bbb653538d6
 msgid "Run ASP ``stereo`` to compute the point cloud (PC). The ``stereo`` command takes as input the orthorectified images and their associated XML files. This command produces an point cloud image that can be converted into a visualisable mesh or gridded DEM."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:311
-#: 3b8a02abf6f343a6978f73cd0bf780b9
+#: 822438879f8747158301ccabfdb3a596
 msgid "This process creates a directory called ``ASTER_DEM`` which contains several intermediate files created by ASP. Please refer to the `ASP stereo documentation <https://stereopipeline.readthedocs.io/en/latest/outputfiles.html>`_ for more details. The most important file for this exercise is the one ending in ``*PC.tif``, which contains information about the point cloud created during the dense stereo matching process."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:314
-#: a293125b775f49009fb65dc72e4fe98b
+#: ba3c7824b6494849b79dc04f39a55247
 msgid "Convert point cloud to DEM"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:316
-#: da4a1b9d54814d99b241bb61d15be003
+#: cedc975f5fbe42e88a296fe9f9266678
 msgid "Finally, we will convert the point cloud into a DEM using the ``point2dem`` command. This command takes as input the point cloud image and creates a gridded DEM. The output DEM will be in ``GeoTIFF`` format."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:324
-#: 3255eef2612c42de935ac35d784f2942
+#: 27f7cdb5f5f94855be1df7724164a1be
 msgid "An intermediate step with GDAL needs to be executed to correctly setup data type to Float32 bits."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:331
-#: 1a9412218a604aa487df998922d1303a
+#: b9288e9e61f841e197700db935a74cd2
 msgid "Setting vertical datum (**optional**)"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:333
-#: 9e667864fae243a9aed0a5396a22d7ab
+#: 215e35cc8d734c1584aeb1cc08a63363
 msgid "By default, the DEM generated by ASP is referenced to the WGS84 ellipsoid. However, for most applications, it is preferable to have the DEM referenced to a vertical datum such as EGM96 or EGM2008. To do this, we will use the ``dem_geoid`` tool to compute the geoid height at each pixel of the DEM."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:343
-#: 7b46533635924e92af1262d6b20a7bc9
+#: 87684ece3d274f41a398871559bc1654
 msgid "Finally, you can clean the ``ASTER_DEM`` directory by removing the unnecessary files (i.e. ``*PC.tif``, ``*DEM.tif``, and ``*DEM-adj.tif`` files)."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:350
-#: 8466c1605d7e4426abd32fef53e00c80
+#: 0a97774c89c641dfbf9cc9530949439c
 msgid "Visualize the results"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:352
-#: 5788dbf7452144c1b9915f4cb200851b
+#: 5cd658e1ff1d4e3e9c1807b7aeaf13ba
 msgid "Once the results are generated, you should be able to visualize the results using QGIS. You can also use the ``gdalinfo`` command to check the properties of the generated DEM. Your results should be similar to the one shown in :numref:`fig-aster-dem-example`."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:356
-#: bf0570e9dc8f4c04a90bb7b9b14cd436
+#: fc77a1d88c5448d88aa0418c009fc00d
 msgid "DEM generated from ASTER images using ASP."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:361
-#: 1d65a363dcd94791bdb83758883c8f8b
+#: 1669214773694999a1fd100439f12c0d
 msgid "DEM generated from ASTER images using ASP. Left: DEM visualisation; Right: DEM using hillshade effect; visualized in QGIS."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:363
 #: ../../source/practicals/dem_generation.rst:421
-#: 647c86f6c3ab496ab6d40514d78ef313
-#: 6ef55f6118984962b677bea086da3c39
+#: ecf52419960b42b8bba67af448df1d06
+#: ee71b300cff84cbca3dcf7bf4136d5a2
 msgid "Questions for discussion"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:366
 #: ../../source/practicals/dem_generation.rst:424
-#: 70f13301ab4d497191d79abeec209543
-#: 0efe946cfe334d01881af7f49462e8a5
+#: 79e391467fff4f8f997548771a7317c9
+#: 9ede136f6ba54fb1abfe745f04e165d6
 msgid "Based on your experience in this practice, answer the following questions:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:368
 #: ../../source/practicals/dem_generation.rst:426
-#: dadc9758e4a7493c822c9da7eaeaa598
-#: c4a1000e2fed4af786fc12c7952bfc6a
+#: eb9ae01eca2f4962ad02c3b037de5edf
+#: 40d03dbadcea47c0b9aaba29c779240f
 msgid "What is the noise level of your dataset ?"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:369
 #: ../../source/practicals/dem_generation.rst:427
-#: 6ec991583ed84a70b3c5cd66135cb530
-#: 0c8e3ff51503496592e94626b20be8cb
+#: 04bc8b7285974131816ffe4076845b0b
+#: 442a56c13f35414fa2630e53660d37a4
 msgid "What do you think about the white holes in the upper right region?"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:370
 #: ../../source/practicals/dem_generation.rst:428
-#: e298c0ca36fc429497e9a14fa1803868
-#: 2ba32b2e60344ab19fd52ec8866d3c16
+#: 20b4c137308d4496a26ae61b69ed8158
+#: 5b06e4240a59401cb342a7b9823809c9
 msgid "Can you detect differences between ASTER DEM and SRTM DEM?"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:371
 #: ../../source/practicals/dem_generation.rst:429
-#: eefcfafc98b74944a3b0bf62d7783b81
-#: 4998ec6a30b64d55822ac5267577a1d6
+#: f946c580ea43491ebb34f50f02a06919
+#: 3c9b5c8c16984c07984efbfd0e24af87
 msgid "What do you think is the main limitation of ASTER images?"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:372
 #: ../../source/practicals/dem_generation.rst:430
-#: a6f44ffc6bae4f2baf37cdcc381504bd
-#: 6874dbb7d4a94723bbae2a5dd89732c4
+#: f587d459f43f41faa04ff017dd2be33c
+#: 1ed2128f5c1247a3a7d4e71cc48f85b7
 msgid "What are the advantages of using ASP for DEM generation?"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:375
-#: cd07bec05b644a07a3ef5295c949cdc5
+#: d6745b63f3b44ae5adefc6f922b2e84b
 msgid "Repeat the process with different ASTER images"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:377
-#: 1e4cc6364a7f4e5397410484d06b5dba
+#: f53f02f3e644441a937f745a1b4a0ef3
 msgid "Do it yourself"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:379
-#: 1757ef9a9f7a40ad8e2facd4088a9719
+#: d96f4a4c8785499986649fa410d2d109
 msgid "Repeat the previous steps using another ASTER image acquired on 13th, July 2003 (almost 20 years before). The data are available in the directory ``RAW_L1A/out_second``. Name the output files as ``out_second`` to distinguish from the previous results. **This step is important as we will use this second DEM to compute the difference of DEMs (DoD) in the next section**."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:384
-#: 03a8db8461ff420cb02471e0eef38e61
+#: d78f26908d1f48849dd7a6d167c0327a
 msgid "Compute difference of DEMs (DoD)"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:386
-#: 286f1ff0ed674ff4961ce38b57241999
+#: 4563f53fc0fa49c7a4cf2482bd4b0193
 msgid "Once the second DEM is processed, you will now compute the **Difference of DEMs (DoD)**. First, as both DEMs have different spatial extents, you need to **homogenize** into a common spatial extent. To do so, we will use the ``gdalwarp`` tool within the GDAL library."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:404
-#: 375892c8cb8d4378b4441ad8b7891f62
+#: c9bb959c53a545d3905b4595272dc49b
 msgid "Then, you will use the module of raster calculator ``gdal_calc.py`` within GDAL to compute the difference of DEMs."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:410
-#: 6ae7841f2be340c2a0f1b4c4b8a663e8
+#: d6785b7af8d741cbaec060192e5a9dad
 msgid "The command ``gdal_calc.py`` will generate a new raster file containing the difference between the two generated DEMs. Open this raster in QGIS software. Modify the color scale values ``Min`` and ``Max`` values of the band between -50 and +50. You should obtain something similar to :numref:`fig-dod-2023-2003`."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:414
-#: c1fae2a928d1482eb5eaff68a50dd140
+#: 5b3c06a5f35e48878f461ff95d93e18b
 msgid "Difference of DEMs (DoD) generated from ASTER images using ASP between 2003 and 2023."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:419
-#: 11f9b3eb8172409c86de99cb70766515
+#: 5c22be9de9604a448ca881bcfe200e19
 msgid "Difference of DEMs (DoD) generated from ASTER images using ASP between 2003 and 2023. Visualized in QGIS."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:433
-#: 89e5961096dc43a796e30d1e0af469a8
+#: e689a54bce5e4d47a8dbbcf7e1420048
 msgid "To go further (bonus)"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:435
-#: b1f0da4fce2246278f4245073c76962b
+#: 82680f20a5ff4eb38d1429c9002a6ba7
 msgid "As mentioned in Section 3.4, the processing of ``ASTER L1A RAW`` images has become standard in recent years. Together with the ``DEM_GENERATION`` dataset, we provide a bash script called ``make_ASTER-DEM_ASP.sh``, which is used to automatically process multiple `ASTER images <https://github.com/FannyBrun/ASTER_DEM_from_L1A>`_ by running a single script. This is based on the :cite:`brun2017` and :cite:`dussaillant2019` studies and was modified/adapted for this practice. To run this command, first copy all the ASTER tiles you want to process into the same folder (e.g. ``RAW_L1A``). Then go to the parent directory and run the following command indicating the folder where images are stored and the seed DEM:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:441
-#: 874ed432da1c415e8688bbb0b755d968
+#: 59111f6d691444df93ed650a74c225df
 msgid "Do it yourself!!"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:443
-#: 3326f66704144306989c01d5e781c319
+#: 0e65c633705644ac911d4bba0eebf1da
 msgid "**Congratulations!!** Now you have the basic knowledge on how to compute ASTER DEM automatically using ASP. To go further:"
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:445
-#: c8d0ae5c841b4814bc388437e9c4e3aa
+#: d7fb5291d7fb43c6867d2800aa4947ca
 msgid "Replicate the same process using other ASTER images available in the directory ``RAW_L1A``."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:446
-#: 6029841d9bee41d58b278b0401dbd705
+#: b4098fc89e2a45848c5fd35f9656dd99
 msgid "Replicate the same process for another region. You can use the data provided in the directory ``IMG_MACA``."
 msgstr ""
 
 #: ../../source/practicals/dem_generation.rst:449
-#: 18f448b2d6df44cfa061c59c4bb87dbe
+#: e10f8986b0724c6f8ed52718c39c9a7a
 msgid "References"
 msgstr ""

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PSF TelRiskNat 2025 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 05:27+0200\n"
+"POT-Creation-Date: 2025-10-14 06:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -22,17 +22,483 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../source/practicals/landslide_prediction.rst:14
-#: edf7f845d1bc40fc8907507e41246b67
+#: 2a91df00650049bba8fba56dfbead0fb
 msgid "Landslide prediction using time series of displacement"
 msgstr ""
 
-#: ../../source/practicals/landslide_prediction.rst:16
-#: cdcb6d78e0024e93a2f095e0e9e615bd
-msgid "be patient"
+#: ../../source/practicals/landslide_prediction.rst:24
+#: e54ace5ed1104095911bebb320da4d85
+msgid "**Pascal LACROIX**\\ :sup:`1` & **Diego CUSICANQUI**\\ :sup:`1`"
 msgstr ""
 
-#: ../../source/practicals/landslide_prediction.rst:21
-#: d1956c2c794d402f85bf24aab2aeb132
-msgid "Advice from PSF TelRiskNat optical team."
+#: ../../source/practicals/landslide_prediction.rst:26
+#: a48ae6eb3f574bf2bff6e1227c96c1e4
+msgid ""
+"\\ :sup:`1` Univ. Grenoble Alpes, CNES, CNRS, IRD, Institut des Sciences "
+"de la Terre (ISTerre), Grenoble, France."
 msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:30
+#: 889e3e57d44f44dfa80f1b751d07b61e
+msgid "Copyright"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:32
+#: 0db9213f49604e3eaf1fc6abb80cc1a0
+msgid "*Document version 0.2, Last update: 2025-09-18*"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:34
+#: 48bc659eb1a74606b2424e759ff03120
+msgid ""
+"|copy| *PSF TelRIskNat 2025 Optical team (D. Cusicanqui, R. Basantes & P."
+" Lacroix)*. This document and its contents are licensed under the "
+"Creative Commons Attribution 4.0 International License (`CC BY-NC-SA 4.0 "
+"<https://creativecommons.org/licenses/by-nc-sa/4.0/>`_)."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:37
+#: 3948caf003db4a349a4f7b2c41a9b22e
+msgid "License: CC BY-NC-SA 4.0"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:44
+#: f8cbabb85da84125b3cd7984433247d8
+msgid "Learning objectives:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:46
+#: 0b9e0253adff43efb92c26a9b076e6d2
+msgid "Visualize time-series of landslide displacements from different sensors."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:47
+#: 925d16f10c4d4af28248d3762a74a1d2
+msgid "Predict the occurrence time of a landslide failure."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:48
+#: 104d7e377eaa4c7c989e45a0c342b915
+msgid "Understand the notions of uncertainties on landslide displacements."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:52
+#: 948441122c3f4b9fa2170cb10a03e4ed
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:54
+#: 3d450ec202814407ad1e0f67105d1006
+msgid ""
+"Landslides are a major threat in most mountainous environments of the "
+"world provoking almost 10,000 casualties each years. It has been observed"
+" that landslides can be preceded by a phase of acceleration, emphasizing "
+"the interest for detecting slow motions of the ground, and monitoring "
+"their motion though time. Landslide displacement can be measured from a "
+"large amounts of techniques, including in situ measurements "
+":cite:`federico2012`, or from remote sensing images :cite:`lacroix2020`."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:56
+#: 12fe17b5f3624d779facc36ca40b7e35
+msgid ""
+"For this practice, you will study the latest phase of acceleration of 2 "
+"landslides before their failure to try to predict their occurrence time, "
+"based on two types of measurements: 1. TLS measurements installed in "
+"front of the Chambon landslide (France), and 2. Time-series of "
+"displacement coming from satellite images over the Achoma landslide "
+"(Peru)."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:61
+#: 34b575e9711e4b7c9cb40674d65c4f82
+msgid "About the studied Landslides"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:64
+#: 0793affd48644ad2b318345b37e131de
+msgid "The Chambon landslide"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:66
+#: 2ba571ee737a456c9a99c3b8bc58cd28
+msgid ""
+"The **Chambon landslide** :numref:`chambon_landslide` : is located in the"
+" French Alps along the Chambon artificial lake reservoir, affecting lower"
+" Jurassic sedimentary rocks (Lias). The landslide affects the tunnel of "
+"the road linking Grenoble to Briançon. The tunnel closed in April 2015 "
+"after the emergence of several surface fissures :cite:`desrues2019`. On "
+"July a major but incomplete rupture of the landslide occurred. As a "
+"consequence, all of the actors of the landslide risk management team "
+"decided to increase the lake level to purge the remaining unstable "
+"masses. The landslide involved a mass of about 250x100x25 m\\ :sup:`3`."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:70
+#: 93b1ac4bd1c84b0db8a42c7f6230cd18
+msgid "Chambon landslide"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:76
+#: 57f640bc3c6140bb830593e2be0967e0
+msgid ""
+"View of the Chambon landslide (France) in July 2015 after the major "
+"rupture. The red arrow indicates the location of the TLS installed in "
+"front of the landslide."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:78
+#: ../../source/practicals/landslide_prediction.rst:98
+#: ../../source/practicals/landslide_prediction.rst:141
+#: ../../source/practicals/landslide_prediction.rst:174
+#: 076b22b90ae045dc8c683053fe9a9b6b 4ceacf69171b4bbebee6da940d6a14c9
+#: 787108da40ed4efc9fed52390c75d304 bea09cf6357047899359cba19a124150
+msgid "Important"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:79
+#: dcdaae73097a4d8ba2e5bced6aedf63a
+msgid "For a detailed information on Chambon landslide:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:81
+#: 85cc9a1e0d6845dc9f97f2d89d07d4e0
+msgid ""
+"Desrues, M., Lacroix, P., & Brenguier, O. (2019). Satellite Pre-Failure "
+"Detection and In Situ Monitoring of the Landslide of the Tunnel du "
+"Chambon, French Alps. Geosciences, 9(7), 313. "
+"https://doi.org/10.3390/geosciences9070313"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:84
+#: 2bc67b73e2174f36802eb3a46685191c
+msgid "The Achoma landslide"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:86
+#: 2586b65c67c543dc9587d51dd49da719
+msgid ""
+"The **Achoma landslide** :numref:`achoma_landslide` : is situated in the "
+"Colca valley in Peru which is a wide depression filled with lacustrine "
+"sediments deposited over the last 1Myr, after a major debris avalanche "
+"coming from the Hualca hualca volcanic complex damed the valley. After "
+"the breaching of the dam, Colca river started to incise the soft clayey "
+"sediments and initiated landsliding in the whole area. The Achoma "
+"landslide, of approximate size 500x500x80 m\\ :sup:`3` was triggered in "
+"June 2020, 2 months after the end of the rainy season. It destroyed "
+"cultures and blocked the Colca river, creating a lake, threatening the "
+"inhabitants downstream."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:90
+#: 9f0ec5b241d94bdaa59ed6e920ba6537
+msgid "Achoma landslide"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:96
+#: 63e6f68c5e744cfdaeabd72b45ca0a62
+msgid "View of the Achoma landslide (Peru) in August 2020 after its triggering."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:99
+#: d616a541f10349779197a8833f1c4cf3
+msgid "For a detailed information about landslides in Colca valley:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:101
+#: 6c46552583d84406916b5f46efa6f2c5
+msgid ""
+"Zerathe, S., Lacroix, P., Jongmans, D., Marino, J., Taipe, E., Wathelet, "
+"M., Pari, W., Smoll, L. F., Norabuena, E., Guillier, B., and Tatard, L. "
+"(2016) Morphology, structure and kinematics of a rainfall controlled "
+"slow-moving Andean landslide, Peru. Earth Surf. Process. Landforms, 41: "
+"1477–1493. doi: `10.1002/esp.3913 <https://doi.org/10.1002/esp.3913>`_."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:106
+#: 84203964066c4f01b4548dd278221914
+msgid "Landslide occurrence time prediction"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:108
+#: d4f3e2509738454e87b3d9c16825cc44
+#, python-brace-format
+msgid ""
+"In this section, you will try to predict the occurrence time of the two "
+"landslides based on their latest phase of acceleration before rupture. "
+"For some landslides, that experience progressive maturation of faults, "
+":cite:`fukuzono1985` found that the logarithm of the landslide "
+"acceleration (:math:`\\ddot{\\eta}`) in its last stage before failure is "
+"proportional to the logarithm of its velocity (:math:`\\dot{\\eta}`), "
+"i.e.:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:110
+#: 22099c23158e46c280e1a32a41b3cf4e
+#, python-brace-format
+msgid "\\ddot{\\eta}(t) = a\\,\\dot{\\eta}(t)^{\\alpha}"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:115
+#: 16e1646eb09c441486c680bffa57cb3b
+msgid "Integrating this equations for a :math:`\\alpha > 1`, one obtains:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:117
+#: 2b2399451bb94ef0aa18695aa33cac7b
+msgid ""
+"\\dot{\\eta}(t) = \\left[a\\,(\\alpha - 1)\\,\\bigl(t_f - "
+"t\\bigr)\\right]^{-\\frac{1}{\\alpha - 1}}"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:122
+#: 39673def8c924895a23a64c9b7305a2b
+msgid ""
+"In the specific case where :math:`\\alpha = 2`, which is a close "
+"assumption for the tertiary creep of landslides, the equation reduces to "
+"the Saito Formula :cite:`saito1969`:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:124
+#: 395acd0dab634d8a883bddea61c984b4
+#, python-brace-format
+msgid "\\bigl(t_f - t\\bigr)\\,\\dot{\\eta}(t) = A"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:129
+#: 6fade548381b444e82fd4b9e760b23b8
+msgid ""
+"This equation indicates that the time to failure :math:`t_f` in tertiary "
+"creep is inversely proportional to the current strain rate or velocity. "
+"Plotting the inverse velocity of the landslide as a function of time "
+"therefore allows the estimation of the landslide failure, as represented "
+"in Figure 3."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:133
+#: 98698ca852b9414a9666c09585a90f20
+msgid "Inverse velocity method"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:139
+#: cacbc300ab954a7d9cebf93e7f4cdfe1
+msgid ""
+"Linear Fukuzono model application and the corresponding R² value, with a "
+"detail of the intersection between the linear regression and the x-axis. "
+"From :cite:`segalini2018`."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:142
+#: d26d1bdbcdca41779fc36dc87e8be7ca
+msgid "For a detailed information on the pre-failure landslide accelerations:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:144
+#: 31f0b3f7d43a4712b2e4693fae7c26dd
+msgid ""
+"Federico, A., Popescu, M., Elia, G. et al. Prediction of time to slope "
+"failure: a general framework. Environ Earth Sci 66, 245–256 (2012). "
+"https://doi.org/10.1007/s12665-011-1231-5"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:147
+#: e42703463b1a48f79ebfc150738813ea
+msgid "Practical work"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:150
+#: 3953a82c42bc49b6a3ea08fe910f81b4
+msgid "Chambon data"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:152
+#: 3ee4fd10130847f6ad553f7d1aced3ec
+msgid ""
+"A network of 24 of topographic targets was set set up area in in June "
+"2015 by the SAGE society :numref:`fig-chambon-targets`. Seven targets "
+"were were located located in around the movement and 17 and on the "
+"unstable mass. Planimetric and altimetric displacements were regularly "
+"recorded thanks to an automatic theodolite placed in the southern side of"
+" the lake in front of the movement. The automatic theodolite placed in "
+"the southern side of the lake in front of the movement. The measurement "
+"frequency was 1.5 h with a precision of 2 mm, as estimated from the "
+"standard deviation calculated on targets located in the stable parts. For"
+" this practice you will use the data from the target C15."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:156
+#: 0bd9a71332cc456ab78b8ba3c1f45012
+msgid "Chambon targets"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:162
+#: 1222c1702fb24641998d136b5fbca5a6
+msgid ""
+"Left: Position of the topographic targets on the Chambon landslide; "
+"Right: Cumlative displacements in meters of the selected topographic "
+"targets :cite:`desrues2019`."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:165
+#: a1f4d258625a42dd8b6af8ecab04009f
+msgid "Achoma data"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:167
+#: 5590d55d11f64ec9857309354e5aa425
+msgid ""
+"Year 2020 was one of the wettest rainy season from the last 30 years, "
+"that ended up in April 2020. Local inhabitants noted in June 2020 the "
+"existence of large fissures, but, after investigations from the Peruvian "
+"Geological office no monitoring was set up for different reasons, "
+"including the little risk posed to inhabitants (no habitations) and the "
+"lack of technical people to take charge of this monitoring during covid "
+"lowdown time. Therefore, the geodetical data analyzed in this practice "
+"comes from the reanalysis of remote-sensing images. Specifically from the"
+" correlation of Planet satellite images. Planet satellites enabled a "
+"quasi daily monitoring of the landslide with uncertainties of between 0.5"
+" and 1 m. The interest of satellite images is the possibility of having "
+"spatially extended measurements. Here we selected only one point in the "
+"most rapid area."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:170
+#: e4bd7151456f4f49be72bed1f27b9fc2
+msgid "Practice"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:173
+#: 96c8f12b5afe45afbcf166229f99aa32
+msgid "Load the data"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:175
+#: 262b442632f147d399a4c13f84d4519e
+msgid ""
+"For this practice, you will use ``Excel`` or ``LibreOffice`` to visualize"
+" the displacement as a function of the date as a scatter plot."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:177
+#: 5e684b99b0964d2c801bf4585adfaa8a
+msgid "The data used in this exercise can be downloaded from:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:179
+#: 02dfe29fc5c34bc7bb607827d3902ad2
+msgid ":download:`TP_Achoma.xlsx </_static/landslide_prediction/TP_Achoma.xlsx>`"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:180
+#: 871ea31f5a1d4f478bbbc3d3486217df
+msgid ""
+":download:`TP_Chambon.xlsx "
+"</_static/landslide_prediction/TP_Chambon.xlsx>`"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:183
+#: 540ba2d191574c618d5d2f29c111501b
+msgid "Plot the data"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:185
+#: ae8ac5e79836401b9d142878bf42b34e
+msgid ""
+"Compute the landslide velocity using the ``Excel`` tools. Note the "
+"acceleration before the landslide failure."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:187
+#: ../../source/practicals/landslide_prediction.rst:201
+#: 23881da8cf744b05bc7d27e69dbee826 fe15f8d0af93440c87ab89fb10d1ff89
+msgid "Questions for discussion"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:190
+#: 584e954394284c109376370be3da11cc
+msgid "Is the acceleration progressive?"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:191
+#: ee154614070c45a7852d74173ddedec1
+msgid "When did it start?"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:194
+#: a5fa322f2df7408c9a8f46529131c237
+msgid "Predict the time of failure"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:196
+#: ddf46bda589348c2a5ef1abb5aa0b875
+msgid ""
+"Based on the Fukuzono method :cite:`fukuzono1985`, with :math:`\\alpha = "
+"2` (Saito method :cite:`saito1969`, :numref:`fig-inverse-velocity`), "
+"applied on the progressively accelerating part of the displacement curve "
+"(see :eq:`eq-saito` in Section :ref:`landslide_occurrence_prediction`), "
+"predict the time-to-failure of each landslide. Reiterate this process by "
+"removing the last point(s) of the time-series before the failure. Draw "
+"the estimated date of your failure prediction as a function of your last "
+"measurements."
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:199
+#: 14ffedd4c08f4794aca093f6d4450a60
+msgid "Discussion"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:204
+#: 554d7aed33ab4fc381c5276a4aaf0c1b
+msgid ""
+"How long in advance could have been predicted the landslide occurrence "
+"with a 1 day uncertainty? With a 2 day uncertainty? With a 1 week "
+"uncertainty"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:205
+#: 8beb6d20f77c486c8af2fac2484f1e51
+msgid "Discuss the pro and the cons of the satellite and in situ measurements?"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:206
+#: 5d1abe4c2c014411b7cc0059677224cd
+msgid ""
+"Do you think satellite measurements could be used as a operational tool "
+"for  landslide prediction?"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:207
+#: 218ea7c1c1d14664bb8beb9987cb0882
+msgid ""
+"How would you improve this approach for operational landslide risk "
+"management?"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:209
+#: 39c7315f8e304094840228d3dddf48ed
+msgid "Note"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:210
+#: 84ccc52701354502a6ac0fe4742707c3
+msgid "You can download the solution for the practice in the following links:"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:212
+#: 422e6ac712554cc5a4468e25aa56e7df
+msgid ""
+":download:`TS_Chambon_C15.xlsx "
+"</_static/landslide_prediction/TS_Chambon_C15.xlsx>`"
+msgstr ""
+
+#: ../../source/practicals/landslide_prediction.rst:215
+#: 88139341146c47fa84ada755dc9dada3
+msgid "References"
+msgstr ""
+
+#~ msgid "be patient"
+#~ msgstr ""
+
+#~ msgid "Advice from PSF TelRiskNat optical team."
+#~ msgstr ""
 
